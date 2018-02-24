@@ -1,0 +1,4 @@
+/node_modules
+/tscompiled
+/build/aknightinthewoods.js
+package-lock.json
