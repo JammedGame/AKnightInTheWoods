@@ -46,7 +46,7 @@ class ForestTrailOne extends GameScene
     }
     private GenerateBackground() : void
     {
-        let Backs:Engineer.TileCollection = new Engineer.TileCollection(null, ["Resources/Textures/ForestTrailOne.png"]);
+        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/ForestTrailOne.png"]);
         let Back:Engineer.Tile = new Engineer.Tile();
         Back.Name = "Back";
         Back.Collection = Backs;

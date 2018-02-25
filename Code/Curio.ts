@@ -8,7 +8,7 @@ export {Curio}
 
 class Curio {
     private _GameScene:GameScene;
-    private _CurioColl:Engineer.TileCollection = new Engineer.TileCollection(null, []);
+    private _CurioColl:Engineer.ImageCollection = new Engineer.ImageCollection(null, []);
     private _Curio:Engineer.Tile = new Engineer.Tile();
     private _Dialog:Dialog;
     
