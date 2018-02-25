@@ -3,8 +3,7 @@ export { ForestTrailOne };
 import Engineer from "./Engineer";
 import { Player } from "./Player";
 import { Movement } from "./Movement";
-import { ParticleSystemMaterial, Vertex } from "three";
-import { Dialog } from "./Dialog";
+import { ParticleSystemMaterial, Vertex } from "three"
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
@@ -31,8 +30,6 @@ class ForestTrailOne extends GameScene
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
-
-        this._Dialog = new Dialog();
 
         this._Wolf = new Wolf();
         this._Wolf.Init(new Engineer.Vertex(2600, 770, 0.8), new Engineer.Vertex(600, 360, 1));

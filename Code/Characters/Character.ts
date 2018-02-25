@@ -53,6 +53,9 @@ class Character extends Engineer.Sprite
     }
     private ActivateDialog() : void
     {
-        Dialog.Single.ShowDialog(this._CharacterString, this.Data["Chat"]);
+        let Dial = null;
+        if(Dialog.Single) Dial = Dialog.Single;
+        else Dial = new Dialog();
+        Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
     }
 }

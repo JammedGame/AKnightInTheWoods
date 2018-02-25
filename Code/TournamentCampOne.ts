@@ -4,7 +4,6 @@ import Engineer from "./Engineer";
 import { Player } from "./Player";
 import { Movement } from "./Movement";
 import { ParticleSystemMaterial, Vertex } from "three";
-import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
@@ -43,8 +42,6 @@ class TournamentCampOne extends GameScene
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(500, 700, 1);
-
-        this._Dialog = new Dialog();
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();

@@ -5,7 +5,6 @@ import Engineer from "./Engineer";
 import { GameScene } from "./GameScene";
 import { Sprite } from "three";
 import { DefaultGameObject } from "./GameObject";
-import { Dialog } from "./Dialog";
 
 class MainMenu extends Engineer.Scene2D
 {
@@ -41,7 +40,6 @@ class MainMenu extends Engineer.Scene2D
         this.AddSceneObject(this._Fire);
         this.AddSceneObject(this._Player);
         this._Game.AddScene(this);
-        let Dial = new Dialog();
     }
     public PlayClick(G:any, Args:any) : void
     {

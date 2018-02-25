@@ -4,7 +4,6 @@ import Engineer from "./Engineer";
 import { Player } from "./Player";
 import { Movement } from "./Movement";
 import { ParticleSystemMaterial, Vertex } from "three";
-import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 
 import { Tooltip } from "./Tooltip";
@@ -15,7 +14,6 @@ class GameScene extends Engineer.Scene2D
     protected _Background:Engineer.Tile;
     protected _Player:Player;
     protected _Movement:Movement;
-    protected _Dialog:Dialog;
     protected _Tooltip:Tooltip;
     protected _Curio:Curio[];
     public get Pause():boolean { return this._Pause; }

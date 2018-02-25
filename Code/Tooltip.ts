@@ -20,7 +20,7 @@ class Tooltip
     }
     public Set(Game:Engineer.Game, Args:any) : void
     {
-        if(Dialog.Single.Shown)
+        if(Dialog.Shown)
         {
             this.Hide();
             return;
