@@ -29,7 +29,7 @@ class ForestTrailOne extends GameScene
         this._Dialog = new Dialog();
         this._Curio.push(new Curio(this,"signpost1", new Engineer.Vertex(1800,500,0.5)));        
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
-        this._Player.Trans.Translation = new Engineer.Vertex(140, 780, 1);
+        this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
         this.AddSceneObject(this._Player);
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
@@ -52,7 +52,7 @@ class ForestTrailOne extends GameScene
         Back.Collection = Backs;
         Back.Index = 0;
         Back.Trans.Scale = new Engineer.Vertex(5760, 1080, 1);
-        Back.Trans.Translation = new Engineer.Vertex(960, 540, 0);
+        Back.Trans.Translation = new Engineer.Vertex(2800, 540, 0);
         this._Background = Back;
         this.AddSceneObject(this._Background);
     }
