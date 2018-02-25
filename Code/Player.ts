@@ -16,8 +16,6 @@ class Player extends Engineer.Sprite {
         this._GameScene = GameScene;
         this.Fixed = true;    
         this.LoadSets();
-        this.Trans.Scale = new Engineer.Vertex(279, 333, 1);
-        this.Trans.Translation = new Engineer.Vertex(960, 540, 1);
         this.SetSpriteSet(0);
     }
 

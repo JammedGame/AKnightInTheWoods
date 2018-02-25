@@ -21,29 +21,29 @@ class Movement
     {
         if(this._Left && !this._Right)
         {
-            if(this._GameScene.Trans.Translation.X>=-1800)
+            if(this._GameScene.Trans.Translation.X>=-3760)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 3, this._GameScene.Trans.Translation.Y, 2);
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 2, this._GameScene.Trans.Translation.Y, 2);
                 console.log(this._GameScene.Trans.Translation.X);
-            }
-            else if(this._GameScene.Player.Trans.Translation.X>=0 && this._GameScene.Player.Trans.Translation.X<1800)
-            {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + 3, this._GameScene.Player.Trans.Translation.Y, 2);
                 console.log(this._GameScene.Player.Trans.Translation.X);
+            }
+            else if(this._GameScene.Player.Trans.Translation.X<=1720)
+            {
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + 2, this._GameScene.Player.Trans.Translation.Y, 2);
             }
             this._GameScene.Player.UpdateSpriteSet(2);
         }
         if(this._Right && !this._Left)
         {
-            if(this._GameScene.Trans.Translation.X<=-960)
+            if(this._GameScene.Trans.Translation.X<=0)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 3, this._GameScene.Trans.Translation.Y, 2);
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 2, this._GameScene.Trans.Translation.Y, 2);
                 console.log(this._GameScene.Trans.Translation.X);
-            }
-            else if(this._GameScene.Player.Trans.Translation.X>=0 && this._GameScene.Player.Trans.Translation.X<1800)
-            {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - 3, this._GameScene.Player.Trans.Translation.Y, 2);
                 console.log(this._GameScene.Player.Trans.Translation.X);
+            }
+            else if(this._GameScene.Player.Trans.Translation.X>=200)
+            {
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - 2, this._GameScene.Player.Trans.Translation.Y, 2);
             }
             this._GameScene.Player.UpdateSpriteSet(3);
         }
