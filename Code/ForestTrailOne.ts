@@ -39,6 +39,7 @@ class ForestTrailOne extends GameScene
 
         this._Rabbit = new Rabbit();
         this._Rabbit.Flip();
+        this._Rabbit.Data["Chat"] = 0;
         this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
 
         this._Signpost = new Transition(null, "Signpost", "Camp1", "Lower Tournament Camp");

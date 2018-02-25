@@ -1,0 +1,10 @@
+.dialog-choice
+{
+    font-size: 16px;
+    color:#DDDDDD;
+    text-align:center;
+}
+.dialog-choice:hover
+{
+    color:white;
+}

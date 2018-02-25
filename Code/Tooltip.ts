@@ -2,6 +2,8 @@ export { Tooltip }
 
 import * as Engineer from "engineer-js";
 
+import { Dialog } from "./Dialog";
+
 class Tooltip
 {
     private _Element:HTMLElement;
@@ -18,6 +20,11 @@ class Tooltip
     }
     public Set(Game:Engineer.Game, Args:any) : void
     {
+        if(Dialog.Single.Shown)
+        {
+            this.Hide();
+            return;
+        }
         this._DivElement = document.getElementById("tooltip");
         this._Element = document.getElementById("tooltip-text");
         let X = Args.UnscaledLocation.X;
