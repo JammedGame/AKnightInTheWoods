@@ -4,6 +4,7 @@ import Engineer from "./Engineer";
 import { Player } from "./Player";
 import { Movement } from "./Movement";
 import { ParticleSystemMaterial } from "three";
+import { Dialog } from "./Dialog";
 
 class GameScene extends Engineer.Scene2D
 {
@@ -11,6 +12,7 @@ class GameScene extends Engineer.Scene2D
     private _Background:Engineer.Tile;
     private _Player:Player;
     private _Movement:Movement;
+    private _Dialog:Dialog;
     public get Pause():boolean { return this._Pause; }
     public set Pause(value:boolean) { this._Pause = value; }
     public get Player():Player { return this._Player; }
@@ -26,6 +28,7 @@ class GameScene extends Engineer.Scene2D
     {
         this._Movement = new Movement(this);
         this._Player = new Player(this);
+        this._Dialog = new Dialog();
         this.AddSceneObject(this._Player);
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();

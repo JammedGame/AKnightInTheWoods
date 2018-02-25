@@ -25,26 +25,28 @@ class Movement
 
     private KeyDown(Game:Engineer.Game, Args:any) : void
     {
-        if(Args.KeyCode == 37)
-        {
-            this._Right = true;
-            this._GameScene.Player.UpdateSpriteSet(1);
-        }
-        else if(Args.KeyCode == 39)
+        if(Args.KeyCode == 39)
         {
             this._Left = true;
+            this._GameScene.Player.UpdateSpriteSet(1); 
+        }
+        else if(Args.KeyCode == 37)
+        {
+            this._Right = true;                       
         }
     }
 
     private KeyUp(Game:Engineer.Game, Args:any) : void
     {
-        if(Args.KeyCode == 37)
-        {
-            this._Right = false;
-        }
-        else if(Args.KeyCode == 39)
+        if(Args.KeyCode == 39)
         {
             this._Left = false;
+            this._GameScene.Player.UpdateSpriteSet(0);
+        }
+        else if(Args.KeyCode == 37)
+        {
+            this._Right = false;
+            
         }
     }
 }
