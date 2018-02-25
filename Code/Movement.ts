@@ -5,7 +5,7 @@ import { GameScene } from "./GameScene";
 
 class Movement
 {
-    private _GameScene:GameScene;   
+    private _GameScene:GameScene;
     private _Left:boolean = false;
     private _Right:boolean = false;
 
@@ -19,20 +19,51 @@ class Movement
 
     private Move()
     {
-        if(this._Right)this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 3, this._GameScene.Trans.Translation.Y, 2);
-        if(this._Left)this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 3, this._GameScene.Trans.Translation.Y, 2);
+        if(this._Left && !this._Right)
+        {
+            if(this._GameScene.Trans.Translation.X>=-1800)
+            {
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 3, this._GameScene.Trans.Translation.Y, 2);
+                console.log(this._GameScene.Trans.Translation.X);
+            }
+            else if(this._GameScene.Player.Trans.Translation.X>=0 && this._GameScene.Player.Trans.Translation.X<1800)
+            {
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + 3, this._GameScene.Player.Trans.Translation.Y, 2);
+                console.log(this._GameScene.Player.Trans.Translation.X);
+            }
+            this._GameScene.Player.UpdateSpriteSet(2);
+        }
+        if(this._Right && !this._Left)
+        {
+            if(this._GameScene.Trans.Translation.X<=-960)
+            {
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 3, this._GameScene.Trans.Translation.Y, 2);
+                console.log(this._GameScene.Trans.Translation.X);
+            }
+            else if(this._GameScene.Player.Trans.Translation.X>=0 && this._GameScene.Player.Trans.Translation.X<1800)
+            {
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - 3, this._GameScene.Player.Trans.Translation.Y, 2);
+                console.log(this._GameScene.Player.Trans.Translation.X);
+            }
+            this._GameScene.Player.UpdateSpriteSet(3);
+        }
     }
 
     private KeyDown(Game:Engineer.Game, Args:any) : void
     {
         if(Args.KeyCode == 39)
         {
-            this._Left = true;
-            this._GameScene.Player.UpdateSpriteSet(1); 
+            if(!this._Right)
+            {
+            this._Left = true; 
+            }
         }
         else if(Args.KeyCode == 37)
         {
-            this._Right = true;                       
+            if(!this._Left)
+            {
+            this._Right = true; 
+            }                  
         }
     }
 
@@ -40,13 +71,19 @@ class Movement
     {
         if(Args.KeyCode == 39)
         {
-            this._Left = false;
-            this._GameScene.Player.UpdateSpriteSet(0);
+            if(this._Left)
+            {
+                this._Left = false;
+                this._GameScene.Player.UpdateSpriteSet(0);
+            }            
         }
         else if(Args.KeyCode == 37)
         {
-            this._Right = false;
-            
+            if(this._Right)
+            {
+                this._Right = false;
+                this._GameScene.Player.UpdateSpriteSet(1);
+            }            
         }
     }
 }

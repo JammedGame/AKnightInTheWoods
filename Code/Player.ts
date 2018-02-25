@@ -1,8 +1,9 @@
 export { Player };
 
 import Engineer from "./Engineer";
-import { Movement } from "./Movement";
 import { GameScene } from "./GameScene";
+import { Movement } from "./Movement";
+
 
 
 
@@ -16,22 +17,31 @@ class Player extends Engineer.Sprite {
         this.Fixed = true;    
         this.LoadSets();
         this.Trans.Scale = new Engineer.Vertex(279, 333, 1);
-        this.Trans.Translation = new Engineer.Vertex(960, 540, 0.5);
+        this.Trans.Translation = new Engineer.Vertex(960, 540, 1);
         this.SetSpriteSet(0);
-        console.log(this);
     }
 
     private LoadSets(): void 
     {
         let SpriteSetSkin0 = new Engineer.SpriteSet(null, "IdleRight", []);
         SpriteSetSkin0.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin0.Sprites.push("Resources/Characters/IdleR" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin0.Sprites.push("Resources/Characters/idleR" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin0);
 
-        let SpriteSetSkin1 = new Engineer.SpriteSet(null, "WalkRight", []);
+        let SpriteSetSkin1 = new Engineer.SpriteSet(null, "IdleLeft", []);
         SpriteSetSkin1.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin1.Sprites.push("Resources/Characters/walkR" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin1.Sprites.push("Resources/Characters/idleL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin1);
+
+        let SpriteSetSkin2 = new Engineer.SpriteSet(null, "WalkRight", []);
+        SpriteSetSkin2.Seed = 50;
+        for (let i = 0; i < 3; i++) SpriteSetSkin2.Sprites.push("Resources/Characters/walkR" + i + ".png");
+        this.SpriteSets.push(SpriteSetSkin2);
+
+        let SpriteSetSkin3 = new Engineer.SpriteSet(null, "WalkLeft", []);
+        SpriteSetSkin3.Seed = 50;
+        for (let i = 0; i < 3; i++) SpriteSetSkin3.Sprites.push("Resources/Characters/walkL" + i + ".png");
+        this.SpriteSets.push(SpriteSetSkin3);
     }
 }
 
