@@ -24,8 +24,6 @@ class Movement
             if(this._GameScene.Trans.Translation.X>=-3760)
             {
                 this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 2, this._GameScene.Trans.Translation.Y, 2);
-                console.log(this._GameScene.Trans.Translation.X);
-                console.log(this._GameScene.Player.Trans.Translation.X);
             }
             else if(this._GameScene.Player.Trans.Translation.X<=1720)
             {
@@ -38,8 +36,6 @@ class Movement
             if(this._GameScene.Trans.Translation.X<=0)
             {
                 this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 2, this._GameScene.Trans.Translation.Y, 2);
-                console.log(this._GameScene.Trans.Translation.X);
-                console.log(this._GameScene.Player.Trans.Translation.X);
             }
             else if(this._GameScene.Player.Trans.Translation.X>=200)
             {
@@ -51,14 +47,15 @@ class Movement
 
     private KeyDown(Game:Engineer.Game, Args:any) : void
     {
-        if(Args.KeyCode == 39)
+        console.log(Args.KeyCode);
+        if(Args.KeyCode == 68)
         {
             if(!this._Right)
             {
             this._Left = true; 
             }
         }
-        else if(Args.KeyCode == 37)
+        else if(Args.KeyCode == 65)
         {
             if(!this._Left)
             {
@@ -69,7 +66,7 @@ class Movement
 
     private KeyUp(Game:Engineer.Game, Args:any) : void
     {
-        if(Args.KeyCode == 39)
+        if(Args.KeyCode == 68)
         {
             if(this._Left)
             {
@@ -77,7 +74,7 @@ class Movement
                 this._GameScene.Player.UpdateSpriteSet(0);
             }            
         }
-        else if(Args.KeyCode == 37)
+        else if(Args.KeyCode == 65)
         {
             if(this._Right)
             {

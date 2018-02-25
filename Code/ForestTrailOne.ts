@@ -8,8 +8,13 @@ import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
+import { Rabbit } from "./Characters/Rabbit";
+import { Transition } from "./Transition";
+
 class ForestTrailOne extends GameScene
 {
+    private _Rabbit:Rabbit;
+    private _Signpost:Transition;
     public get Pause():boolean { return this._Pause; }
     public set Pause(value:boolean) { this._Pause = value; }
     public get Player():Player { return this._Player; }
@@ -25,14 +30,24 @@ class ForestTrailOne extends GameScene
     {
         this._Curio = [];
         this._Movement = new Movement(this);
+
         this._Player = new Player(this);
-        this._Dialog = new Dialog();
-        this._Curio.push(new Curio(this,"signpost1", new Engineer.Vertex(1800,500,0.5)));        
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
-        this.AddSceneObject(this._Player);
+
+        this._Dialog = new Dialog();
+
+        this._Rabbit = new Rabbit();
+        this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
+
+        this._Signpost = new Transition(null, "Signpost", "Pavillion1", "Lower Tournament Camp");
+        this._Signpost.Init(new Engineer.Vertex(5500, 680, 0.7));
+        
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
+        this.AddSceneObject(this._Rabbit);
+        this.AddSceneObject(this._Player);
+        this.AddSceneObject(this._Signpost);
     }
     private KeyPress(G: any, Args: any): void
     {

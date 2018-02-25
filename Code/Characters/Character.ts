@@ -1,6 +1,6 @@
 export { Character }
 
-import Engineer from "./../Engineer";
+import * as Engineer from "engineer-js";
 
 class Character extends Engineer.Sprite
 {
@@ -18,14 +18,24 @@ class Character extends Engineer.Sprite
         }
         else
         {
-            if(!this._IdleLength) this._IdleLength = 3;
-            if(!this._CharacterSeed) this._CharacterSeed = 50;
-            if(!this._CharacterString)
-            {
-                Engineer.Log.Error("CharacterString not set!");
-            }
-            else this.LoadSpriteSets();
+            
         }
+    }
+    public Flip() : void
+    {
+        this.FlipX = !this.FlipX;
+    }
+    public Init(Position:Engineer.Vertex, Size:Engineer.Vertex) : void
+    {
+        this.Trans.Translation = Position;
+        this.Trans.Scale = Size;
+        if(!this._IdleLength) this._IdleLength = 3;
+        if(!this._CharacterSeed) this._CharacterSeed = 50;
+        if(!this._CharacterString)
+        {
+            Engineer.Log.Error("CharacterString not set!");
+        }
+        else this.LoadSpriteSets();
     }
     private LoadSpriteSets() : void
     {
