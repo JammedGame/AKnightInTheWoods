@@ -2,6 +2,8 @@ export { Character }
 
 import * as Engineer from "engineer-js";
 
+import { Dialog } from "./../Dialog";
+
 class Character extends Engineer.Sprite
 {
     protected _IdleLength:number;
@@ -20,7 +22,7 @@ class Character extends Engineer.Sprite
         {
             
         }
-        this.Events.MouseDown.push(this.ActivateTooltip.bind(this));
+        this.Events.MouseDown.push(this.ActivateDialog.bind(this));
     }
     public Flip() : void
     {
@@ -49,8 +51,8 @@ class Character extends Engineer.Sprite
         this.SpriteSets.push(Idle);
         this.UpdateSpriteSet(0);
     }
-    private ActivateTooltip() : void
+    private ActivateDialog() : void
     {
-        console.log("test");
+        Dialog.Single.ShowDialog();
     }
 }
