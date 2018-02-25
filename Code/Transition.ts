@@ -32,6 +32,7 @@ class Transition extends Engineer.Tile
     public Init(Position:Engineer.Vertex) : void
     {
         this.Trans.Translation = Position;
+        this.Events.MouseDown.push(this.Transit.bind(this));
     }
     private LoadCollection() : void
     {
@@ -41,5 +42,9 @@ class Transition extends Engineer.Tile
         }
         this.Collection = new Engineer.ImageCollection(null, ["Resources/Textures/Transitions/"+this._Art+".png"]);
         this.Index = 0;
+    }
+    private Transit() : void
+    {
+        this._Runner.SwitchScene(this._Destination, false);
     }
 }

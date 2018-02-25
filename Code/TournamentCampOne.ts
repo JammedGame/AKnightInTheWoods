@@ -1,4 +1,4 @@
-export { ForestTrailOne };
+export { TournamentCampOne };
 
 import Engineer from "./Engineer";
 import { Player } from "./Player";
@@ -8,46 +8,45 @@ import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
-import { Rabbit } from "./Characters/Rabbit";
+import { Owl } from "./Characters/Owl";
+import { Tortoise } from "./Characters/Tortoise";
 import { Transition } from "./Transition";
 
-class ForestTrailOne extends GameScene
+class TournamentCampOne extends GameScene
 {
-    private _Rabbit:Rabbit;
+    private _Owl:Owl;
+    private _Tortoise:Tortoise;
     private _Signpost:Transition;
-    public get Pause():boolean { return this._Pause; }
-    public set Pause(value:boolean) { this._Pause = value; }
-    public get Player():Player { return this._Player; }
-    public set Player(value:Player) { this._Player = value; }
-
     public constructor()
     {
         super();
-        this.Name = "ForestTrailOne";
+        this.Name = "Camp1";
         this.Init();
     }
     public Init(): void
     {
-        this._Curio = [];
         this._Movement = new Movement(this);
+
+        this._Owl = new Owl();
+        this._Owl.Fixed = true;
+        this._Owl.Init(new Engineer.Vertex(1500, 680, 0.8), new Engineer.Vertex(400, 400, 1));
+
+        this._Tortoise = new Tortoise();
+        this._Tortoise.Fixed = true;
+        this._Tortoise.Flip();
+        this._Tortoise.Init(new Engineer.Vertex(200, 800, 1.1), new Engineer.Vertex(360, 360, 1));
 
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
-        this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
+        this._Player.Trans.Translation = new Engineer.Vertex(500, 700, 1);
 
         this._Dialog = new Dialog();
-
-        this._Rabbit = new Rabbit();
-        this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
-
-        this._Signpost = new Transition(null, "Signpost", "Pavillion1", "Lower Tournament Camp");
-        this._Signpost.Init(new Engineer.Vertex(5500, 680, 0.7));
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
-        this.AddSceneObject(this._Rabbit);
         this.AddSceneObject(this._Player);
-        this.AddSceneObject(this._Signpost);
+        this.AddSceneObject(this._Owl);
+        this.AddSceneObject(this._Tortoise);
     }
     private KeyPress(G: any, Args: any): void
     {
@@ -61,13 +60,14 @@ class ForestTrailOne extends GameScene
     }
     private GenerateBackground() : void
     {
-        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/ForestTrailOne.png"]);
+        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/Backgrounds/PavilionDayF.png"]);
         let Back:Engineer.Tile = new Engineer.Tile();
         Back.Name = "Back";
         Back.Collection = Backs;
         Back.Index = 0;
-        Back.Trans.Scale = new Engineer.Vertex(5760, 1080, 1);
-        Back.Trans.Translation = new Engineer.Vertex(2800, 540, 0);
+        Back.Trans.Scale = new Engineer.Vertex(1920, 1080, 1);
+        Back.Trans.Translation = new Engineer.Vertex(960, 540, 0);
+        Back.Fixed = true;
         this._Background = Back;
         this.AddSceneObject(this._Background);
     }

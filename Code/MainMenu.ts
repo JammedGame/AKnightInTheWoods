@@ -5,6 +5,7 @@ import Engineer from "./Engineer";
 import { GameScene } from "./GameScene";
 import { Sprite } from "three";
 import { ForestTrailOne } from "./ForestTrailOne";
+import { TournamentCampOne } from "./TournamentCampOne";
 
 class MainMenu extends Engineer.Scene2D
 {
@@ -44,8 +45,10 @@ class MainMenu extends Engineer.Scene2D
     public PlayClick(G:any, Args:any) : void
     {
         let Scene = new ForestTrailOne();
+        let OtherScene = new TournamentCampOne();
         this._Game.AddScene(Scene);
-        this._Runner.SwitchScene("ForestTrailOne", false);
+        this._Game.AddScene(OtherScene);
+        this._Runner.SwitchScene("Route1", false);
     }
     private GenerateBackground() : void
     {

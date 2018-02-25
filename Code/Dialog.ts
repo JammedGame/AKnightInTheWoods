@@ -10,7 +10,7 @@ class Dialog {
     {
         this._DivDialog = document.getElementById("dialog-overlay");
         this._Option1 = document.getElementById("dialog-info-1");
-        this._DivDialog.style.display = "block";
+        //this._DivDialog.style.display = "block";
         this._Option1.addEventListener("click", this.SetDialog.bind(this));
     }
 

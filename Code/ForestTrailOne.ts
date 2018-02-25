@@ -15,15 +15,10 @@ class ForestTrailOne extends GameScene
 {
     private _Rabbit:Rabbit;
     private _Signpost:Transition;
-    public get Pause():boolean { return this._Pause; }
-    public set Pause(value:boolean) { this._Pause = value; }
-    public get Player():Player { return this._Player; }
-    public set Player(value:Player) { this._Player = value; }
-
     public constructor()
     {
         super();
-        this.Name = "ForestTrailOne";
+        this.Name = "Route1";
         this.Init();
     }
     public Init(): void
@@ -40,7 +35,7 @@ class ForestTrailOne extends GameScene
         this._Rabbit = new Rabbit();
         this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
 
-        this._Signpost = new Transition(null, "Signpost", "Pavillion1", "Lower Tournament Camp");
+        this._Signpost = new Transition(null, "Signpost", "Camp1", "Lower Tournament Camp");
         this._Signpost.Init(new Engineer.Vertex(5500, 680, 0.7));
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
