@@ -18,6 +18,8 @@ class Tooltip
     }
     public Set(Game:Engineer.Game, Args:any) : void
     {
+        this._DivElement = document.getElementById("tooltip");
+        this._Element = document.getElementById("tooltip-text");
         let X = Args.UnscaledLocation.X;
         let Y = Args.UnscaledLocation.Y;
         let FoundObject:Engineer.ImageObject = <Engineer.ImageObject>this._Runner.PickSceneObject({X:X, Y:Y});

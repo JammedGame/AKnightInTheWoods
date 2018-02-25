@@ -38,6 +38,7 @@ class TournamentCampOne extends GameScene
 
         this._Signpost = new Transition(null, "Signpost", "Arena1", "Go To Archery Competition");
         this._Signpost.Init(new Engineer.Vertex(500, 1000, 1.2));
+        this._Signpost.Fixed = true;
 
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
