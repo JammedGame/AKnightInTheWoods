@@ -8,11 +8,13 @@ import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
+import { Wolf } from "./Characters/Wolf";
 import { Rabbit } from "./Characters/Rabbit";
 import { Transition } from "./Transition";
 
 class ForestTrailOne extends GameScene
 {
+    private _Wolf:Wolf;
     private _Rabbit:Rabbit;
     private _Signpost:Transition;
     public constructor()
@@ -32,7 +34,11 @@ class ForestTrailOne extends GameScene
 
         this._Dialog = new Dialog();
 
+        this._Wolf = new Wolf();
+        this._Wolf.Init(new Engineer.Vertex(2600, 770, 0.8), new Engineer.Vertex(600, 360, 1));
+
         this._Rabbit = new Rabbit();
+        this._Rabbit.Flip();
         this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
 
         this._Signpost = new Transition(null, "Signpost", "Camp1", "Lower Tournament Camp");
@@ -40,19 +46,10 @@ class ForestTrailOne extends GameScene
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
+        this.AddSceneObject(this._Wolf);
         this.AddSceneObject(this._Rabbit);
         this.AddSceneObject(this._Player);
         this.AddSceneObject(this._Signpost);
-    }
-    private KeyPress(G: any, Args: any): void
-    {
-        if(this._Pause) return;
-        // Key Code here
-    }
-    private SceneUpdate() : void
-    {
-        if(this._Pause) return;
-        // Update Code here
     }
     private GenerateBackground() : void
     {

@@ -36,6 +36,9 @@ class TournamentCampOne extends GameScene
         this._Tortoise.Flip();
         this._Tortoise.Init(new Engineer.Vertex(200, 800, 1.1), new Engineer.Vertex(360, 360, 1));
 
+        this._Signpost = new Transition(null, "Signpost", "Arena1", "Go To Archery Competition");
+        this._Signpost.Init(new Engineer.Vertex(500, 1000, 1.2));
+
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(500, 700, 1);
@@ -47,6 +50,7 @@ class TournamentCampOne extends GameScene
         this.AddSceneObject(this._Player);
         this.AddSceneObject(this._Owl);
         this.AddSceneObject(this._Tortoise);
+        this.AddSceneObject(this._Signpost);
     }
     private KeyPress(G: any, Args: any): void
     {
