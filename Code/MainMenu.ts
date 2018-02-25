@@ -30,8 +30,9 @@ class MainMenu extends Engineer.Scene2D
         Play.Name = "Play";
         Play.Collection = Buttons;
         Play.Index = 0;
+        Play.Paint = Engineer.Color.Aqua;
         Play.Trans.Scale = new Engineer.Vertex(300, 150, 1);
-        Play.Trans.Translation = new Engineer.Vertex(200, 200, 3);
+        Play.Trans.Translation = new Engineer.Vertex(1400, 500, 3);
         Play.Events.MouseDown.push(this.PlayClick.bind(this));
         this.LoadSets();
         this.AddSceneObject(Play);
@@ -71,7 +72,7 @@ class MainMenu extends Engineer.Scene2D
         SpriteSetSkin1.Seed = 20;
         this._Player.Trans.Scale = new Engineer.Vertex(300,300,1);
         this._Player.Trans.Translation = new Engineer.Vertex(420,560,2);
-        for (let i = 0; i < 1; i++) SpriteSetSkin1.Images.push("Resources/Textures/log" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/Sitting" + i + ".png");
         this._Player.SpriteSets.push(SpriteSetSkin1);
     }
 }
