@@ -7,6 +7,8 @@ import { ParticleSystemMaterial, Vertex } from "three";
 import { Dialog } from "./Dialog";
 import { Curio } from "./Curio";
 
+import { Tooltip } from "./Tooltip";
+
 class GameScene extends Engineer.Scene2D
 {
     protected _Pause:boolean;
@@ -14,6 +16,7 @@ class GameScene extends Engineer.Scene2D
     protected _Player:Player;
     protected _Movement:Movement;
     protected _Dialog:Dialog;
+    protected _Tooltip:Tooltip;
     protected _Curio:Curio[];
     public get Pause():boolean { return this._Pause; }
     public set Pause(value:boolean) { this._Pause = value; }
@@ -23,5 +26,6 @@ class GameScene extends Engineer.Scene2D
     public constructor()
     {
         super();
+        this._Tooltip = new Tooltip(this);
     }
 }

@@ -47,7 +47,6 @@ class Movement
 
     private KeyDown(Game:Engineer.Game, Args:any) : void
     {
-        console.log(Args.KeyCode);
         if(Args.KeyCode == 68)
         {
             if(!this._Right)

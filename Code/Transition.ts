@@ -5,25 +5,27 @@ import * as Engineer from "engineer-js";
 class Transition extends Engineer.Tile
 {
     private _Art:string;
-    private _Tooltip:string;
+    private _TooltipText:string;
     private _Destination:string;
     private _Runner:Engineer.Runner;
-    public constructor(Old?:Transition, Art?:string, Destination?:string, Tooltip?:string)
+    public constructor(Old?:Transition, Art?:string, Destination?:string, TooltipText?:string)
     {
         super(Old);
         this._Runner = Engineer.Runner.Current;
         if(Old)
         {
             this._Art = Old._Art;
-            this._Tooltip = Old._Tooltip;
+            this._TooltipText = Old._TooltipText;
             this._Destination = Old._Destination;
         }
         else
         {
             if(Art) this._Art = Art;
             else this._Art = "Signpost";
-            this._Tooltip = Tooltip;
+            this._TooltipText = TooltipText;
             this._Destination = Destination;
+            this.Data["Pickable"] = true;
+            this.Data["Tooltip"] = TooltipText;
         }
         this.LoadCollection();
     }
@@ -31,7 +33,7 @@ class Transition extends Engineer.Tile
     {
         this.Trans.Translation = Position;
     }
-    private LoadCollection()
+    private LoadCollection() : void
     {
         if(this._Art == "Signpost")
         {

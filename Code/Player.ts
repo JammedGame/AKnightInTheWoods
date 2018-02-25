@@ -17,6 +17,7 @@ class Player extends Engineer.Sprite {
         this.Fixed = true;    
         this.LoadSets();
         this.SetSpriteSet(0);
+        this.Events.MouseDown.push(this.ActivateTooltip.bind(this));
     }
 
     private LoadSets(): void 
@@ -40,6 +41,10 @@ class Player extends Engineer.Sprite {
         SpriteSetSkin3.Seed = 50;
         for (let i = 0; i < 3; i++) SpriteSetSkin3.Images.push("Resources/Characters/walkL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin3);
+    }
+    private ActivateTooltip() : void
+    {
+        console.log("test");
     }
 }
 

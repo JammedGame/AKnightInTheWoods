@@ -20,6 +20,7 @@ class Character extends Engineer.Sprite
         {
             
         }
+        this.Events.MouseDown.push(this.ActivateTooltip.bind(this));
     }
     public Flip() : void
     {
@@ -45,5 +46,9 @@ class Character extends Engineer.Sprite
         for (let i = 0; i < this._IdleLength; i++) Idle.Images.push(ArtPath + i + ".png");
         this.SpriteSets.push(Idle);
         this.UpdateSpriteSet(0);
+    }
+    private ActivateTooltip() : void
+    {
+        console.log("test");
     }
 }
