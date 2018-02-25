@@ -15,7 +15,7 @@ class Rabbit extends Character
         {
             this._IdleLength = 2;
             this._CharacterString = "Rabbit";
-            this.Name = "Rabbit";
+            this.Name = "Knight Carrot";
         }
     }
 }

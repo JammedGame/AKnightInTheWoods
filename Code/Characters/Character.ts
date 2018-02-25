@@ -37,6 +37,8 @@ class Character extends Engineer.Sprite
             Engineer.Log.Error("CharacterString not set!");
         }
         else this.LoadSpriteSets();
+        this.Data["Pickable"] = true;
+        this.Data["Tooltip"] = this.Name;
     }
     private LoadSpriteSets() : void
     {
