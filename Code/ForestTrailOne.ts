@@ -7,6 +7,7 @@ import { ParticleSystemMaterial, Vertex } from "three"
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
+import { Raccoon } from "./Characters/Raccoon";
 import { Bob } from "./Characters/Bob";
 import { Jim } from "./Characters/Jim";
 import { Wolf } from "./Characters/Wolf";
@@ -16,6 +17,7 @@ import { Transition } from "./Transition";
 
 class ForestTrailOne extends GameScene
 {
+    private _Raccoon:Raccoon;
     private _Bob:Bob;
     private _Jim:Jim;
     private _Wolf:Wolf;
@@ -36,6 +38,10 @@ class ForestTrailOne extends GameScene
         this._Player = new Player(this);
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
+
+        this._Raccoon = new Raccoon();
+        this._Raccoon.Data["Chat"] = 0;
+        this._Raccoon.Init(new Engineer.Vertex(1000, 650, 0.8), new Engineer.Vertex(300, 350, 1));
 
         this._Bob = new Bob();
         this._Bob.Data["Chat"] = 0;
@@ -62,6 +68,7 @@ class ForestTrailOne extends GameScene
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
+        this.AddSceneObject(this._Raccoon);
         this.AddSceneObject(this._Bob);
         this.AddSceneObject(this._Jim);
         this.AddSceneObject(this._Wolf);
