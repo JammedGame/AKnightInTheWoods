@@ -7,12 +7,16 @@ import { ParticleSystemMaterial, Vertex } from "three"
 import { Curio } from "./Curio";
 import { GameScene } from "./GameScene";
 
+import { Bob } from "./Characters/Bob";
+import { Jim } from "./Characters/Jim";
 import { Wolf } from "./Characters/Wolf";
 import { Rabbit } from "./Characters/Rabbit";
 import { Transition } from "./Transition";
 
 class ForestTrailOne extends GameScene
 {
+    private _Bob:Bob;
+    private _Jim:Jim;
     private _Wolf:Wolf;
     private _Rabbit:Rabbit;
     private _Signpost:Transition;
@@ -31,6 +35,14 @@ class ForestTrailOne extends GameScene
         this._Player.Trans.Scale = new Engineer.Vertex(279, 333, 1);
         this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
 
+        this._Bob = new Bob();
+        this._Bob.Data["Chat"] = 0;
+        this._Bob.Init(new Engineer.Vertex(2200, 650, 0.8), new Engineer.Vertex(400, 550, 1));
+
+        this._Jim = new Jim();
+        this._Jim.Data["Chat"] = 0;
+        this._Jim.Init(new Engineer.Vertex(3000, 620, 0.8), new Engineer.Vertex(430, 600, 1));
+
         this._Wolf = new Wolf();
         this._Wolf.Data["Chat"] = 0;
         this._Wolf.Init(new Engineer.Vertex(2600, 770, 0.8), new Engineer.Vertex(600, 360, 1));
@@ -45,6 +57,8 @@ class ForestTrailOne extends GameScene
         
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
         this.GenerateBackground();
+        this.AddSceneObject(this._Bob);
+        this.AddSceneObject(this._Jim);
         this.AddSceneObject(this._Wolf);
         this.AddSceneObject(this._Rabbit);
         this.AddSceneObject(this._Player);
