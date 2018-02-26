@@ -10,6 +10,7 @@ import { GameScene } from "./GameScene";
 import { Bob } from "./Characters/Bob";
 import { Jim } from "./Characters/Jim";
 import { Wolf } from "./Characters/Wolf";
+import { Fox } from "./Characters/Fox";
 import { Rabbit } from "./Characters/Rabbit";
 import { Transition } from "./Transition";
 
@@ -18,6 +19,7 @@ class ForestTrailOne extends GameScene
     private _Bob:Bob;
     private _Jim:Jim;
     private _Wolf:Wolf;
+    private _Fox:Fox;
     private _Rabbit:Rabbit;
     private _Signpost:Transition;
     public constructor()
@@ -47,8 +49,11 @@ class ForestTrailOne extends GameScene
         this._Wolf.Data["Chat"] = 0;
         this._Wolf.Init(new Engineer.Vertex(2600, 770, 0.8), new Engineer.Vertex(600, 360, 1));
 
+        this._Fox = new Fox();
+        this._Fox.Data["Chat"] = 0;
+        this._Fox.Init(new Engineer.Vertex(4800, 630, 0.8), new Engineer.Vertex(400, 400, 1));
+
         this._Rabbit = new Rabbit();
-        this._Rabbit.Flip();
         this._Rabbit.Data["Chat"] = 0;
         this._Rabbit.Init(new Engineer.Vertex(5100, 680, 0.8), new Engineer.Vertex(300, 300, 1));
 
@@ -60,6 +65,7 @@ class ForestTrailOne extends GameScene
         this.AddSceneObject(this._Bob);
         this.AddSceneObject(this._Jim);
         this.AddSceneObject(this._Wolf);
+        this.AddSceneObject(this._Fox);
         this.AddSceneObject(this._Rabbit);
         this.AddSceneObject(this._Player);
         this.AddSceneObject(this._Signpost);
