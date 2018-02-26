@@ -32,6 +32,7 @@ class ForestTrailOne extends GameScene
         this._Player.Trans.Translation = new Engineer.Vertex(200, 780, 1);
 
         this._Wolf = new Wolf();
+        this._Wolf.Data["Chat"] = 0;
         this._Wolf.Init(new Engineer.Vertex(2600, 770, 0.8), new Engineer.Vertex(600, 360, 1));
 
         this._Rabbit = new Rabbit();

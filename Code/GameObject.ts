@@ -82,7 +82,7 @@ let DefaultGameObject:any =
             ]
         },
         {
-            Name:"DeadWolf",
+            Name:"Wolf",
             Chats:
             [
                 {
@@ -108,22 +108,17 @@ let DefaultGameObject:any =
                         {
                             Text: "Examine face",
                             Locked: false,
-                            Link: 3
+                            Link: 2
                         },
                         {
                             Text: "Examine arms",
                             Locked: false,
-                            Link: 4
+                            Link: 3
                         },
                         {
                             Text: "Examine torso",
                             Locked: false,
-                            Link: 5
-                        },
-                        {
-                            Text: "Leave",
-                            Locked: false,
-                            Link: -1
+                            Link: 4
                         }
                     ]
                 },
@@ -134,18 +129,28 @@ let DefaultGameObject:any =
                         {
                             Text: "Continue examining",
                             Locked: false,
-                            Link: 2
+                            Link: 1
+                        },
+                        {
+                            Text: "Leave",
+                            Locked: false,
+                            Link: -1
                         }
                     ]
                 },
                 {
-                    Text: "There is mix of blood and skin under his clwas, he wa a string wolf",
+                    Text: "There is mix of blood and skin under his claws, he was a strong wolf.",
                     Options:
                     [
                         {
                             Text: "Continue examining",
                             Locked: false,
-                            Link: 2
+                            Link: 1
+                        },
+                        {
+                            Text: "Leave",
+                            Locked: false,
+                            Link: -1
                         }
                     ]
                 },
@@ -156,7 +161,12 @@ let DefaultGameObject:any =
                         {
                             Text: "Continue examining",
                             Locked: false,
-                            Link: 2
+                            Link: 1
+                        },
+                        {
+                            Text: "Leave",
+                            Locked: false,
+                            Link: -1
                         }
                     ]
                 }
