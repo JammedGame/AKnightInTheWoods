@@ -188,6 +188,128 @@ let DefaultGameObject:any =
                     ]
                 }
             ]
-        }        
+        },
+        {
+            Name:"Bob",
+            Chats:
+            [
+                {
+                    Text: "Curses! *sobs*",
+                    Options:
+                    [
+                        {
+                            Text: "What happened here?",
+                            Locked: false,
+                            Link: 1
+                        }                       
+                    ]
+                },
+                {
+                    Text: "Our dear master here was brutally... murdered during the night.",
+                    Options:
+                    [
+                        {
+                            Text: "[continue listening]",
+                            Locked: false,
+                            Link: 2
+                        }
+                    ]
+                },
+                {
+                    Text: "We blame ourselves... After a few ales, our master went to mark a tree... we were too drunk to hear something was wrong.",
+                    Options:
+                    [
+                        {
+                            Text: "Surely, this is not your fault...",
+                            Locked: false,
+                            Link: 3
+                        }
+                    ]
+                },
+                {
+                    Text: "He was only eight years old.",
+                    Options:
+                    [
+                        {
+                            Text: "My condolences, wolves. This must truly be a sad day for you.",
+                            Locked: false,
+                            Link: 4
+                        }
+                    ]
+                },
+                {
+                    Text: "Thank you for your words of kindness, stranger.",
+                    Options:
+                    [
+                        {
+                            Text: "[continue traveling]",
+                            Locked: false,
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            Name:"Jim",
+            Chats:
+            [
+                {
+                    Text: "Why, Animal God, why?",
+                    Options:
+                    [
+                        {
+                            Text: "What happened here?",
+                            Locked: false,
+                            Link: 1
+                        }                       
+                    ]
+                },
+                {
+                    Text: "What kind of an animal would do a thing like this? He was a great champion, most beloved and a crowd favourite... *howls*",
+                    Options:
+                    [
+                        {
+                            Text: "[continue listening]",
+                            Locked: false,
+                            Link: 2
+                        }
+                    ]
+                },
+                {
+                    Text: "We blame ourselves... After a few ales, our master went to mark a tree... we were too drunk to hear something was wrong.",
+                    Options:
+                    [
+                        {
+                            Text: "Surely, this is not your fault...",
+                            Locked: false,
+                            Link: 3
+                        }
+                    ]
+                },                
+                {
+                    Text: "Thank you for your words of kindness, stranger.",
+                    Options:
+                    [
+                        {
+                            Text: "[continue traveling]",
+                            Locked: false,
+                            Link: 4
+                        }
+                    ]
+                },
+                {
+                    Text: "One thing - we don't know who did this, but I think I saw something dark and unsightly sneaking around the moment we arrived at the scene. Beware, knight. Evil is surely at work here.",
+                    Options:
+                    [
+                        {
+                            Text: "Thanks for the head up. Stay strong.",
+                            Locked: false,
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 };
