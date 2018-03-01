@@ -1,8 +1,8 @@
 export { MainMenu };
 
-import Engineer from "./Engineer";
+import * as Engineer from "engineer-js";
 
-import { GameScene } from "./GameScene";
+import { GameScene } from "./Scenes/GameScene";
 import { Sprite } from "three";
 import { DefaultGameObject } from "./GameObject";
 
@@ -44,11 +44,11 @@ class MainMenu extends Engineer.Scene2D
     public PlayClick(G:any, Args:any) : void
     {
         this._Game.Data["GO"] = JSON.parse(JSON.stringify(DefaultGameObject));
-        this._Runner.SwitchScene("Route1", false);
+        this._Runner.SwitchScene("Path1", false);
     }
     private GenerateBackground() : void
     {
-        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/camp1.png"]);
+        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/Backgrounds/Menu.png"]);
         let Back:Engineer.Tile = new Engineer.Tile();
         Back.Name = "Back";
         Back.Collection = Backs;
@@ -64,7 +64,7 @@ class MainMenu extends Engineer.Scene2D
         SpriteSetSkin0.Seed = 20;
         this._Fire.Trans.Scale = new Engineer.Vertex(275,275,1);
         this._Fire.Trans.Translation = new Engineer.Vertex(580,610,1);
-        for (let i = 0; i < 4; i++) SpriteSetSkin0.Images.push("Resources/Textures/FireFrame" + i + ".png");
+        for (let i = 0; i < 4; i++) SpriteSetSkin0.Images.push("Resources/Textures/Other/FireFrame" + i + ".png");
         this._Fire.SpriteSets.push(SpriteSetSkin0);
 
         let SpriteSetSkin1 = new Engineer.SpriteSet(null, [], "PlayerCamping");

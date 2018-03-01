@@ -1,12 +1,12 @@
 export { GameLogic };
 
-import Engineer from "./Engineer";
+import * as Engineer from "engineer-js";
 
 import { MainMenu } from "./MainMenu";
-import { GameScene } from "./GameScene";
+import { GameScene } from "./Scenes/GameScene";
 import { Arena1 } from "./Scenes/Arena1";
-import { ForestTrailOne } from "./ForestTrailOne";
-import { TournamentCampOne } from "./TournamentCampOne";
+import { Path1 } from "./Scenes/Path1";
+import { Camp1 } from "./Scenes/Camp1";
 
 class GameLogic
 {
@@ -21,11 +21,11 @@ class GameLogic
         let _Menu:any = new MainMenu(this._Runner, this._Game);
         this._Game.AddScene(_Menu);
         let ArenaD1 = new Arena1();
-        let Route1 = new ForestTrailOne();
-        let Camp1 = new TournamentCampOne();
+        let PathD1 = new Path1();
+        let CampD1 = new Camp1();
         this._Game.AddScene(ArenaD1);
-        this._Game.AddScene(Route1);
-        this._Game.AddScene(Camp1);
+        this._Game.AddScene(PathD1);
+        this._Game.AddScene(CampD1);
     }
     public Run() : void
     {

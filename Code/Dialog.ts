@@ -1,6 +1,5 @@
 export { Dialog }
 
-import { GameScene } from "./GameScene";
 import * as Engineer from "engineer-js";
 
 class Dialog

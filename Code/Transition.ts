@@ -38,6 +38,7 @@ class Transition extends Engineer.Tile
     {
         if(this._Art == "Signpost")
         {
+            
             this.Trans.Scale = new Engineer.Vertex(300,300,1);
         }
         this.Collection = new Engineer.ImageCollection(null, ["Resources/Textures/Transitions/"+this._Art+".png"]);
