@@ -162,7 +162,7 @@ let DefaultGameObject:any =
                     Position: {X:1550,Y:600,Z:0.8},
                     Size: {X:550,Y:550},
                     Chat: 0
-                },
+                }
             ],
             Transitions:
             [
@@ -187,10 +187,16 @@ let DefaultGameObject:any =
                 },
                 {
                     Name: "Bear",
-                    Position: {X:1500,Y:600,Z:0.8},
+                    Position: {X:2300,Y:600,Z:0.8},
                     Size: {X:600,Y:600},
                     Chat: 1
                 },
+                {
+                    Name: "Rabbit",
+                    Position: {X:4000,Y:700,Z:1.1},
+                    Size: {X:300, Y:300},
+                    Chat: 3
+                }
             ],
             Transitions:
             [
@@ -207,7 +213,18 @@ let DefaultGameObject:any =
             Type: "Camp",
             Characters:
             [
-
+                {
+                    Name: "Kangaroo",
+                    Position: {X:600,Y:550,Z:0.8},
+                    Size: {X:500, Y:500},
+                    Chat: 0
+                },
+                {
+                    Name: "Queen",
+                    Position: {X:1400,Y:600,Z:1.1},
+                    Size: {X:450, Y:450},
+                    Chat: 0
+                }
             ],
             Transitions:
             [
