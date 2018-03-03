@@ -15,7 +15,7 @@ class Raccoon extends Character
         {
             this._IdleLength = 2;
             this._CharacterString = "Raccoon";
-            this.Name = "Judge Hoot";
+            this.Name = "Oonie de Racko";
         }
     }
 }
