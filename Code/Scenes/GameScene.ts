@@ -39,6 +39,10 @@ class GameScene extends Engineer.Scene2D
         this._Transitions = [];
         this._Tooltip = new Tooltip(this);
     }
+    public Init() : void
+    {
+        // Virtual
+    }
     protected GenerateBackground() : void
     {
         this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
@@ -47,12 +51,13 @@ class GameScene extends Engineer.Scene2D
         Back.Name = "Back";
         Back.Collection = Backs;
         Back.Index = 0;
+        Back.Sampling = Engineer.ImageObjectSamplingType.Linear;
         Back.Trans.Scale = new Engineer.Vertex(this._XSize, 1080, 1);
         Back.Trans.Translation = new Engineer.Vertex((this._XSize / 2), 540, 0);
         this._Background = Back;
         this.AddSceneObject(this._Background);
     }
-    protected CreateCharacter(Name:string, Position:any, Size:any, Chat:number, Flip?:boolean) : void
+    public CreateCharacter(Name:string, Position:any, Size:any, Chat:number, Flip?:boolean) : void
     {
         let Char:Character;
         if(Name == "Raccoon") Char = new Raccoon();
@@ -71,7 +76,7 @@ class GameScene extends Engineer.Scene2D
         this._Characters.push(Char);
         this.AddSceneObject(Char);
     }
-    protected CreateTransition(Type:string, Destination:string, Tooltip:string, Position:any)
+    public CreateTransition(Type:string, Destination:string, Tooltip:string, Position:any)
     {
         let Trans = new Transition(null, Type, Destination, Tooltip);
         if(!Position.Z) Position.Z = 0.7;

@@ -2,6 +2,101 @@ export { DefaultGameObject }
 
 let DefaultGameObject:any =
 {
+    Scenes:
+    [
+        {
+            Name: "Path1",
+            Type: "Path",
+            Characters:
+            [
+                {
+                    Name: "Raccoon",
+                    Position: {X:1000,Y:650,Z:0.8},
+                    Size: {X:300, Y:350},
+                    Chat: 0
+                },
+                {
+                    Name: "Bob",
+                    Position: {X:2200,Y:650,Z:0.8},
+                    Size: {X:400, Y:550},
+                    Chat: 0
+                },
+                {
+                    Name: "Jim",
+                    Position: {X:3000,Y:620,Z:0.8},
+                    Size: {X:430, Y:600},
+                    Chat: 0
+                },
+                {
+                    Name: "Wolf",
+                    Position: {X:2600,Y:770,Z:0.8},
+                    Size: {X:600, Y:360},
+                    Chat: 0
+                },
+                {
+                    Name: "Fox",
+                    Position: {X:4800,Y:630,Z:0.8},
+                    Size: {X:400, Y:400},
+                    Chat: 0
+                },
+                {
+                    Name: "Rabbit",
+                    Position: {X:5100,Y:680,Z:0.8},
+                    Size: {X:300, Y:300},
+                    Chat: 0
+                }
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Camp1",
+                    Tooltip: "Lower Tournament Camp",
+                    Position:  {X:5500, Y:680, Z:0.7}
+                }
+            ]
+        },
+        {
+            Name: "Camp1",
+            Type: "Camp",
+            Characters: 
+            [
+                {
+                    Name: "Owl",
+                    Position: {X:1500,Y:680,Z:0.8},
+                    Size: {X:400, Y:400},
+                    Chat: 0
+                },
+                {
+                    Name: "Tortoise",
+                    Position: {X:200,Y:800,Z:1.1},
+                    Size: {X:360, Y:360},
+                    Chat: 0
+                },
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Arena1",
+                    Tooltip: "Go To Archery Competition",
+                    Position:  {X:500, Y:1000, Z:1.2}
+                }
+            ]
+        },
+        {
+            Name: "Arena1",
+            Type: "Arena",
+            Characters:
+            [
+
+            ],
+            Transitions:
+            [
+
+            ]
+        }
+    ],
     Characters:
     [
         {

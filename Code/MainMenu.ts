@@ -4,7 +4,6 @@ import * as Engineer from "engineer-js";
 
 import { GameScene } from "./Scenes/GameScene";
 import { Sprite } from "three";
-import { DefaultGameObject } from "./GameObject";
 
 class MainMenu extends Engineer.Scene2D
 {
@@ -39,11 +38,9 @@ class MainMenu extends Engineer.Scene2D
         this.GenerateBackground();
         this.AddSceneObject(this._Fire);
         this.AddSceneObject(this._Player);
-        this._Game.AddScene(this);
     }
     public PlayClick(G:any, Args:any) : void
     {
-        this._Game.Data["GO"] = JSON.parse(JSON.stringify(DefaultGameObject));
         this._Runner.SwitchScene("Path1", false);
     }
     private GenerateBackground() : void
