@@ -151,7 +151,18 @@ let DefaultGameObject:any =
             Type: "Camp",
             Characters:
             [
-
+                {
+                    Name: "Fox",
+                    Position: {X:150,Y:750,Z:1.2},
+                    Size: {X:400,Y:400},
+                    Chat: 1
+                },
+                {
+                    Name: "Gator",
+                    Position: {X:1550,Y:600,Z:0.8},
+                    Size: {X:550,Y:550},
+                    Chat: 0
+                },
             ],
             Transitions:
             [
@@ -159,7 +170,7 @@ let DefaultGameObject:any =
                     Type: "Signpost",
                     Destination: "Path3",
                     Tooltip: "Path3",
-                    Position:  {X:500, Y:1000, Z:1.2}
+                    Position:  {X:1500, Y:1000, Z:1.2}
                 }
             ]
         },
@@ -168,7 +179,18 @@ let DefaultGameObject:any =
             Type: "Path",
             Characters:
             [
-
+                {
+                    Name: "Tortoise",
+                    Position: {X:600,Y:650,Z:0.8},
+                    Size: {X:360, Y:360},
+                    Chat: 1
+                },
+                {
+                    Name: "Bear",
+                    Position: {X:1500,Y:600,Z:0.8},
+                    Size: {X:600,Y:600},
+                    Chat: 1
+                },
             ],
             Transitions:
             [
