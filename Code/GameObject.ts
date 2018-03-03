@@ -72,7 +72,7 @@ let DefaultGameObject:any =
                     Position: {X:200,Y:800,Z:1.1},
                     Size: {X:360, Y:360},
                     Chat: 0
-                },
+                }
             ],
             Transitions:
             [
@@ -89,7 +89,18 @@ let DefaultGameObject:any =
             Type: "Arena",
             Characters:
             [
-
+                {
+                    Name: "Rabbit",
+                    Position: {X:450,Y:800,Z:1.1},
+                    Size: {X:300, Y:300},
+                    Chat: 2
+                },
+                {
+                    Name: "Tortoise",
+                    Position: {X:300,Y:900,Z:1.2},
+                    Size: {X:360, Y:360},
+                    Chat: 0
+                }
             ],
             Transitions:
             [
@@ -106,7 +117,24 @@ let DefaultGameObject:any =
             Type: "Path",
             Characters:
             [
-
+                {
+                    Name: "Kangaroo",
+                    Position: {X:1250,Y:650,Z:0.8},
+                    Size: {X:500, Y:500},
+                    Chat: 0
+                },
+                {
+                    Name: "Raccoon",
+                    Position: {X:3200,Y:700,Z:0.8},
+                    Size: {X:300, Y:350},
+                    Chat: 0
+                },
+                {
+                    Name: "Rabbit",
+                    Position: {X:5000,Y:650,Z:1.1},
+                    Size: {X:300, Y:300},
+                    Chat: 3
+                }
             ],
             Transitions:
             [
@@ -114,7 +142,7 @@ let DefaultGameObject:any =
                     Type: "Signpost",
                     Destination: "Camp2",
                     Tooltip: "Middle Tournament Camp",
-                    Position:  {X:5500, Y:680, Z:0.7}
+                    Position:  {X:5500, Y:620, Z:0.7}
                 }
             ]
         },
@@ -148,7 +176,7 @@ let DefaultGameObject:any =
                     Type: "Signpost",
                     Destination: "Camp3",
                     Tooltip: "Upper Tournament Camp",
-                    Position:  {X:5500, Y:680, Z:0.7}
+                    Position:  {X:5500, Y:620, Z:0.7}
                 }
             ]
         },
