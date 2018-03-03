@@ -93,9 +93,77 @@ let DefaultGameObject:any =
             ],
             Transitions:
             [
-
+                {
+                    Type: "Signpost",
+                    Destination: "Path2",
+                    Tooltip: "Path2",
+                    Position:  {X:500, Y:1000, Z:1.2}
+                }
             ]
-        }
+        },
+        {
+            Name: "Path2",
+            Type: "Path",
+            Characters:
+            [
+
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Camp2",
+                    Tooltip: "Middle Tournament Camp",
+                    Position:  {X:5500, Y:680, Z:0.7}
+                }
+            ]
+        },
+        {
+            Name: "Camp2",
+            Type: "Camp",
+            Characters:
+            [
+
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Path3",
+                    Tooltip: "Path3",
+                    Position:  {X:500, Y:1000, Z:1.2}
+                }
+            ]
+        },
+        {
+            Name: "Path3",
+            Type: "Path",
+            Characters:
+            [
+
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Camp3",
+                    Tooltip: "Upper Tournament Camp",
+                    Position:  {X:5500, Y:680, Z:0.7}
+                }
+            ]
+        },
+        {
+            Name: "Camp3",
+            Type: "Camp",
+            Characters:
+            [
+
+            ],
+            Transitions:
+            [
+                
+            ]
+        },
     ],
     Characters:
     [
