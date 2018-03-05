@@ -29,10 +29,19 @@ class MainMenu extends Engineer.Scene2D
         Play.Name = "Play";
         Play.Collection = Buttons;
         Play.Index = 0;
+        Play.Sampling = Engineer.ImageObjectSamplingType.Nearest;
         Play.Paint = Engineer.Color.Aqua;
-        Play.Trans.Scale = new Engineer.Vertex(300, 150, 1);
-        Play.Trans.Translation = new Engineer.Vertex(1400, 500, 3);
+        Play.Trans.Scale = new Engineer.Vertex(175, 100, 1);
+        Play.Trans.Translation = new Engineer.Vertex(1500, 600, 3);
         Play.Events.MouseDown.push(this.PlayClick.bind(this));
+        let Titles:any = new Engineer.ImageCollection(null, ["/Resources/Textures/Title.png"]);
+        let Title:any = new Engineer.Tile();
+        Title.Name = "Title";
+        Title.Collection = Titles;
+        Title.Index = 0;
+        Title.Trans.Scale = new Engineer.Vertex(1800, 300, 1);
+        Title.Trans.Translation = new Engineer.Vertex(960, 220, 1);
+        this.AddSceneObject(Title);
         this.LoadSets();
         this.AddSceneObject(Play);
         this.GenerateBackground();
@@ -41,7 +50,7 @@ class MainMenu extends Engineer.Scene2D
     }
     public PlayClick(G:any, Args:any) : void
     {
-        this._Runner.SwitchScene("Path3", false);
+        this._Runner.SwitchScene("Path1", false);
     }
     private GenerateBackground() : void
     {
