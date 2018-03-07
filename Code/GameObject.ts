@@ -90,16 +90,16 @@ let DefaultGameObject:any =
             Characters:
             [
                 {
-                    Name: "Rabbit",
+                    Name: "RabbitBow",
                     Position: {X:450,Y:800,Z:1.1},
                     Size: {X:300, Y:300},
-                    Chat: 2
+                    Chat: -1
                 },
                 {
-                    Name: "Tortoise",
+                    Name: "Fox",
                     Position: {X:300,Y:900,Z:1.2},
-                    Size: {X:360, Y:360},
-                    Chat: 0
+                    Size: {X:400, Y:400},
+                    Chat: -1
                 }
             ],
             Transitions:
@@ -180,7 +180,7 @@ let DefaultGameObject:any =
             Characters:
             [
                 {
-                    Name: "Tortoise",
+                    Name: "TortoiseRun",
                     Position: {X:600,Y:650,Z:0.8},
                     Size: {X:360, Y:360},
                     Chat: 1
@@ -192,7 +192,7 @@ let DefaultGameObject:any =
                     Chat: 1
                 },
                 {
-                    Name: "Rabbit",
+                    Name: "RabbitRun",
                     Position: {X:4000,Y:700,Z:1.1},
                     Size: {X:300, Y:300},
                     Chat: 3
