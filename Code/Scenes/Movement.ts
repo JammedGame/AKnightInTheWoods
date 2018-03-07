@@ -2,6 +2,7 @@ export { Movement }
 
 import * as Engineer from "engineer-js";
 
+import { Dialog } from "./../Dialog";
 import { GameScene } from "./GameScene";
 
 class Movement
@@ -19,6 +20,7 @@ class Movement
     }
     private Move1()
     {
+        if(Dialog.Single && Dialog.Single._Shown) return;
         if(this._Left && !this._Right)
         {
             if(this._GameScene.Trans.Translation.X>=-3760)
@@ -46,6 +48,7 @@ class Movement
     }
     private Move2()
     {
+        if(Dialog.Single && Dialog.Single._Shown) return;
         if(this._Left && !this._Right)
         {
             if(this._GameScene.Player.Trans.Translation.X<=1200)

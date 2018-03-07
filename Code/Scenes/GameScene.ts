@@ -103,6 +103,5 @@ class GameScene extends Engineer.Scene2D
         Trans.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z));
         this._Transitions.push(Trans);
         this.AddSceneObject(Trans);
-        console.log(Trans);
     }
 }

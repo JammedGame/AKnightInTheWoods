@@ -30,7 +30,7 @@ class Tooltip
         let X = Args.UnscaledLocation.X;
         let Y = Args.UnscaledLocation.Y;
         let FoundObject:Engineer.ImageObject = <Engineer.ImageObject>this._Runner.PickSceneObject({X:X, Y:Y});
-        if(FoundObject)
+        if(FoundObject && FoundObject.Data["Tooltip"] != "")
         {
             this.Show({X:X, Y:Y}, FoundObject.Data["Tooltip"]);
         }

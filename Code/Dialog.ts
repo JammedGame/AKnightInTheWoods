@@ -2,9 +2,12 @@ export { Dialog }
 
 import * as Engineer from "engineer-js";
 
+import { GameScene } from "./Scenes/GameScene";
+
 class Dialog
 {
     public static Single:Dialog;
+    private _Scene:GameScene;
     public _Shown:boolean = false;
     private _DivDialog:HTMLElement;
     private _Title:HTMLElement;
@@ -117,5 +120,9 @@ class Dialog
             return;
         }
         this.SetChat(this._Chat.Options[2].Link);
+    }
+    public SetScene(Scene:GameScene) : void
+    {
+        this._Scene = Scene;
     }
 }

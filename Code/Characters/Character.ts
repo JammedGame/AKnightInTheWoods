@@ -3,9 +3,11 @@ export { Character }
 import * as Engineer from "engineer-js";
 
 import { Dialog } from "./../Dialog";
+import { GameScene } from "./../Scenes/GameScene";
 
 class Character extends Engineer.Sprite
 {
+    private _Scene:GameScene;
     protected _IdleLength:number;
     protected _CharacterSeed:number;
     protected _CharacterString:string;
@@ -23,6 +25,10 @@ class Character extends Engineer.Sprite
             
         }
         this.Events.MouseDown.push(this.ActivateDialog.bind(this));
+    }
+    public SetScene(Scene:GameScene) : void
+    {
+        this._Scene = Scene;
     }
     public Flip() : void
     {
@@ -53,9 +59,11 @@ class Character extends Engineer.Sprite
     }
     private ActivateDialog() : void
     {
+        if(Dialog.Single && Dialog.Single._Shown) return;
         let Dial = null;
         if(Dialog.Single) Dial = Dialog.Single;
         else Dial = new Dialog();
+        Dial.SetScene(this._Scene);
         Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
     }
 }
