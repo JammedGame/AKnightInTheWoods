@@ -276,11 +276,44 @@ let DefaultGameObject:any =
                     Position: {X:1400,Y:600,Z:1.1},
                     Size: {X:450, Y:450},
                     Chat: 0
+                },
+                {
+                    Name: "Fire",
+                    Position: {X:730,Y:820,Z:1.5},
+                    Size: {X:400, Y:400},
+                    Chat: 0
                 }
             ],
             Transitions:
             [
-                
+                {
+                    Type: "Signpost",
+                    Destination: "Arena2",
+                    Tooltip: "Go To Combat",
+                    Position:  {X:1500, Y:1000, Z:1.2}
+                }
+            ]
+        },
+        {
+            Name: "Arena2",
+            Type: "Arena",
+            Characters:
+            [
+                {
+                    Name: "Gator",
+                    Position: {X:1500,Y:750,Z:0.8},
+                    Size: {X:550,Y:550},
+                    Chat: 0
+                },
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
+                    Destination: "Arena2",
+                    Tooltip: "Go To Combat",
+                    Position:  {X:1500, Y:1000, Z:1.2}
+                }
             ]
         },
     ],
