@@ -97,13 +97,19 @@ let DefaultGameObject:any =
             [
                 {
                     Name: "RabbitBow",
-                    Position: {X:450,Y:800,Z:1.1},
+                    Position: {X:380,Y:800,Z:1.1},
                     Size: {X:300, Y:300},
                     Chat: -1
                 },
                 {
                     Name: "Fox",
-                    Position: {X:300,Y:900,Z:1.2},
+                    Position: {X:300,Y:850,Z:1.2},
+                    Size: {X:400, Y:400},
+                    Chat: -1
+                },
+                {
+                    Name: "Target",
+                    Position: {X:1600,Y:850,Z:1.2},
                     Size: {X:400, Y:400},
                     Chat: -1
                 }
@@ -112,8 +118,36 @@ let DefaultGameObject:any =
             [
                 {
                     Type: "Signpost",
+                    Destination: "Camp1a",
+                    Tooltip: "Camp1a",
+                    Position:  {X:1800, Y:1000, Z:1.2}
+                }
+            ]
+        },
+        {
+            Name: "Camp1a",
+            Type: "Camp",
+            Characters: 
+            [
+                {
+                    Name: "Owl",
+                    Position: {X:1500,Y:680,Z:0.8},
+                    Size: {X:400, Y:400},
+                    Chat: 0
+                },
+                {
+                    Name: "Goat",
+                    Position: {X:200,Y:900,Z:1.1},
+                    Size: {X:360, Y:360},
+                    Chat: 0
+                }
+            ],
+            Transitions:
+            [
+                {
+                    Type: "Signpost",
                     Destination: "Path2",
-                    Tooltip: "Path2",
+                    Tooltip: "Go To Upper Way",
                     Position:  {X:500, Y:1000, Z:1.2}
                 }
             ]
@@ -173,6 +207,12 @@ let DefaultGameObject:any =
                     Name: "Gator",
                     Position: {X:1550,Y:600,Z:0.8},
                     Size: {X:550,Y:550},
+                    Chat: 0
+                },
+                {
+                    Name: "Goat",
+                    Position: {X:1000,Y:900,Z:1.5},
+                    Size: {X:360, Y:360},
                     Chat: 0
                 }
             ],

@@ -13,9 +13,9 @@ class Target extends Character
         }
         else
         {
-            this._IdleLength = 3;
+            this._IdleLength = 1;
             this._CharacterString = "Target";
-            this.Name = "Judge Hoot";
+            this.Name = "Shoot The Target";
         }
     }
 }

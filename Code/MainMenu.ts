@@ -50,7 +50,7 @@ class MainMenu extends Engineer.Scene2D
     }
     public PlayClick(G:any, Args:any) : void
     {
-        this._Runner.SwitchScene("Path1", false);
+        this._Runner.SwitchScene("Arena1", false);
     }
     private GenerateBackground() : void
     {
