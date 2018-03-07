@@ -21,22 +21,22 @@ class Player extends Engineer.Sprite
     {
         let SpriteSetSkin0 = new Engineer.SpriteSet(null, [], "IdleRight");
         SpriteSetSkin0.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin0.Images.push("Resources/Textures/Player/idleR" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin0.Images.push("Resources/Textures/Player/IdleR" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin0);
 
         let SpriteSetSkin1 = new Engineer.SpriteSet(null, [], "IdleLeft");
         SpriteSetSkin1.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/idleL" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/IdleL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin1);
 
         let SpriteSetSkin2 = new Engineer.SpriteSet(null, [], "WalkRight");
         SpriteSetSkin2.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin2.Images.push("Resources/Textures/Player/walkR" + i + ".png");
+        for (let i = 0; i < 4; i++) SpriteSetSkin2.Images.push("Resources/Textures/Player/WalkR" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin2);
 
         let SpriteSetSkin3 = new Engineer.SpriteSet(null, [], "WalkLeft");
         SpriteSetSkin3.Seed = 50;
-        for (let i = 0; i < 3; i++) SpriteSetSkin3.Images.push("Resources/Textures/Player/walkL" + i + ".png");
+        for (let i = 0; i < 4; i++) SpriteSetSkin3.Images.push("Resources/Textures/Player/WalkL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin3);
     }
 }

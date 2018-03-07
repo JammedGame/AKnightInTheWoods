@@ -40,6 +40,7 @@ class Dialog
     }
     public ShowDialog(Character:string, Chat:number)
     {
+        if(Chat == -1) return;
         let Char = this.FindCharacter(Character);
         if(!Char) return;
         this._Character = Char;
@@ -79,6 +80,10 @@ class Dialog
         this._Shown = false;
         this._DivDialog.style.display = "none";
     }
+    private GetHints() : string[]
+    {
+        return Engineer.Runner.Current.Game.Data["GO"].Hints;
+    }
     private FindCharacter(Character:string) : any
     {
         this._GameObject = Engineer.Runner.Current.Game.Data["GO"];
@@ -91,9 +96,13 @@ class Dialog
         }
         return null;
     }
+    private SetHints(HintsList:string[]) : void
+    {
+
+    }
     private Choice1() : void
     {
-        if(this._Chat.Options[0].Link == null) return;
+        if(this._Chat.Options[0] == null && this._Chat.Options[0].Link == null) return;
         if(this._Chat.Options[0].Link == -1)
         {
             this.Hide();
@@ -103,7 +112,7 @@ class Dialog
     }
     private Choice2() : void
     {
-        if(this._Chat.Options[1].Link == null) return;
+        if(this._Chat.Options[1] == null && this._Chat.Options[1].Link == null) return;
         if(this._Chat.Options[1].Link == -1)
         {
             this.Hide();
@@ -113,7 +122,7 @@ class Dialog
     }
     private Choice3() : void
     {
-        if(this._Chat.Options[2].Link == null) return;
+        if(this._Chat.Options[2] == null && this._Chat.Options[2].Link == null) return;
         if(this._Chat.Options[2].Link == -1)
         {
             this.Hide();
