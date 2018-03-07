@@ -44,6 +44,12 @@ let DefaultGameObject:any =
                     Position: {X:5100,Y:680,Z:0.8},
                     Size: {X:300, Y:300},
                     Chat: 0
+                },
+                {
+                    Name: "Arrow",
+                    Position: {X:1650,Y:500,Z:0.8},
+                    Size: {X:150, Y:100},
+                    Chat: 0
                 }
             ],
             Transitions:
@@ -134,6 +140,12 @@ let DefaultGameObject:any =
                     Position: {X:5000,Y:650,Z:1.1},
                     Size: {X:300, Y:300},
                     Chat: 3
+                },
+                {
+                    Name: "Dagger",
+                    Position: {X:2470,Y:740,Z:0.8},
+                    Size: {X:150, Y:100},
+                    Chat: 0
                 }
             ],
             Transitions:

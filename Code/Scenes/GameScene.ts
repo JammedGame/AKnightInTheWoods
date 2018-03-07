@@ -25,6 +25,8 @@ import { Bear } from "./../Characters/Bear";
 import { RabbitRun } from "./../Characters/RabbitRun";
 import { RabbitBow } from "./../Characters/RabbitBow";
 import { TortoiseRun } from "./../Characters/TortoiseRun";
+import { Arrow } from "./../Characters/Arrow";
+import { Dagger } from "./../Characters/Dagger";
 
 class GameScene extends Engineer.Scene2D
 {
@@ -84,6 +86,8 @@ class GameScene extends Engineer.Scene2D
         else if(Name == "RabbitBow") Char = new RabbitBow();
         else if(Name == "RabbitRun") Char = new RabbitRun();
         else if(Name == "TortoiseRun") Char = new TortoiseRun();
+        else if(Name == "Arrow") Char = new Arrow();
+        else if(Name == "Dagger") Char = new Dagger();
         Char.Fixed = this._FixedScene;
         Char.Data["Chat"] = Chat;
         if(Flip) Char.Flip();
