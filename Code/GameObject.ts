@@ -232,6 +232,7 @@ let DefaultGameObject:any =
             ]
         },
     ],
+    Hints: [],
     Characters:
     [
         {
@@ -244,12 +245,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "How do you do, kind sir",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Greetings, m'lady!",
-                            Locked: false,
                             Link: 1
                         }
                     ]
@@ -260,7 +259,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Uhh... sorry.",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -277,12 +275,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "My good man, you do seem concerned. What worries you this fine day, may i ask?.",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Out of my way scoundrel.",
-                            Locked: false,
                             Link: 2
                         }
                     ]
@@ -293,7 +289,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Good luck!",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -304,7 +299,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "...",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -321,12 +315,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Turn him around",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Leave",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -337,17 +329,14 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Examine face",
-                            Locked: false,
                             Link: 2
                         },
                         {
                             Text: "Examine arms",
-                            Locked: false,
                             Link: 3
                         },
                         {
                             Text: "Examine torso",
-                            Locked: false,
                             Link: 4
                         }
                     ]
@@ -358,12 +347,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Continue examining",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Leave",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -374,12 +361,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Continue examining",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Leave",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -390,12 +375,10 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Continue examining",
-                            Locked: false,
                             Link: 1
                         },
                         {
                             Text: "Leave",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -412,7 +395,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "...",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -429,7 +411,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What happened here?",
-                            Locked: false,
                             Link: 1
                         }                       
                     ]
@@ -440,7 +421,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue listening]",
-                            Locked: false,
                             Link: 2
                         }
                     ]
@@ -451,7 +431,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Surely, this is not your fault...",
-                            Locked: false,
                             Link: 3
                         }
                     ]
@@ -462,7 +441,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "My condolences, wolves. This must truly be a sad day for you.",
-                            Locked: false,
                             Link: 4
                         }
                     ]
@@ -473,7 +451,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue traveling]",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -490,7 +467,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What happened here?",
-                            Locked: false,
                             Link: 1
                         }                       
                     ]
@@ -501,7 +477,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue listening]",
-                            Locked: false,
                             Link: 2
                         }
                     ]
@@ -512,7 +487,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Surely, this is not your fault...",
-                            Locked: false,
                             Link: 3
                         }
                     ]
@@ -523,7 +497,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue traveling]",
-                            Locked: false,
                             Link: 4
                         }
                     ]
@@ -534,7 +507,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Thanks for the head up. Stay strong.",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -551,7 +523,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "I accept your quest, honorable judge, May I ask you a few questions to aid me in this quest?",
-                            Locked: false,
                             Link: 1
                         }                    
                     ]
@@ -562,7 +533,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Duke Howl?",
-                            Locked: false,
                             Link: 2
                         }
                     ]
@@ -573,7 +543,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Oonie de Racko? ",
-                            Locked: false,
                             Link: 3
                         }
                     ]
@@ -584,7 +553,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Aristurtle? ",
-                            Locked: false,
                             Link: 4
                         }
                     ]
@@ -595,7 +563,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "How about… errrrm… Carrot?",
-                            Locked: false,
                             Link: 5
                         }
                     ]
@@ -606,7 +573,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Tell me a bit about Lady Mosilla.",
-                            Locked: false,
                             Link: 6
                         }
                     ]
@@ -617,7 +583,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Thank you for your time.",
-                            Locked: false,
                             Link: -1
                         }
                     ]
@@ -625,7 +590,7 @@ let DefaultGameObject:any =
             ]
         },
         {
-            Name:"Turtle",
+            Name:"Tortoise",
             Chats:
             [
                 {
@@ -634,7 +599,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What do you know, friend?",
-                            Locked: false,
                             Link: 1
                         }                    
                     ]
@@ -645,7 +609,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "I have heard that you've been competing in this championship for a hundred years... literally. With no avail.",
-                            Locked: false,
                             Link: 2
                         }
                     ]
@@ -656,7 +619,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue listening]",
-                            Locked: false,
                             Link: 3
                         }
                     ]
@@ -667,7 +629,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "I will enjoy beating you in the tournament today.",
-                            Locked: false,
                             Link: 4
                         }
                     ]
@@ -678,7 +639,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "I am investigating the murder of Duke Howl. Where were you last night?",
-                            Locked: false,
                             Link: 5
                         }
                     ]
@@ -689,7 +649,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Oonie?",
-                            Locked: false,
                             Link: 6
                         }
                     ]
@@ -700,7 +659,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Duke Howl?",
-                            Locked: false,
                             Link: 7
                         }
                     ]
@@ -711,7 +669,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about knight Rabbit?",
-                            Locked: false,
                             Link: 8
                         }
                     ]
@@ -722,7 +679,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "What can you tell me about Lady Mosilla?",
-                            Locked: false,
                             Link: 9
                         }
                     ]
@@ -733,7 +689,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "*A phone rings from his shell*",
-                            Locked: false,
                             Link: 10
                         }
                     ]
@@ -744,7 +699,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "*He looks at you in a paranoid way*",
-                            Locked: false,
                             Link: 11
                         }
                     ]
@@ -755,7 +709,6 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "*speaks on the phone* Hello mother. Yes, but this year, I'm feeling confident that...",
-                            Locked: false,
                             Link: -1
                         }
                     ]
