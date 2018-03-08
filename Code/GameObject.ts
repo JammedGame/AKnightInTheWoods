@@ -799,6 +799,54 @@ let DefaultGameObject:any =
                     ]
                 }
             ]
-        }
+        },
+        {
+            Name:"Arrow",
+            Chats:
+            [
+                {
+                    Text: "[You found weird arrow]",
+                    Options:
+                    [
+                        {
+                            Text: "Take",
+                            Action:
+                            {
+                                ID: "Hide",
+                                Params:
+                                {
+                                    CharID: "Arrow"
+                                }
+                            },
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            Name:"Dagger",
+            Chats:
+            [
+                {
+                    Text: "[You found weird dagger]",
+                    Options:
+                    [
+                        {
+                            Text: "Take",
+                            Action:
+                            {
+                                ID: "Hide",
+                                Params:
+                                {
+                                    CharID: "Dagger"
+                                }
+                            },
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        },
     ]
 };

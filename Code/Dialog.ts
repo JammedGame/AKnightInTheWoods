@@ -132,6 +132,7 @@ class Dialog
     {
         if(Option == null && Option.Link == null) return;
         if(Option.Sets) this.SetHints(Option.Sets);
+        if(Option.Action) this._Scene.Action(Option.Action.ID, Option.Action.Params);
         if(Option.Link == -1)
         {
             this.Hide();

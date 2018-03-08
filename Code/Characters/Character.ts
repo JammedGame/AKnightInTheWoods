@@ -11,6 +11,7 @@ class Character extends Engineer.Sprite
     protected _IdleLength:number;
     protected _CharacterSeed:number;
     protected _CharacterString:string;
+    public get CharID():string { return this._CharacterString; }
     public constructor(Old?:Character)
     {
         super(Old);

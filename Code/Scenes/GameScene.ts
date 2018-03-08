@@ -97,6 +97,7 @@ class GameScene extends Engineer.Scene2D
         if(Flip) Char.Flip();
         if(!Position.Z) Position.Z = 0.8;
         Char.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z), new Engineer.Vertex(Size.X, Size.Y, 1));
+        Char.SetScene(this);
         this._Characters.push(Char);
         this.AddSceneObject(Char);
     }
@@ -107,5 +108,19 @@ class GameScene extends Engineer.Scene2D
         Trans.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z));
         this._Transitions.push(Trans);
         this.AddSceneObject(Trans);
+    }
+    public Action(Action:string, Params:any) : void
+    {
+        if(Action == "Hide")
+        {
+            for(let i in this._Characters)
+            {
+                if(this._Characters[i].CharID == Params.CharID)
+                {
+                    this._Characters[i].Active = false;
+                    break;
+                }
+            }
+        }
     }
 }
