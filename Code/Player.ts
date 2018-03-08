@@ -45,8 +45,7 @@ class Player extends Engineer.Sprite
         let STX = 0;
         if(ST) STX = ST.X;
         let PPX = this.Trans.Translation.X - STX;
-        console.log(PPX);
-        return Math.abs(PPX - Position.X) < Size;
+        return Math.abs(PPX - Position.X) < Size * 1.5;
     }
 }
 

@@ -21,7 +21,6 @@ class GameLogic
         let _Menu:any = new MainMenu(this._Runner, this._Game);
         this._Game.AddScene(_Menu);
         SceneFactory.GenerateAll();
-        console.log(this._Game);
     }
     public Run() : void
     {
