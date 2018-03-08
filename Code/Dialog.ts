@@ -14,6 +14,7 @@ class Dialog
     private _Option1:HTMLElement;
     private _Option2:HTMLElement;
     private _Option3:HTMLElement;
+    private _Option4:HTMLElement;
     private _Character:any;
     private _Chat:any;
     private _GameObject:any;
@@ -30,9 +31,11 @@ class Dialog
         this._Option1 = document.getElementById("dialog-choice1");
         this._Option2 = document.getElementById("dialog-choice2");
         this._Option3 = document.getElementById("dialog-choice3");
+        this._Option4 = document.getElementById("dialog-choice4");
         this._Option1.addEventListener("click", this.Choice1.bind(this));
         this._Option2.addEventListener("click", this.Choice2.bind(this));
         this._Option3.addEventListener("click", this.Choice3.bind(this));
+        this._Option4.addEventListener("click", this.Choice4.bind(this));
     }
     public SetDialog(Text:string):void
     {
@@ -69,6 +72,12 @@ class Dialog
             this._Option3.innerHTML = Chat.Options[2].Text;
         }
         else this._Option3.style.display = "none";
+        if(Chat.Options.length > 3 && this.CheckReqs(Chat.Options[3].Requires))
+        {
+            this._Option4.style.display = "block";
+            this._Option4.innerHTML = Chat.Options[3].Text;
+        }
+        else this._Option4.style.display = "none";
     }
     private Show()
     {
@@ -127,6 +136,10 @@ class Dialog
     private Choice3() : void
     {
         this.HandleOption(this._Chat.Options[2]);
+    }
+    private Choice4() : void
+    {
+        this.HandleOption(this._Chat.Options[3]);
     }
     private HandleOption(Option) : void
     {

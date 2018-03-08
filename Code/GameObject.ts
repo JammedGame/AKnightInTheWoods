@@ -93,6 +93,7 @@ let DefaultGameObject:any =
         {
             Name: "Arena1",
             Type: "Arena",
+            Set: 4,
             Characters:
             [
                 {
@@ -303,6 +304,7 @@ let DefaultGameObject:any =
         {
             Name: "Arena2",
             Type: "Arena",
+            Set: 5,
             Characters:
             [
                 {
@@ -350,7 +352,16 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Uhh... sorry.",
-                            Link: -1
+                            Link: -1,
+                            Action:
+                            {
+                                ID: "SetChat",
+                                Params: 
+                                {
+                                    CharID: "Rabbit",
+                                    Chat: -1
+                                }
+                            }
                         }
                     ]
                 },
@@ -440,11 +451,29 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "My good man, you do seem concerned. What worries you this fine day, may i ask?.",
-                            Link: 1
+                            Link: 1,
+                            Action:
+                            {
+                                ID:"SetChat",
+                                Params:
+                                {
+                                    CharID:"Raccoon",
+                                    Chat:-1
+                                }
+                            }
                         },
                         {
                             Text: "Out of my way scoundrel.",
-                            Link: 2
+                            Link: 2,
+                            Action:
+                            {
+                                ID:"SetChat",
+                                Params:
+                                {
+                                    CharID:"Raccoon",
+                                    Chat:-1
+                                }
+                            }
                         }
                     ]
                 },
@@ -583,7 +612,7 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "Turn him around",
+                            Text: "Check the body",
                             Link: 1
                         },
                         {
@@ -663,8 +692,43 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "...",
+                            Text: "[Leave]",
                             Link: -1
+                        },
+                        {
+                            Text: "Is this your Arrow?",
+                            Requires: ["FoundArrow"],
+                            Sets: ["ReturnedArrow"],
+                            Link: 1
+                        },
+                    ]
+                },
+                {
+                    Text: "My arrow! You found it! Thank you very much.",
+                    Options:
+                    [
+                        {
+                            Text: "No Problem [Leave]",
+                            Link: -1,
+                            Action:
+                            {
+                                ID: "SetChat",
+                                Params: 
+                                {
+                                    CharID: "Fox",
+                                    Chat: 2
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    Text: "Thank you for finding my arrow.",
+                    Options:
+                    [
+                        {
+                            Text: "No Problem [Leave]",
+                            Link: -1,
                         }
                     ]
                 },
@@ -750,10 +814,29 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "[continue traveling]",
-                            Link: -1
+                            Link: -1,
+                            Action:
+                            {
+                                ID: "SetChat",
+                                Params:
+                                {
+                                    CharID:"Bob",
+                                    Chat:5
+                                }
+                            }
                         }
                     ]
-                }
+                },
+                {
+                    Text: "Curses! *sobs*",
+                    Options:
+                    [
+                        {
+                            Text: "...",
+                            Link: -1
+                        }                       
+                    ]
+                },
             ]
         },
         {
@@ -806,8 +889,27 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "Thanks for the head up. Stay strong.",
-                            Link: -1
+                            Link: -1,
+                            Action:
+                            {
+                                ID: "SetChat",
+                                Params:
+                                {
+                                    CharID:"Jim",
+                                    Chat:5
+                                }
+                            }
                         }
+                    ]
+                },
+                {
+                    Text: "Why, Animal God, why?",
+                    Options:
+                    [
+                        {
+                            Text: "...",
+                            Link: -1
+                        }                       
                     ]
                 }
             ]
@@ -817,22 +919,120 @@ let DefaultGameObject:any =
             Chats:
             [
                 {
-                    Text: "Fine knight, Sir Acorn of Hazelgrove, we are proud to welcome you to our land. I have heard much about your great fighting skills, your brave heart and your quick wit. Your visit is a joyous occasion for us. However, not all is so full of joy in this land. As you may have heard, our greatest champion deceased last night under mysterious circumstances. Say, on your honor and valor, would you help us solve this mystery? The good Duke Howl was much envied around these parts, and you, who only arrived now, couldn’t have possibly done it.",
+                    Text: "Fine knight, Sir Acorn of Hazelgrove, we are proud to welcome you to our land. I have heard much about your great fighting skills, your brave heart and your quick wit.",
                     Options:
                     [
                         {
-                            Text: "I accept your quest, honorable judge, May I ask you a few questions to aid me in this quest?",
+                            Text: "<b>[Continue Listening]</b>",
                             Link: 1
                         }                    
                     ]
                 },
                 {
-                    Text: "Please, do.",
+                    Text: "Your visit is a joyous occasion for us. However, not all is so full of joy in this land. As you may have heard, our greatest champion deceased last night under mysterious circumstances. Say, on your honor and valor, would you help us solve this mystery? The good Duke Howl was much envied around these parts, and you, who only arrived now, couldn’t have possibly done it.",
+                    Options:
+                    [
+                        {
+                            Text: "I accept your quest, honorable judge.",
+                            Link: 2
+                        }                    
+                    ]
+                },
+                {
+                    Text: "Honor is mine, fair knight. Is there any information I can provide to aid you?",
+                    Options:
+                    [
+                        {
+                            Text: "I want to know more about knights.",
+                            Link: 4
+                        },
+                        {
+                            Text: "I want to know more about entourage.",
+                            Link: 5
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Is there any information I can provide to aid you?",
+                    Options:
+                    [
+                        {
+                            Text: "I want to know more about knights.",
+                            Link: 4
+                        },
+                        {
+                            Text: "I want to know more about entourage.",
+                            Link: 6
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Which of the knights you want to know about?",
                     Options:
                     [
                         {
                             Text: "What can you tell me about Duke Howl?",
-                            Link: 2
+                            Link: 7
+                        },
+                        {
+                            Text: "What can you tell me about Aristurtle?",
+                            Link: 8
+                        },
+                        {
+                            Text: "How about… errrrm… Carrot?",
+                            Link: 9
+                        },
+                        {
+                            Text: "<b>[Next>]</b>",
+                            Link: 5
+                        }
+                    ]
+                },
+                {
+                    Text: "Which of the knights you want to know about?",
+                    Options:
+                    [
+                        {
+                            Text: "<b>[&lt;Previous]</b>",
+                            Link: 4
+                        },
+                        {
+                            Text: "What can you tell me about Lady Mosilla?",
+                            Link: 10
+                        },
+                        {
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Which person you want to know about?",
+                    Options:
+                    [
+                        {
+                            Text: "What can you tell me about Oonie de Racko? ",
+                            Link: 11
+                        },
+                        {
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
                         }
                     ]
                 },
@@ -841,18 +1041,12 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "What can you tell me about Oonie de Racko? ",
+                            Text: "I want to know about someone else.",
                             Link: 3
-                        }
-                    ]
-                },
-                {
-                    Text: "He is but a petty thief and a rascal. We’ve put him on probation to give him a chance to purchase his freedom, but he wasted all his belongings betting against Duke Howl. The favourite! Can you imagine all that, just for the quota? Dirty gambler…",
-                    Options:
-                    [
+                        },
                         {
-                            Text: "What can you tell me about Aristurtle? ",
-                            Link: 4
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
                         }
                     ]
                 },
@@ -861,8 +1055,12 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "How about… errrrm… Carrot?",
-                            Link: 5
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
                         }
                     ]
                 },
@@ -871,8 +1069,12 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "Tell me a bit about Lady Mosilla.",
-                            Link: 6
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
                         }
                     ]
                 },
@@ -881,7 +1083,25 @@ let DefaultGameObject:any =
                     Options:
                     [
                         {
-                            Text: "Thank you for your time.",
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "He is but a petty thief and a rascal. We’ve put him on probation to give him a chance to purchase his freedom, but he wasted all his belongings betting against Duke Howl. The favourite! Can you imagine all that, just for the quota? Dirty gambler…",
+                    Options:
+                    [
+                        {
+                            Text: "I want to know about someone else.",
+                            Link: 3
+                        },
+                        {
+                            Text: "That is all, thank you for your help. <b>[Leave]</b>",
                             Link: -1
                         }
                     ]
@@ -1053,11 +1273,12 @@ let DefaultGameObject:any =
             Chats:
             [
                 {
-                    Text: "[You found weird arrow]",
+                    Text: "[You found the fine silver arrow]",
                     Options:
                     [
                         {
-                            Text: "Take",
+                            Text: "[Take]",
+                            Sets: ["FoundArrow"],
                             Action:
                             {
                                 ID: "Hide",

@@ -5,14 +5,18 @@ import * as Engineer from "engineer-js";
 import { Dialog } from "./../Dialog";
 import { GameScene } from "./GameScene";
 
+const MOV_SPEED = 20;
+
 class Movement
 {
     private _GameScene:GameScene;
     private _Left:boolean = false;
     private _Right:boolean = false;
+    private _Type:string;
     public constructor(GameScene:GameScene, Type:string)
     {
         this._GameScene = GameScene;
+        this._Type = Type;
         if(Type == "Path") GameScene.Events.TimeTick.push(this.Move1.bind(this));
         if(Type == "Camp") GameScene.Events.TimeTick.push(this.Move2.bind(this));
         GameScene.Events.KeyDown.push(this.KeyDown.bind(this));
@@ -25,12 +29,12 @@ class Movement
         {
             if(this._GameScene.Trans.Translation.X>=-3760)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 5, this._GameScene.Trans.Translation.Y, 0);
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
                 this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X<=1720)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + 5, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(2);
         }
@@ -38,12 +42,12 @@ class Movement
         {
             if(this._GameScene.Trans.Translation.X<=0)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 5, this._GameScene.Trans.Translation.Y, 0);
+                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
                 this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X>=200)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - 5, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(3);
         }
@@ -55,7 +59,7 @@ class Movement
         {
             if(this._GameScene.Player.Trans.Translation.X<=1200)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + 5, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(2);
         }
@@ -63,7 +67,7 @@ class Movement
         {
             if(this._GameScene.Player.Trans.Translation.X>=400)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - 5, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(3);
         }
@@ -93,7 +97,7 @@ class Movement
             if(this._Left)
             {
                 this._Left = false;
-                this._GameScene.Player.UpdateSpriteSet(0);
+                if(this._Type != "Arena") this._GameScene.Player.UpdateSpriteSet(0);
             }            
         }
         else if(Args.KeyCode == 65)
@@ -101,7 +105,7 @@ class Movement
             if(this._Right)
             {
                 this._Right = false;
-                this._GameScene.Player.UpdateSpriteSet(1);
+                if(this._Type != "Arena") this._GameScene.Player.UpdateSpriteSet(1);
             }            
         }
     }

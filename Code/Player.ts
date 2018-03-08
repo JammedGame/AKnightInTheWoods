@@ -38,6 +38,16 @@ class Player extends Engineer.Sprite
         SpriteSetSkin3.Seed = 10;
         for (let i = 0; i < 4; i++) SpriteSetSkin3.Images.push("Resources/Textures/Player/WalkL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin3);
+
+        let SpriteSetSkin4 = new Engineer.SpriteSet(null, [], "Bow");
+        SpriteSetSkin4.Seed = 10;
+        for (let i = 0; i < 3; i++) SpriteSetSkin4.Images.push("Resources/Textures/Player/Bow" + i + ".png");
+        this.SpriteSets.push(SpriteSetSkin4);
+
+        let SpriteSetSkin5 = new Engineer.SpriteSet(null, [], "Sword");
+        SpriteSetSkin5.Seed = 10;
+        for (let i = 0; i < 3; i++) SpriteSetSkin5.Images.push("Resources/Textures/Player/Sword" + i + ".png");
+        this.SpriteSets.push(SpriteSetSkin5);
     }
     public CheckProximity(Position:Engineer.Vertex, Size:number) : boolean
     {

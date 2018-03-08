@@ -29,7 +29,12 @@ class SceneFactory
         let GS:GameScene = null;
         if(Data.Type == "Path") GS = new Path(Data.Name);
         else if(Data.Type == "Camp") GS = new Camp(Data.Name);
-        else if(Data.Type == "Arena") GS = new Arena(Data.Name);
+        else if(Data.Type == "Arena")
+        {
+            let AGS = new Arena(Data.Name);
+            AGS.SetSpriteSet(Data.Set);
+            GS = AGS;
+        }
         for(let i in Data.Characters)
         {
             let Char = Data.Characters[i];
