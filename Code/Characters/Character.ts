@@ -40,7 +40,7 @@ class Character extends Engineer.Sprite
         this.Trans.Translation = Position;
         this.Trans.Scale = Size;
         if(!this._IdleLength) this._IdleLength = 3;
-        if(!this._CharacterSeed) this._CharacterSeed = 50;
+        if(!this._CharacterSeed) this._CharacterSeed = 20;
         if(!this._CharacterString)
         {
             Engineer.Log.Error("CharacterString not set!");
