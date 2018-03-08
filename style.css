@@ -1,9 +1,12 @@
+body
+{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
 .dialog-choice
 {
     font-size: 22px;
     color:grey;
     text-align:center;
-    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 .dialog-choice:hover
 {
@@ -14,5 +17,4 @@
     color:black;
     font-size:24px;
     text-align:center;
-    font-family: "Comic Sans MS", cursive, sans-serif;
 }
