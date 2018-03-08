@@ -134,7 +134,7 @@ let DefaultGameObject:any =
                     Name: "Owl",
                     Position: {X:1500,Y:680,Z:0.8},
                     Size: {X:400, Y:400},
-                    Chat: 7
+                    Chat: 12
                 },
                 {
                     Name: "Goat",
@@ -919,7 +919,7 @@ let DefaultGameObject:any =
             Chats:
             [
                 {
-                    Text: "Fine knight, Sir Acorn of Hazelgrove, we are proud to welcome you to our land. I have heard much about your great fighting skills, your brave heart and your quick wit.",
+                    Text: "Fine knight, Sir Acorn of Hazelgrove, we are proud to welcome you to our land. I have heard much about your fighting skills, your brave heart and your quick wit.",
                     Options:
                     [
                         {
@@ -1107,35 +1107,41 @@ let DefaultGameObject:any =
                     ]
                 },
                 {
-                    Text: "...",
+                    Text: "Great performance today! Your skills are one for the songs.",
                     Options:
                     [
                         {
-                            Text: "Have you seen anything unusual around here?",
-                            Link: 8
+                            Text: "Thank you. Can I ask you further questions about our inquiry?",
+                            Link: 13
                         }
                     ]
                 },
                 {
-                    Text: "Well... I couldn't talk earlier because turtle was nearby.",
+                    Text: "As you wish my friend, how can I be of help?",
                     Options:
                     [
                         {
-                            Text: "Hmm?",
-                            Link: 9
+                            Text: "Have you noticed any strange behaviour around here?",
+                            Link: 14
                         }
                     ]
                 },
                 {
-                    Text: "I have seen turtle leaving Rabbit's tent last night.",
+                    Text: "Well... I beleive I did. I could not speak openly earlier with Sir Aristurtle on the premises.",
                     Options:
                     [
                         {
-                            Text: "Mhm, seems a little bit odd.",
-                            Link: -1
-                        },
+                            Text: "So you have seen something?",
+                            Link: 15
+                        }
+                    ]
+                },
+                {
+                    Text: "Might be that my eyes deceived me, but it appeared as if Sir Aristurtle was leaving tent of our very own Knight Carrot.",
+                    Options:
+                    [
                         {
-                            Text: "Nothing wrong with that. You need to be more open minded.",
+                            Text: "Yes, you are right, that does seem a little bit odd. Thanks you for your help. <b>[Leave]</b>",
                             Link: -1
                         }
                     ]
