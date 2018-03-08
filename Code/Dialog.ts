@@ -56,14 +56,14 @@ class Dialog
     private SetValues(Chat:any)
     {
         this._Title.innerHTML = Chat.Text;
-        this._Option1.innerHTML = Chat.Options[0].Text;
-        if(Chat.Options.length > 1)
+        if(this.CheckReqs(Chat.Options[0].Requires)) this._Option1.innerHTML = Chat.Options[0].Text;
+        if(Chat.Options.length > 1 && this.CheckReqs(Chat.Options[1].Requires))
         {
             this._Option2.style.display = "block";
             this._Option2.innerHTML = Chat.Options[1].Text;
         }
         else this._Option2.style.display = "none";
-        if(Chat.Options.length > 2)
+        if(Chat.Options.length > 2 && this.CheckReqs(Chat.Options[2].Requires))
         {
             this._Option3.style.display = "block";
             this._Option3.innerHTML = Chat.Options[2].Text;
@@ -80,10 +80,7 @@ class Dialog
         this._Shown = false;
         this._DivDialog.style.display = "none";
     }
-    private GetHints() : string[]
-    {
-        return Engineer.Runner.Current.Game.Data["GO"].Hints;
-    }
+    
     private FindCharacter(Character:string) : any
     {
         this._GameObject = Engineer.Runner.Current.Game.Data["GO"];
@@ -96,39 +93,51 @@ class Dialog
         }
         return null;
     }
+    private GetHints() : string[]
+    {
+        return Engineer.Runner.Current.Game.Data["GO"].Hints;
+    }
     private SetHints(HintsList:string[]) : void
     {
-
+        let Hints = this.GetHints();
+        for(let i in HintsList)
+        {
+            if(Hints.indexOf(HintsList[i]) != -1) continue;
+            Hints.push(HintsList[i]);
+        }
+    }
+    private CheckReqs(Reqs:string[]) : boolean
+    {
+        if(!Reqs) return true;
+        let Hints = this.GetHints();
+        for(let i in Reqs)
+        {
+            if(Hints.indexOf(Reqs[i]) == -1) return false;
+        }
+        return true;
     }
     private Choice1() : void
     {
-        if(this._Chat.Options[0] == null && this._Chat.Options[0].Link == null) return;
-        if(this._Chat.Options[0].Link == -1)
-        {
-            this.Hide();
-            return;
-        }
-        this.SetChat(this._Chat.Options[0].Link);
+        this.HandleOption(this._Chat.Options[0]);
     }
     private Choice2() : void
     {
-        if(this._Chat.Options[1] == null && this._Chat.Options[1].Link == null) return;
-        if(this._Chat.Options[1].Link == -1)
-        {
-            this.Hide();
-            return;
-        }
-        this.SetChat(this._Chat.Options[1].Link);
+        this.HandleOption(this._Chat.Options[1]);
     }
     private Choice3() : void
     {
-        if(this._Chat.Options[2] == null && this._Chat.Options[2].Link == null) return;
-        if(this._Chat.Options[2].Link == -1)
+        this.HandleOption(this._Chat.Options[2]);
+    }
+    private HandleOption(Option) : void
+    {
+        if(Option == null && Option.Link == null) return;
+        if(Option.Sets) this.SetHints(Option.Sets);
+        if(Option.Link == -1)
         {
             this.Hide();
             return;
         }
-        this.SetChat(this._Chat.Options[2].Link);
+        this.SetChat(Option.Link);
     }
     public SetScene(Scene:GameScene) : void
     {
