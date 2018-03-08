@@ -173,7 +173,7 @@ let DefaultGameObject:any =
                     Name: "Rabbit",
                     Position: {X:5000,Y:650,Z:1.1},
                     Size: {X:300, Y:300},
-                    Chat: 3
+                    Chat: 2
                 },
                 {
                     Name: "Dagger",
@@ -213,7 +213,7 @@ let DefaultGameObject:any =
                     Name: "Goat",
                     Position: {X:1000,Y:900,Z:1.5},
                     Size: {X:360, Y:360},
-                    Chat: 0
+                    Chat: 3
                 }
             ],
             Transitions:
@@ -235,13 +235,13 @@ let DefaultGameObject:any =
                     Name: "TortoiseRun",
                     Position: {X:600,Y:650,Z:0.8},
                     Size: {X:360, Y:360},
-                    Chat: 1
+                    Chat: 0
                 },
                 {
                     Name: "Bear",
                     Position: {X:2300,Y:600,Z:0.8},
                     Size: {X:600,Y:600},
-                    Chat: 1
+                    Chat: 0
                 },
                 {
                     Name: "RabbitRun",
@@ -353,7 +353,81 @@ let DefaultGameObject:any =
                             Link: -1
                         }
                     ]
-                }
+                },
+                {
+                    Text: "...",
+                    Options:
+                    [
+                        {
+                            Text: "That was a great shot, back there.",
+                            Link: 3
+                        }
+                    ]
+                },
+                {
+                    Text: "Of course it was, it was perfect in fact.",
+                    Options:
+                    [
+                        {
+                            Text: "Well, judge didn't think the same.",
+                            Link: 4
+                        }
+                    ]
+                },
+                {
+                    Text: "Ahh that judge couldn't see further from his beak. I just cant wait for the race, that's my domain.",
+                    Options:
+                    [
+                        {
+                            Text: "...",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "...",
+                    Options:
+                    [
+                        {
+                            Text: "Is this yours?",
+                            Link: 6
+                        }                   
+                    ]
+                },
+                {
+                    Text: "Oh, yes! Where did you find it? I looked for it everywhere.",
+                    Options:
+                    [
+                        {
+                            Text: "I found it in a hollow tree, some one must have hid it there.",
+                            Link: 7
+                        }
+                    ]
+                },
+                {
+                    Text: "Please sir, give it back. It's been in my family for generations.",
+                    Options:
+                    [
+                        {
+                            Text: "Here you go, it's yours. ",
+                            Link: 8
+                        },
+                        {
+                            Text: "Finders keepers.[Leave]",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Thank you, ill repay you somehow you have my word.",
+                    Options:
+                    [
+                        {
+                            Text: "Glad I could help.",
+                            Link: -1
+                        }
+                    ]
+                }  
             ]
         },
         {
@@ -590,6 +664,36 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "...",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Congratulation on your victory!",
+                    Options:
+                    [
+                        {
+                            Text: "Thank you m'lady.",
+                            Link: 2
+                        }
+                    ]
+                },
+                {
+                    Text: "I kind of feel bad for Carrot, first it's family dagger was stolen and later on archery contest Carrot was so frustrated, couldn't aim at all.",
+                    Options:
+                    [
+                        {
+                            Text: "Bad luck I guess.",
+                            Link: 3
+                        }
+                    ]
+                },
+                {
+                    Text: "It will be fine, Carrot is having high hopes for the race. Carrot is one of the fastest contestants I know, never lost a race before.",
+                    Options:
+                    [
+                        {
+                            Text: "That doesn't suits me well, but there is first time for everything.",
                             Link: -1
                         }
                     ]
@@ -1029,6 +1133,74 @@ let DefaultGameObject:any =
                             Link: -1
                         }
                     ]
+                },
+                {
+                    Text: "Great! You found me!",
+                    Options:
+                    [
+                        {
+                            Text: "Hello Giovanni, how was your trip?",
+                            Link: 4
+                        }
+                    ]
+                },
+                {
+                    Text: "I traveled fine, but I heard some commoners were bothered by a bear.",
+                    Options:
+                    [
+                        {
+                            Text: "A bear? What does a bear do around here?",
+                            Link: 5
+                        }
+                    ]
+                },
+                {
+                    Text: "A bear do what a bear does... it looks for a honey of course.",
+                    Options:
+                    [
+                        {
+                            Text: "He must be desperate to turn outlaw for a little bit of honey.",
+                            Link: 6
+                        }
+                    ]
+                },
+                {
+                    Text: "Yes he is desperate, and desperate ones will do anything to get what they want.",
+                    Options:
+                    [
+                        {
+                            Text: "You are right.",
+                            Link: 7
+                        },
+                        {
+                            Text: "You are wrong.[Leave]",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Oddly enough I happen to sell honey in my store, are you interested perhaps?",
+                    Options:
+                    [
+                        {
+                            Text: "I didn't bring any money with me, but I can give you this golden arrow I won on archery tournament.",
+                            Link: 8
+                        },
+                        {
+                            Text: "No, I have no use of it.",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "That will do. Here is your honeypot.",
+                    Options:
+                    [
+                        {
+                            Text: "Thank you.",
+                            Link: -1
+                        }
+                    ]
                 }
             ]
         },
@@ -1110,6 +1282,115 @@ let DefaultGameObject:any =
                         }
                     ]
                 }
+            ]
+        },
+        {
+            Name:"Bear",
+            Chats:
+            [
+                {
+                    Text: "What's that you have? Could it be honey?",
+                    Options:
+                    [
+                        {
+                            Text: "Whooo, take it easy big fella. Indeed this is a honeypot I've got here. But tell me what can you offer me for it?",
+                            Link: 1
+                        }                   
+                    ]
+                },
+                {
+                    Text: "Well, seeing you are nobility I can't deal with you I usually deal with those kind of situations.",
+                    Options:
+                    [
+                        {
+                            Text: "Yeah, you better keep your claws to yourself and hurry up I have a race to win.",
+                            Link: 2
+                        }
+                    ]
+                },
+                {
+                    Text: "Oh, I got it! I can show you a shortcut to finish in exchange for that honeypot you've got.",
+                    Options:
+                    [
+                        {
+                            Text: "Deal![Go with the bear]",
+                            Link: -1
+                        },
+                        {
+                            Text: "No way I'm going with you into this dark forest...[Leave]",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Move along sir, no shortcuts over here.",
+                    Options:
+                    [
+                        {
+                            Text: "Hmm? Ok.",
+                            Link: -1
+                        }
+                    ]
+                }               
+            ]
+        },
+        {
+            Name:"RabbitRun",
+            Chats:
+            [
+                             
+            ]
+        },
+        {
+            Name:"TortoiseRun",
+            Chats:
+            [
+                {
+                    Text: "We all know how race with rabbit and turtle ends... ",
+                    Options:
+                    [
+                        {
+                            Text: "But, what about me?",
+                            Link: 1
+                        }
+                    ]
+                },
+                {
+                    Text: "Ahhh yes, a squirrel must prove to exist first.",
+                    Options:
+                    [
+                        {
+                            Text: "[Continue race]",
+                            Link: -1
+                        }
+                    ]
+                }             
+            ]
+        },
+        {
+            Name:"Queen",
+            Chats:
+            [
+                {
+                    Text: "I'm impressed sir Acorn. I must admit I wasn't expecting to see you make it to the final round.",
+                    Options:
+                    [
+                        {
+                            Text: "You flatter me my queen.",
+                            Link: 1
+                        }
+                    ]
+                },
+                {
+                    Text: "I hope you have finished your investigation, you will be announcing culprit's name after the final round.",
+                    Options:
+                    [
+                        {
+                            Text: "Of course! ... YES!... The culprits name...",
+                            Link: -1
+                        }
+                    ]
+                }             
             ]
         }
     ]
