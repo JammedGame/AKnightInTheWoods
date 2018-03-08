@@ -161,7 +161,7 @@ let DefaultGameObject:any =
                 {
                     Name: "Kangaroo",
                     Position: {X:1250,Y:650,Z:0.8},
-                    Size: {X:500, Y:500},
+                    Size: {X:550, Y:550},
                     Chat: 0
                 },
                 {
@@ -172,7 +172,7 @@ let DefaultGameObject:any =
                 },
                 {
                     Name: "Rabbit",
-                    Position: {X:5000,Y:650,Z:1.1},
+                    Position: {X:5000,Y:650,Z:0.8},
                     Size: {X:300, Y:300},
                     Chat: 2
                 },
@@ -246,13 +246,13 @@ let DefaultGameObject:any =
                 },
                 {
                     Name: "RabbitRun",
-                    Position: {X:4000,Y:700,Z:1.1},
+                    Position: {X:4000,Y:700,Z:0.8},
                     Size: {X:300, Y:300},
                     Chat: 3
                 },
                 {
                     Name: "Raccoon",
-                    Position: {X:5300,Y:600,Z:1.1},
+                    Position: {X:5300,Y:600,Z:0.8},
                     Size: {X:300, Y:300},
                     Chat: 11
                 }
@@ -274,8 +274,8 @@ let DefaultGameObject:any =
             [
                 {
                     Name: "Kangaroo",
-                    Position: {X:600,Y:550,Z:0.8},
-                    Size: {X:500, Y:500},
+                    Position: {X:700,Y:550,Z:0.8},
+                    Size: {X:550, Y:550},
                     Chat: 0
                 },
                 {
