@@ -122,5 +122,16 @@ class GameScene extends Engineer.Scene2D
                 }
             }
         }
+        else if(Action == "SetChat")
+        {
+            for(let i in this._Characters)
+            {
+                if(this._Characters[i].CharID == Params.CharID)
+                {
+                    this._Characters[i].Data["Chat"] = Params.Chat;
+                    break;
+                }
+            }
+        }
     }
 }
