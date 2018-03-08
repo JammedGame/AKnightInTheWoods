@@ -26,6 +26,7 @@ class Movement
             if(this._GameScene.Trans.Translation.X>=-3760)
             {
                 this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - 2, this._GameScene.Trans.Translation.Y, 2);
+                this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X<=1720)
             {
@@ -38,6 +39,7 @@ class Movement
             if(this._GameScene.Trans.Translation.X<=0)
             {
                 this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + 2, this._GameScene.Trans.Translation.Y, 2);
+                this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X>=200)
             {

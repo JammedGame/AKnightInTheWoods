@@ -61,6 +61,7 @@ class Character extends Engineer.Sprite
     private ActivateDialog() : void
     {
         if(Dialog.Single && Dialog.Single._Shown) return;
+        if(!this._Scene.Player.CheckProximity(this.Trans.Translation, this.Trans.Scale.X / 2)) return;
         let Dial = null;
         if(Dialog.Single) Dial = Dialog.Single;
         else Dial = new Dialog();

@@ -39,5 +39,14 @@ class Player extends Engineer.Sprite
         for (let i = 0; i < 4; i++) SpriteSetSkin3.Images.push("Resources/Textures/Player/WalkL" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin3);
     }
+    public CheckProximity(Position:Engineer.Vertex, Size:number) : boolean
+    {
+        let ST = this.Data["ST"];
+        let STX = 0;
+        if(ST) STX = ST.X;
+        let PPX = this.Trans.Translation.X - STX;
+        console.log(PPX);
+        return Math.abs(PPX - Position.X) < Size;
+    }
 }
 
