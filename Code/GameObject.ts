@@ -133,7 +133,7 @@ let DefaultGameObject:any =
                     Name: "Owl",
                     Position: {X:1500,Y:680,Z:0.8},
                     Size: {X:400, Y:400},
-                    Chat: 0
+                    Chat: 7
                 },
                 {
                     Name: "Goat",
@@ -167,7 +167,7 @@ let DefaultGameObject:any =
                     Name: "Raccoon",
                     Position: {X:3200,Y:700,Z:0.8},
                     Size: {X:300, Y:350},
-                    Chat: 0
+                    Chat: 3
                 },
                 {
                     Name: "Rabbit",
@@ -248,6 +248,12 @@ let DefaultGameObject:any =
                     Position: {X:4000,Y:700,Z:1.1},
                     Size: {X:300, Y:300},
                     Chat: 3
+                },
+                {
+                    Name: "Raccoon",
+                    Position: {X:5300,Y:600,Z:1.1},
+                    Size: {X:300, Y:300},
+                    Chat: 11
                 }
             ],
             Transitions:
@@ -384,6 +390,110 @@ let DefaultGameObject:any =
                     [
                         {
                             Text: "...",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Kghhhh! Get away it's mine!",
+                    Options:
+                    [
+                        {
+                            Text: "Whooo! Take it easy! It's me sir Acorn.",
+                            Link: 4
+                        }
+                    ]
+                },
+                {
+                    Text: "Ohhh... sorry, didn't see it was you my friend.",
+                    Options:
+                    [
+                        {
+                            Text: "What's happening? What are you doing here?",
+                            Link: 5
+                        }
+                    ]
+                },
+                {
+                    Text: "I've seen something shiny around here, but damn it, can't find it now.",
+                    Options:
+                    [
+                        {
+                            Text: "I don't have time for this[Leave]",
+                            Link: -1
+                        },
+                        {
+                            Text: "Alright, let me take a look.",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "...",
+                    Options:
+                    [
+                        {
+                            Text: "Look what I've found, do you know to whom does this dagger belong to?",
+                            Link: 7
+                        }
+                    ]
+                },
+                {
+                    Text: "It belongs to Carrot, I believe, but Carrot lost it a while ago, it might have something to do with Duke Howls death.",
+                    Options:
+                    [
+                        {
+                            Text: "Perhaps... Do you know if anyone had something against the Duke?",
+                            Link: 8
+                        }
+                    ]
+                },
+                {
+                    Text: "I don't like gossiping, but I overheard some lizard named Ali Gator was blackmailing Duke.",
+                    Options:
+                    [
+                        {
+                            Text: "Blackmailing? What with?",
+                            Link: 9
+                        }
+                    ]
+                },
+                {
+                    Text: "The Duke was allegedly planning rebellion against the Queen. And if I'm right that lizard knew about his plan and blackmailed him.",
+                    Options:
+                    [
+                        {
+                            Text: "Do you think Gator had something to do with Dukes death?",
+                            Link: 10
+                        }
+                    ]
+                },
+                {
+                    Text: "Not sure, that's your job to find out.",
+                    Options:
+                    [
+                        {
+                            Text: "Alright, I'll do my best.",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Another victory, my friend, you are doing great. But be careful in the arena, I've heard you are going to fight with that Gator, he's a big lad.",
+                    Options:
+                    [
+                        {
+                            Text: "Size doesn't matter if my sword finds it's way.",
+                            Link: 12
+                        }
+                    ]
+                },
+                {
+                    Text: "I suggest you just run.",
+                    Options:
+                    [
+                        {
+                            Text: "I appreciate your concern.",
                             Link: -1
                         }
                     ]
@@ -671,6 +781,40 @@ let DefaultGameObject:any =
                             Link: -1
                         }
                     ]
+                },
+                {
+                    Text: "...",
+                    Options:
+                    [
+                        {
+                            Text: "Have you seen anything unusual around here?",
+                            Link: 8
+                        }
+                    ]
+                },
+                {
+                    Text: "Well... I couldn't talk earlier because turtle was nearby.",
+                    Options:
+                    [
+                        {
+                            Text: "Hmm?",
+                            Link: 9
+                        }
+                    ]
+                },
+                {
+                    Text: "I have seen turtle leaving Rabbit's tent last night.",
+                    Options:
+                    [
+                        {
+                            Text: "Mhm, seems a little bit odd.",
+                            Link: -1
+                        },
+                        {
+                            Text: "Nothing wrong with that. You need to be more open minded.",
+                            Link: -1
+                        }
+                    ]
                 }
             ]
         },
@@ -685,7 +829,7 @@ let DefaultGameObject:any =
                         {
                             Text: "What do you know, friend?",
                             Link: 1
-                        }                    
+                        }
                     ]
                 },
                 {
@@ -848,5 +992,125 @@ let DefaultGameObject:any =
                 }
             ]
         },
+        {
+            Name:"Goat",
+            Chats:
+            [
+                {
+                    Text: "...",
+                    Options:
+                    [
+                        {
+                            Text: "Good day sir. That is a lot of bags what is it that you do, if I may ask?",
+                            Link: 1
+                        }                       
+                    ]
+                },
+                {
+                    Text: "Good day sir, my name is Giovanni and I am a traveling merchant.",
+                    Options:
+                    [
+                        {
+                            Text: "What do you have for sale?",
+                            Link: 2
+                        },
+                        {
+                            Text: "Goodbye.",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "I'm sorry sir but my bags are already packed, I am going to set up my shop in next camp. Must get there fast before the race starts.",
+                    Options:
+                    [
+                        {
+                            Text: "Alright, I'll see you there. Safe travel.",
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            Name:"Kangaroo",
+            Chats:
+            [
+                {
+                    Text: "Ugh... agh... my arm.",
+                    Options:
+                    [
+                        {
+                            Text: "What happened, sir?",
+                            Link: 1
+                        },  
+                        {
+                            Text: "Heh... nice makeup [Leave]",
+                            Link: 2
+                        }                     
+                    ]
+                },
+                {
+                    Text: "Damn that lizard... I'll get him next time.",
+                    Options:
+                    [
+                        {
+                            Text: "...",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Get out of here you joker!",
+                    Options:
+                    [
+                        {
+                            Text: "...",
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            Name:"Gator",
+            Chats:
+            [
+                {
+                    Text: "Greetings fellow knight, I am Ali Gator from a land far away. My journey brought me here to compete and win this tournament.",
+                    Options:
+                    [
+                        {
+                            Text: "Greetings, I am sir Acorn of Hazelgrove and I'm looking forward meeting you in the arena.",
+                            Link: 1
+                        },  
+                        {
+                            Text: "Greetings, I am sir Acorn of Hazelgrove I hope our paths won't cross in the arena.",
+                            Link: 2
+                        }                     
+                    ]
+                },
+                {
+                    Text: "You? Fight me?! Khakhakha... What can a little fellow like you do to a mountain like me?",
+                    Options:
+                    [
+                        {
+                            Text: "We'll see. Farewell.",
+                            Link: -1
+                        }
+                    ]
+                },
+                {
+                    Text: "Yeah, you better hope so... or I'll crush you.",
+                    Options:
+                    [
+                        {
+                            Text: "You really are cold blooded.",
+                            Link: -1
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 };
