@@ -20,6 +20,6 @@ class Path extends GameScene
 
         this._Player = new Player();
         this._Player.Init({X:200,Y:780,Z:1},{X:279,Y:333});
-        this.AddSceneObject(this._Player);
+        this.Attach(this._Player);
     }
 }

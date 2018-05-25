@@ -48,6 +48,8 @@ class Player extends Engineer.Sprite
         SpriteSetSkin5.Seed = 10;
         for (let i = 0; i < 3; i++) SpriteSetSkin5.Images.push("Resources/Textures/Player/Sword" + i + ".png");
         this.SpriteSets.push(SpriteSetSkin5);
+
+        console.log(this.Collection);
     }
     public CheckProximity(Position:Engineer.Vertex, Size:number) : boolean
     {

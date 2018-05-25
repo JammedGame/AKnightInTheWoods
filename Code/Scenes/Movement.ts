@@ -17,8 +17,8 @@ class Movement
     {
         this._GameScene = GameScene;
         this._Type = Type;
-        if(Type == "Path") GameScene.Events.TimeTick.push(this.Move1.bind(this));
-        if(Type == "Camp") GameScene.Events.TimeTick.push(this.Move2.bind(this));
+        if(Type == "Path") GameScene.Events.Update.push(this.Move1.bind(this));
+        if(Type == "Camp") GameScene.Events.Update.push(this.Move2.bind(this));
         GameScene.Events.KeyDown.push(this.KeyDown.bind(this));
         GameScene.Events.KeyUp.push(this.KeyUp.bind(this));
     }

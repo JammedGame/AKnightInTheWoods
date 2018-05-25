@@ -63,11 +63,11 @@ class GameScene extends Engineer.Scene2D
         Back.Name = "Back";
         Back.Collection = Backs;
         Back.Index = 0;
-        Back.Sampling = Engineer.ImageObjectSamplingType.Linear;
+        Back.Material.Sampling = Engineer.TextureSamplingType.Linear;
         Back.Trans.Scale = new Engineer.Vertex(this._XSize, 1080, 1);
         Back.Trans.Translation = new Engineer.Vertex((this._XSize / 2), 540, 0);
         this._Background = Back;
-        this.AddSceneObject(this._Background);
+        this.Attach(this._Background);
     }
     public CreateCharacter(Name:string, Position:any, Size:any, Chat:number, Flip?:boolean) : void
     {
@@ -99,7 +99,7 @@ class GameScene extends Engineer.Scene2D
         Char.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z), new Engineer.Vertex(Size.X, Size.Y, 1));
         Char.SetScene(this);
         this._Characters.push(Char);
-        this.AddSceneObject(Char);
+        this.Attach(Char);
     }
     public CreateTransition(Type:string, Destination:string, Tooltip:string, Position:any)
     {
@@ -107,7 +107,7 @@ class GameScene extends Engineer.Scene2D
         if(!Position.Z) Position.Z = 0.7;
         Trans.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z));
         this._Transitions.push(Trans);
-        this.AddSceneObject(Trans);
+        this.Attach(Trans);
     }
     public Action(Action:string, Params:any) : void
     {

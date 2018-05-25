@@ -21,7 +21,7 @@ class SceneFactory
         {
             let GS:GameScene = SceneFactory.Generate(SceneData[i]);
             GS.Init();
-            Game.AddScene(GS);
+            Game.Attach(GS);
         }
     }
     private static Generate(Data:any) : GameScene

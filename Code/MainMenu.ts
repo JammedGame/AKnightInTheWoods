@@ -25,28 +25,28 @@ class MainMenu extends Engineer.Scene2D
         this._Player = new Engineer.Sprite();
         this.Name = "Menu";
         let Buttons:any = new Engineer.ImageCollection(null, ["/Resources/Textures/Play.png"]);
-        let Play:any = new Engineer.Tile();
+        let Play:Engineer.Tile = new Engineer.Tile();
         Play.Name = "Play";
         Play.Collection = Buttons;
         Play.Index = 0;
-        Play.Sampling = Engineer.ImageObjectSamplingType.Nearest;
+        Play.Material.Sampling = Engineer.TextureSamplingType.Nearest;
         Play.Paint = Engineer.Color.Aqua;
         Play.Trans.Scale = new Engineer.Vertex(175, 100, 1);
         Play.Trans.Translation = new Engineer.Vertex(1500, 600, 3);
         Play.Events.MouseDown.push(this.PlayClick.bind(this));
-        let Titles:any = new Engineer.ImageCollection(null, ["/Resources/Textures/Title.png"]);
-        let Title:any = new Engineer.Tile();
+        let Titles:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["/Resources/Textures/Title.png"]);
+        let Title:Engineer.Tile = new Engineer.Tile();
         Title.Name = "Title";
         Title.Collection = Titles;
         Title.Index = 0;
         Title.Trans.Scale = new Engineer.Vertex(1800, 300, 1);
         Title.Trans.Translation = new Engineer.Vertex(960, 220, 1);
-        this.AddSceneObject(Title);
+        this.Attach(Title);
         this.LoadSets();
-        this.AddSceneObject(Play);
+        this.Attach(Play);
         this.GenerateBackground();
-        this.AddSceneObject(this._Fire);
-        this.AddSceneObject(this._Player);
+        this.Attach(this._Fire);
+        this.Attach(this._Player);
     }
     public PlayClick(G:any, Args:any) : void
     {
@@ -62,7 +62,7 @@ class MainMenu extends Engineer.Scene2D
         Back.Trans.Scale = new Engineer.Vertex(1920, 1080, 1);
         Back.Trans.Translation = new Engineer.Vertex(960, 540, 0);
         this._Background = Back;
-        this.AddSceneObject(this._Background);
+        this.Attach(this._Background);
     }
     private LoadSets(): void 
     {
