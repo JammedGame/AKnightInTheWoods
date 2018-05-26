@@ -74,10 +74,10 @@ class MainMenu extends Engineer.Scene2D
         this._Fire.SpriteSets.push(SpriteSetSkin0);
 
         let SpriteSetSkin1 = new Engineer.SpriteSet(null, [], "PlayerCamping");
-        SpriteSetSkin1.Seed = 20;
-        this._Player.Trans.Scale = new Engineer.Vertex(280,350,1);
-        this._Player.Trans.Translation = new Engineer.Vertex(420,560,2);
-        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/Sitting" + i + ".png");
+        SpriteSetSkin1.Seed = 6;
+        this._Player.Trans.Scale = new Engineer.Vertex(200,200,1);
+        this._Player.Trans.Translation = new Engineer.Vertex(920,760,2);
+        for (let i = 0; i < 8; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/Run" + i + ".png");
         this._Player.SpriteSets.push(SpriteSetSkin1);
     }
 }

@@ -47,6 +47,6 @@ class Transition extends Engineer.Tile
     private Transit() : void
     {
         this._Runner.SwitchScene(this._Destination, false);
-        console.log(this._Runner.Game);
+        //console.log(this._Runner.Game);
     }
 }
