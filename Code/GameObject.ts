@@ -84,7 +84,7 @@ let DefaultGameObject:any =
             [
                 {
                     Type: "Signpost",
-                    Destination: "Path1",
+                    Destination: "Arena1",
                     Tooltip: "Go To Archery Competition",
                     Position:  {X:500, Y:1000, Z:1.2}
                 }
