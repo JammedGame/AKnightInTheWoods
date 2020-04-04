@@ -1,6 +1,6 @@
 export { Dialog }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { GameScene } from "./Scenes/GameScene";
 
@@ -92,7 +92,7 @@ class Dialog
     
     private FindCharacter(Character:string) : any
     {
-        this._GameObject = Engineer.Runner.Current.Game.Data["GO"];
+        this._GameObject = TBX.Runner.Current.Game.Data["GO"];
         for(let i in this._GameObject.Characters)
         {
             if(this._GameObject.Characters[i].Name == Character)
@@ -104,7 +104,7 @@ class Dialog
     }
     private GetHints() : string[]
     {
-        return Engineer.Runner.Current.Game.Data["GO"].Hints;
+        return TBX.Runner.Current.Game.Data["GO"].Hints;
     }
     private SetHints(HintsList:string[]) : void
     {

@@ -4,10 +4,10 @@
   "description": "Project description",
   "main": "build/public/aknightinthewoods.js",
   "scripts": {
-    "start": "tsc && webpack-dev-server --hot",
+    "start": "concurrently -k \"npm run build\" \"npm run serve\"",
+    "serve": "webpack-dev-server --hot",
     "build": "tsc && webpack --watch",
-    "prod": "tsc && webpack -p",
-    "test": "cd tests"
+    "prod": "tsc && webpack --mode=production"
   },
   "keywords": [
     "aknightinthewoods"
@@ -20,7 +20,8 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "engineer-js": "0.0.70",
+    "concurrently": "^5.1.0",
+    "toybox-engine": "^0.2.1",
     "ts-loader": "^2.3.2"
   }
 }

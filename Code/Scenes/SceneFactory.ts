@@ -1,6 +1,6 @@
 export { SceneFactory }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { GameScene } from "./GameScene";
 import { Camp } from "./Camp";
@@ -11,11 +11,11 @@ class SceneFactory
 {
     public static GenerateAll()
     {
-        let G:Engineer.Game = Engineer.Runner.Current.Game;
+        let G:TBX.Game = TBX.Runner.Current.Game;
         let GameObject:any = G.Data["GO"];
         SceneFactory.GenerateScenes(G, GameObject.Scenes);
     }
-    public static GenerateScenes(Game:Engineer.Game, SceneData:any[]) : void
+    public static GenerateScenes(Game:TBX.Game, SceneData:any[]) : void
     {
         for(let i in SceneData)
         {

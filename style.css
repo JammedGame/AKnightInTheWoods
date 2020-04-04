@@ -10,11 +10,17 @@ body
 }
 .dialog-choice:hover
 {
-    color:black;
+    color:#4488FF;
 }
 .dialog-title
 {
     color:black;
     font-size:24px;
     text-align:center;
+    background-color:rgb(255,178,126);
+    margin: 0px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border: 2px solid #555555;
+    border-width: 0 0 2px 0;
 }

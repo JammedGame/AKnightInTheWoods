@@ -1,6 +1,6 @@
 export { Tooltip }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { Dialog } from "./Dialog";
 
@@ -8,17 +8,17 @@ class Tooltip
 {
     private _Element:HTMLElement;
     private _DivElement:HTMLElement;
-    private _Scene:Engineer.Scene2D;
-    private _Runner:Engineer.Runner;
-    public constructor(Scene:Engineer.Scene2D)
+    private _Scene:TBX.Scene2D;
+    private _Runner:TBX.Runner;
+    public constructor(Scene:TBX.Scene2D)
     {
         this._Scene = Scene;
-        this._Runner = Engineer.Runner.Current;
+        this._Runner = TBX.Runner.Current;
         this._Scene.Events.MouseMove.push(this.Set.bind(this));
         this._DivElement = document.getElementById("tooltip");
         this._Element = document.getElementById("tooltip-text");
     }
-    public Set(Game:Engineer.Game, Args:any) : void
+    public Set(Game:TBX.Game, Args:any) : void
     {
         if(Dialog.Shown)
         {
@@ -29,7 +29,7 @@ class Tooltip
         this._Element = document.getElementById("tooltip-text");
         let X = Args.UnscaledLocation.X;
         let Y = Args.UnscaledLocation.Y;
-        let FoundObject:Engineer.ImageObject = <Engineer.ImageObject>this._Runner.PickSceneObject({X:X, Y:Y});
+        let FoundObject:TBX.ImageObject = <TBX.ImageObject>this._Runner.PickSceneObject({X:X, Y:Y});
         if(FoundObject && FoundObject.Data["Tooltip"] != "")
         {
             this.Show({X:X, Y:Y}, FoundObject.Data["Tooltip"]);

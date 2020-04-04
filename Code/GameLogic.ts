@@ -1,6 +1,6 @@
 export { GameLogic };
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { MainMenu } from "./MainMenu";
 import { GameScene } from "./Scenes/GameScene";
@@ -13,11 +13,11 @@ class GameLogic
     private _Runner:any;
     public constructor()
     {
-        this._Game = new Engineer.Game();
+        this._Game = new TBX.Game();
         this._Game.Data["GO"] = JSON.parse(JSON.stringify(DefaultGameObject));
         this._Game.Name = "AKnightInTheWoods";
-        this._Runner = new Engineer.Runner(this._Game, Engineer.DrawEngineType.ThreeJS);
-        this._Runner.SetResolution(new Engineer.Vertex(1920, 1080, 0));
+        this._Runner = new TBX.Runner(this._Game, TBX.DrawEngineType.ThreeJS);
+        this._Runner.SetResolution(new TBX.Vertex(1920, 1080, 0));
         let _Menu:any = new MainMenu(this._Runner, this._Game);
         this._Game.Attach(_Menu);
         SceneFactory.GenerateAll();

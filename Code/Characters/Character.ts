@@ -1,11 +1,11 @@
 export { Character }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { Dialog } from "./../Dialog";
 import { GameScene } from "./../Scenes/GameScene";
 
-class Character extends Engineer.Sprite
+class Character extends TBX.Sprite
 {
     private _Scene:GameScene;
     protected _IdleLength:number;
@@ -35,15 +35,16 @@ class Character extends Engineer.Sprite
     {
         this.FlipX = !this.FlipX;
     }
-    public Init(Position:Engineer.Vertex, Size:Engineer.Vertex) : void
+    public Init(Position:TBX.Vertex, Size:TBX.Vertex) : void
     {
         this.Trans.Translation = Position;
         this.Trans.Scale = Size;
+        //
         if(!this._IdleLength) this._IdleLength = 3;
         if(!this._CharacterSeed) this._CharacterSeed = 20;
         if(!this._CharacterString)
         {
-            Engineer.Log.Error("CharacterString not set!");
+            TBX.Log.Error("CharacterString not set!");
         }
         else this.LoadSpriteSets();
         this.Data["Pickable"] = true;
@@ -51,7 +52,7 @@ class Character extends Engineer.Sprite
     }
     private LoadSpriteSets() : void
     {
-        let Idle = new Engineer.SpriteSet(null, [], "IdleRight");
+        let Idle = new TBX.SpriteSet(null, [], "IdleRight");
         Idle.Seed = this._CharacterSeed;
         let ArtPath:string = "Resources/Textures/Characters/" + this._CharacterString + "/" + this._CharacterString;
         for (let i = 0; i < this._IdleLength; i++) Idle.Images.push(ArtPath + i + ".png");

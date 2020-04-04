@@ -1,6 +1,6 @@
 export { Movement }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { Dialog } from "./../Dialog";
 import { GameScene } from "./GameScene";
@@ -29,12 +29,12 @@ class Movement
         {
             if(this._GameScene.Trans.Translation.X>=-3760)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X - MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
+                this._GameScene.Trans.Translation = new TBX.Vertex(this._GameScene.Trans.Translation.X - MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
                 this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X<=1720)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(2);
         }
@@ -42,12 +42,12 @@ class Movement
         {
             if(this._GameScene.Trans.Translation.X<=0)
             {
-                this._GameScene.Trans.Translation = new Engineer.Vertex(this._GameScene.Trans.Translation.X + MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
+                this._GameScene.Trans.Translation = new TBX.Vertex(this._GameScene.Trans.Translation.X + MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
                 this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
             }
             else if(this._GameScene.Player.Trans.Translation.X>=200)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(3);
         }
@@ -59,7 +59,7 @@ class Movement
         {
             if(this._GameScene.Player.Trans.Translation.X<=1200)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(2);
         }
@@ -67,12 +67,12 @@ class Movement
         {
             if(this._GameScene.Player.Trans.Translation.X>=400)
             {
-                this._GameScene.Player.Trans.Translation = new Engineer.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
+                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
             this._GameScene.Player.UpdateSpriteSet(3);
         }
     }
-    private KeyDown(Game:Engineer.Game, Args:any) : void
+    private KeyDown(Game:TBX.Game, Args:any) : void
     {
         if(Args.KeyCode == 68)
         {
@@ -90,7 +90,7 @@ class Movement
         }
     }
 
-    private KeyUp(Game:Engineer.Game, Args:any) : void
+    private KeyUp(Game:TBX.Game, Args:any) : void
     {
         if(Args.KeyCode == 68)
         {

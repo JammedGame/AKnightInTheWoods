@@ -1,6 +1,6 @@
 export { GameScene };
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
 import { Player } from "./../Player";
 import { Movement } from "./Movement";
@@ -30,11 +30,11 @@ import { Dagger } from "./../Characters/Dagger";
 import { Goat } from "./../Characters/Goat";
 import { Fire } from "./../Characters/Fire";
 
-class GameScene extends Engineer.Scene2D
+class GameScene extends TBX.Scene2D
 {
     protected _XSize:number;
     protected _FixedScene:boolean;
-    protected _Background:Engineer.Tile;
+    protected _Background:TBX.Tile;
     protected _Player:Player;
     protected _Movement:Movement;
     protected _Tooltip:Tooltip;
@@ -57,15 +57,15 @@ class GameScene extends Engineer.Scene2D
     }
     protected GenerateBackground() : void
     {
-        this.BackColor = Engineer.Color.FromRGBA(0, 0, 0, 255);
-        let Backs:Engineer.ImageCollection = new Engineer.ImageCollection(null, ["Resources/Textures/Backgrounds/"+this.Name+".png"]);
-        let Back:Engineer.Tile = new Engineer.Tile();
+        this.BackColor = TBX.Color.FromRGBA(0, 0, 0, 255);
+        let Backs:TBX.ImageCollection = new TBX.ImageCollection(null, ["Resources/Textures/Backgrounds/"+this.Name+".png"]);
+        let Back:TBX.Tile = new TBX.Tile();
         Back.Name = "Back";
         Back.Collection = Backs;
         Back.Index = 0;
-        Back.Material.Sampling = Engineer.TextureSamplingType.Linear;
-        Back.Trans.Scale = new Engineer.Vertex(this._XSize, 1080, 1);
-        Back.Trans.Translation = new Engineer.Vertex((this._XSize / 2), 540, 0);
+        Back.Material.Sampling = TBX.TextureSamplingType.Linear;
+        Back.Trans.Scale = new TBX.Vertex(this._XSize, 1080, 1);
+        Back.Trans.Translation = new TBX.Vertex((this._XSize / 2), 540, 0);
         this._Background = Back;
         this.Attach(this._Background);
     }
@@ -96,7 +96,7 @@ class GameScene extends Engineer.Scene2D
         Char.Data["Chat"] = Chat;
         if(Flip) Char.Flip();
         if(!Position.Z) Position.Z = 0.8;
-        Char.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z), new Engineer.Vertex(Size.X, Size.Y, 1));
+        Char.Init(new TBX.Vertex(Position.X, Position.Y, Position.Z), new TBX.Vertex(Size.X, Size.Y, 1));
         Char.SetScene(this);
         this._Characters.push(Char);
         this.Attach(Char);
@@ -105,7 +105,7 @@ class GameScene extends Engineer.Scene2D
     {
         let Trans = new Transition(null, Type, Destination, Tooltip);
         if(!Position.Z) Position.Z = 0.7;
-        Trans.Init(new Engineer.Vertex(Position.X, Position.Y, Position.Z));
+        Trans.Init(new TBX.Vertex(Position.X, Position.Y, Position.Z));
         this._Transitions.push(Trans);
         this.Attach(Trans);
     }

@@ -1,17 +1,17 @@
 export { Transition }
 
-import * as Engineer from "engineer-js";
+import * as TBX from "toybox-engine";
 
-class Transition extends Engineer.Tile
+class Transition extends TBX.Tile
 {
     private _Art:string;
     private _TooltipText:string;
     private _Destination:string;
-    private _Runner:Engineer.Runner;
+    private _Runner:TBX.Runner;
     public constructor(Old?:Transition, Art?:string, Destination?:string, TooltipText?:string)
     {
         super(Old);
-        this._Runner = Engineer.Runner.Current;
+        this._Runner = TBX.Runner.Current;
         if(Old)
         {
             this._Art = Old._Art;
@@ -29,7 +29,7 @@ class Transition extends Engineer.Tile
         }
         this.LoadCollection();
     }
-    public Init(Position:Engineer.Vertex) : void
+    public Init(Position:TBX.Vertex) : void
     {
         this.Trans.Translation = Position;
         this.Events.MouseDown.push(this.Transit.bind(this));
@@ -39,9 +39,9 @@ class Transition extends Engineer.Tile
         if(this._Art == "Signpost")
         {
             
-            this.Trans.Scale = new Engineer.Vertex(300,300,1);
+            this.Trans.Scale = new TBX.Vertex(300,300,1);
         }
-        this.Collection = new Engineer.ImageCollection(null, ["Resources/Textures/Transitions/"+this._Art+".png"]);
+        this.Collection = new TBX.ImageCollection(null, ["Resources/Textures/Transitions/"+this._Art+".png"]);
         this.Index = 0;
     }
     private Transit() : void
