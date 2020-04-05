@@ -2,7 +2,7 @@ export { Movement }
 
 import * as TBX from "toybox-engine";
 
-import { Dialog } from "./../Dialog";
+import { Dialog } from "./../UIElements/Dialog";
 import { GameScene } from "./GameScene";
 
 const MOV_SPEED = 20;
@@ -24,7 +24,7 @@ class Movement
     }
     private Move1()
     {
-        if(Dialog.Single && Dialog.Single._Shown) return;
+        if(this._GameScene.Dialog.Active) return;
         if(this._Left && !this._Right)
         {
             if(this._GameScene.Trans.Translation.X>=-3760)
@@ -54,7 +54,7 @@ class Movement
     }
     private Move2()
     {
-        if(Dialog.Single && Dialog.Single._Shown) return;
+        if(this._GameScene.Dialog.Active) return;
         if(this._Left && !this._Right)
         {
             if(this._GameScene.Player.Trans.Translation.X<=1200)

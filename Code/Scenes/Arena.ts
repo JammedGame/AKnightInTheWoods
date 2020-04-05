@@ -14,6 +14,7 @@ class Arena extends GameScene
     }
     public Init(): void
     {
+        super.Init();
         this.GenerateBackground();
 
         this._Movement = new Movement(this, "Arena");

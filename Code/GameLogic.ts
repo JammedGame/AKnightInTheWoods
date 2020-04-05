@@ -13,6 +13,7 @@ class GameLogic
     private _Runner:any;
     public constructor()
     {
+        TBX.Settings.GlobalFontFamily = "'Comic Sans MS' sans-serif";
         this._Game = new TBX.Game();
         this._Game.Data["GO"] = JSON.parse(JSON.stringify(DefaultGameObject));
         this._Game.Name = "AKnightInTheWoods";

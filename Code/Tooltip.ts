@@ -2,7 +2,7 @@ export { Tooltip }
 
 import * as TBX from "toybox-engine";
 
-import { Dialog } from "./Dialog";
+import { Dialog } from "./UIElements/Dialog";
 
 class Tooltip
 {
@@ -20,7 +20,7 @@ class Tooltip
     }
     public Set(Game:TBX.Game, Args:any) : void
     {
-        if(Dialog.Shown)
+        /*if(Dialog.Shown)
         {
             this.Hide();
             return;
@@ -34,7 +34,7 @@ class Tooltip
         {
             this.Show({X:X, Y:Y}, FoundObject.Data["Tooltip"]);
         }
-        else this.Hide();
+        else this.Hide();*/
     }
     private Show(Position:any, Text:string) : void
     {

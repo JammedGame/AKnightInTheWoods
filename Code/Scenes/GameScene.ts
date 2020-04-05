@@ -29,17 +29,20 @@ import { Arrow } from "./../Characters/Arrow";
 import { Dagger } from "./../Characters/Dagger";
 import { Goat } from "./../Characters/Goat";
 import { Fire } from "./../Characters/Fire";
+import { Dialog } from "../UIElements/Dialog";
 
 class GameScene extends TBX.Scene2D
 {
     protected _XSize:number;
     protected _FixedScene:boolean;
+    protected _Dialog: Dialog;
     protected _Background:TBX.Tile;
     protected _Player:Player;
     protected _Movement:Movement;
     protected _Tooltip:Tooltip;
     protected _Characters:Character[];
     protected _Transitions:Transition[];
+    public get Dialog():Dialog { return this._Dialog; }
     public get Player():Player { return this._Player; }
     public set Player(value:Player) { this._Player = value; }
     public constructor()
@@ -54,6 +57,8 @@ class GameScene extends TBX.Scene2D
     public Init() : void
     {
         // Virtual
+        this._Dialog = new Dialog();
+        this.Attach(this._Dialog);
     }
     protected GenerateBackground() : void
     {

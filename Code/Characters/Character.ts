@@ -2,7 +2,7 @@ export { Character }
 
 import * as TBX from "toybox-engine";
 
-import { Dialog } from "./../Dialog";
+import { Dialog } from "./../UIElements/Dialog";
 import { GameScene } from "./../Scenes/GameScene";
 
 class Character extends TBX.Sprite
@@ -61,12 +61,11 @@ class Character extends TBX.Sprite
     }
     private ActivateDialog() : void
     {
-        if(Dialog.Single && Dialog.Single._Shown) return;
+        if(this._Scene.Dialog.Active) return;
         if(!this._Scene.Player.CheckProximity(this.Trans.Translation, this.Trans.Scale.X / 2)) return;
         let Dial = null;
-        if(Dialog.Single) Dial = Dialog.Single;
-        else Dial = new Dialog();
-        Dial.SetScene(this._Scene);
-        Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
+        //Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
+        this._Scene.Dialog.SetDialog(this, this.Data["Chat"]);
+        this._Scene.Dialog.Show();
     }
 }
