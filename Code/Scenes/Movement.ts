@@ -27,29 +27,31 @@ class Movement
         if(this._GameScene.Dialog.Active) return;
         if(this._Left && !this._Right)
         {
-            if(this._GameScene.Trans.Translation.X>=-3760)
-            {
-                this._GameScene.Trans.Translation = new TBX.Vertex(this._GameScene.Trans.Translation.X - MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
-                this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
-            }
-            else if(this._GameScene.Player.Trans.Translation.X<=1720)
-            {
-                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
-            }
+            this._GameScene.Player.Trans.Translation.X += MOV_SPEED;
+            if(this._GameScene.Player.Trans.Translation.X > 5760 - 150) this._GameScene.Player.Trans.Translation.X = 5760 - 150;
             this._GameScene.Player.UpdateSpriteSet(2);
         }
         if(this._Right && !this._Left)
         {
-            if(this._GameScene.Trans.Translation.X<=0)
-            {
-                this._GameScene.Trans.Translation = new TBX.Vertex(this._GameScene.Trans.Translation.X + MOV_SPEED, this._GameScene.Trans.Translation.Y, 0);
-                this._GameScene.Player.Data["ST"] = this._GameScene.Trans.Translation;
-            }
-            else if(this._GameScene.Player.Trans.Translation.X>=200)
-            {
-                this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
-            }
+            this._GameScene.Player.Trans.Translation.X -= MOV_SPEED;
+            if(this._GameScene.Player.Trans.Translation.X < 150) this._GameScene.Player.Trans.Translation.X = 150;
             this._GameScene.Player.UpdateSpriteSet(3);
+        }
+        if(this._Right || this._Left)
+        {
+            if(this._GameScene.Player.Trans.Translation.X < 960)
+            {
+                this._GameScene.Trans.Translation.X = 0;
+            }
+            else if(this._GameScene.Player.Trans.Translation.X > 5760 - 960)
+            {
+                this._GameScene.Trans.Translation.X = -(5760 - 1920);
+            }
+            else
+            {
+                this._GameScene.Trans.Translation.X = -(this._GameScene.Player.Position.X - 960);
+            }
+            console.log(this._GameScene.Trans.Translation.X);
         }
     }
     private Move2()
@@ -57,7 +59,7 @@ class Movement
         if(this._GameScene.Dialog.Active) return;
         if(this._Left && !this._Right)
         {
-            if(this._GameScene.Player.Trans.Translation.X<=1200)
+            if(this._GameScene.Player.Trans.Translation.X <= 1200)
             {
                 this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X + MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }
@@ -65,7 +67,7 @@ class Movement
         }
         if(this._Right && !this._Left)
         {
-            if(this._GameScene.Player.Trans.Translation.X>=400)
+            if(this._GameScene.Player.Trans.Translation.X >= 400)
             {
                 this._GameScene.Player.Trans.Translation = new TBX.Vertex(this._GameScene.Player.Trans.Translation.X - MOV_SPEED, this._GameScene.Player.Trans.Translation.Y, this._GameScene.Player.Trans.Translation.Z);
             }

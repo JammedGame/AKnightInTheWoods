@@ -7,7 +7,6 @@ class Player extends TBX.Sprite
     public constructor()
     {
         super();
-        this.Fixed = true;    
         this.LoadSets();
         this.SetSpriteSet(0);
     }
@@ -57,7 +56,7 @@ class Player extends TBX.Sprite
         let STX = 0;
         if(ST) STX = ST.X;
         let PPX = this.Trans.Translation.X - STX;
-        return Math.abs(PPX - Position.X) < Size * 1.5;
+        return Math.abs(PPX - Position.X) < Size * 3;
     }
 }
 

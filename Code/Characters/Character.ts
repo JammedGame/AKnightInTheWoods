@@ -4,13 +4,16 @@ import * as TBX from "toybox-engine";
 
 import { Dialog } from "./../UIElements/Dialog";
 import { GameScene } from "./../Scenes/GameScene";
+import { Player } from "../Player";
 
 class Character extends TBX.Sprite
 {
     private _Scene:GameScene;
+    public ShowTooltip: boolean;
     protected _IdleLength:number;
     protected _CharacterSeed:number;
     protected _CharacterString:string;
+    protected _CharacterTooltip:TBX.UI.Label;
     public get CharID():string { return this._CharacterString; }
     public constructor(Old?:Character)
     {
@@ -20,10 +23,20 @@ class Character extends TBX.Sprite
             this._IdleLength = Old._IdleLength;
             this._CharacterSeed = Old._CharacterSeed;
             this._CharacterString = Old._CharacterString;
+            this._CharacterTooltip = Old._CharacterTooltip;
         }
         else
         {
-            
+            this._CharacterTooltip = new TBX.UI.Label();
+            this._CharacterTooltip.Dock = TBX.UI.DockType.TopLeft;
+            this._CharacterTooltip.Size = new TBX.Vertex(300, 160, 1);
+            this._CharacterTooltip.Style.Text.Size = 20;
+            this._CharacterTooltip.ForeColor = TBX.Color.Black;
+            this._CharacterTooltip.Style.Padding.Top = 20;
+            this._CharacterTooltip.Style.Values.backgroundColor = "transparent";
+            this._CharacterTooltip.Style.Values.backgroundImage = "url('/Resources/Textures/Tooltip.png')";
+            this._CharacterTooltip.Style.Values.backgroundRepeat = "no-repeat";
+            this._CharacterTooltip.Style.Values.backgroundSize = "cover";
         }
         this.Events.MouseDown.push(this.ActivateDialog.bind(this));
     }
@@ -49,6 +62,17 @@ class Character extends TBX.Sprite
         else this.LoadSpriteSets();
         this.Data["Pickable"] = true;
         this.Data["Tooltip"] = this.Name;
+    }
+    public Update() : void
+    {
+        this._CharacterTooltip.Active = this.ShowTooltip && Math.abs(this._Scene.Player.Position.X - this.Position.X) < 500;
+        this._CharacterTooltip.Text = this.Name;
+        this._CharacterTooltip.Position = new TBX.Vertex(this.Position.X + this._Scene.Trans.Translation.X - (this._CharacterTooltip.Size.X / 2) - 30, 300, 3);
+    }
+    public OnAttach(Args) : void
+    {
+        super.OnAttach(Args);
+        Args.Scene.Attach(this._CharacterTooltip);
     }
     private LoadSpriteSets() : void
     {

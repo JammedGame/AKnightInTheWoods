@@ -22,7 +22,7 @@ class Dialog extends TBX.UI.Panel
     {   
         this.BackColor = TBX.Color.FromRGBA(255,228,176,255);
         this.Size = new TBX.Vertex(430, 1, 1);
-        this.Position = new TBX.Vertex(150, 0, 1);
+        this.Position = new TBX.Vertex(150, 0, 4);
         this.Dock = TBX.UI.DockType.Right;
         this.Style.Border.Width = 3;
         this.Style.Border.Color = TBX.Color.Black;

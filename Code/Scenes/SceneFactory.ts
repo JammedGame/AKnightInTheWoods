@@ -38,7 +38,7 @@ class SceneFactory
         for(let i in Data.Characters)
         {
             let Char = Data.Characters[i];
-            GS.CreateCharacter(Char.Name, Char.Position, Char.Size, Char.Chat);
+            GS.CreateCharacter(Char.Name, Char.Position, Char.Size, Char.Chat, null, Char.ShowTooltip);
         }
         for(let i in Data.Transitions)
         {

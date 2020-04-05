@@ -16,6 +16,7 @@ class Goat extends Character
             this._IdleLength = 3;
             this._CharacterString = "Goat";
             this.Name = "Giovanni the Merchant";
+            this._CharacterTooltip.Style.Text.Size = 15;
         }
     }
 }

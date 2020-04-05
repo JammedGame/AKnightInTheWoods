@@ -13,19 +13,22 @@ let DefaultGameObject:any =
                     Name: "Raccoon",
                     Position: {X:1000,Y:650,Z:0.8},
                     Size: {X:300, Y:350},
-                    Chat: 0
+                    Chat: 0,
+                    ShowTooltip: true
                 },
                 {
                     Name: "Bob",
                     Position: {X:2200,Y:650,Z:0.8},
                     Size: {X:400, Y:550},
-                    Chat: 0
+                    Chat: 0,
+                    ShowTooltip: true
                 },
                 {
                     Name: "Jim",
                     Position: {X:3000,Y:620,Z:0.8},
                     Size: {X:430, Y:600},
-                    Chat: 0
+                    Chat: 0,
+                    ShowTooltip: true
                 },
                 {
                     Name: "Wolf",
@@ -37,13 +40,15 @@ let DefaultGameObject:any =
                     Name: "Fox",
                     Position: {X:4800,Y:630,Z:0.8},
                     Size: {X:400, Y:400},
-                    Chat: 0
+                    Chat: 0,
+                    ShowTooltip: true
                 },
                 {
                     Name: "Rabbit",
                     Position: {X:5100,Y:680,Z:0.8},
                     Size: {X:300, Y:300},
-                    Chat: 0
+                    Chat: 0,
+                    ShowTooltip: true
                 },
                 {
                     Name: "Arrow",
@@ -71,12 +76,14 @@ let DefaultGameObject:any =
                     Name: "Owl",
                     Position: {X:1500,Y:680,Z:0.8},
                     Size: {X:400, Y:400},
+                    ShowTooltip: true,
                     Chat: 0
                 },
                 {
                     Name: "Tortoise",
                     Position: {X:200,Y:800,Z:1.1},
                     Size: {X:360, Y:360},
+                    ShowTooltip: true,
                     Chat: 0
                 }
             ],
@@ -133,12 +140,14 @@ let DefaultGameObject:any =
                 {
                     Name: "Owl",
                     Position: {X:1500,Y:680,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:400, Y:400},
                     Chat: 12
                 },
                 {
                     Name: "Goat",
                     Position: {X:200,Y:900,Z:1.1},
+                    ShowTooltip: true,
                     Size: {X:360, Y:360},
                     Chat: 0
                 }
@@ -162,18 +171,21 @@ let DefaultGameObject:any =
                     Name: "Kangaroo",
                     Position: {X:1250,Y:650,Z:0.8},
                     Size: {X:550, Y:550},
+                    ShowTooltip: true,
                     Chat: 0
                 },
                 {
                     Name: "Raccoon",
                     Position: {X:3200,Y:700,Z:0.8},
                     Size: {X:300, Y:350},
+                    ShowTooltip: true,
                     Chat: 3
                 },
                 {
                     Name: "Rabbit",
                     Position: {X:5000,Y:650,Z:0.8},
                     Size: {X:300, Y:300},
+                    ShowTooltip: true,
                     Chat: 2
                 },
                 {
@@ -201,18 +213,21 @@ let DefaultGameObject:any =
                 {
                     Name: "Fox",
                     Position: {X:150,Y:750,Z:1.2},
+                    ShowTooltip: true,
                     Size: {X:400,Y:400},
                     Chat: 1
                 },
                 {
                     Name: "Gator",
                     Position: {X:1550,Y:600,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:550,Y:550},
                     Chat: 0
                 },
                 {
                     Name: "Goat",
                     Position: {X:1000,Y:900,Z:1.5},
+                    ShowTooltip: true,
                     Size: {X:360, Y:360},
                     Chat: 3
                 }
@@ -235,24 +250,28 @@ let DefaultGameObject:any =
                 {
                     Name: "TortoiseRun",
                     Position: {X:600,Y:650,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:360, Y:360},
                     Chat: 0
                 },
                 {
                     Name: "Bear",
                     Position: {X:2300,Y:600,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:600,Y:600},
                     Chat: 0
                 },
                 {
                     Name: "RabbitRun",
                     Position: {X:4000,Y:700,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:300, Y:300},
                     Chat: 3
                 },
                 {
                     Name: "Raccoon",
                     Position: {X:5300,Y:600,Z:0.8},
+                    ShowTooltip: true,
                     Size: {X:300, Y:300},
                     Chat: 11
                 }
@@ -276,12 +295,14 @@ let DefaultGameObject:any =
                     Name: "Kangaroo",
                     Position: {X:700,Y:550,Z:0.8},
                     Size: {X:550, Y:550},
+                    ShowTooltip: true,
                     Chat: 0
                 },
                 {
                     Name: "Queen",
                     Position: {X:1400,Y:600,Z:1.1},
                     Size: {X:450, Y:450},
+                    ShowTooltip: true,
                     Chat: 0
                 },
                 {

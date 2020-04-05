@@ -53,12 +53,17 @@ class GameScene extends TBX.Scene2D
         this._Characters = [];
         this._Transitions = [];
         this._Tooltip = new Tooltip(this);
+        this.Events.Update.push(() => this.Update());
     }
     public Init() : void
     {
         // Virtual
         this._Dialog = new Dialog();
         this.Attach(this._Dialog);
+    }
+    public Update() : void
+    {
+        this._Characters.forEach(Char => Char.Update());
     }
     protected GenerateBackground() : void
     {
@@ -74,7 +79,7 @@ class GameScene extends TBX.Scene2D
         this._Background = Back;
         this.Attach(this._Background);
     }
-    public CreateCharacter(Name:string, Position:any, Size:any, Chat:number, Flip?:boolean) : void
+    public CreateCharacter(Name:string, Position:any, Size:any, Chat:number, Flip?:boolean, ShowTooltip?: boolean) : void
     {
         let Char:Character;
         if(Name == "Raccoon") Char = new Raccoon();
@@ -99,6 +104,7 @@ class GameScene extends TBX.Scene2D
         else if(Name == "Fire") Char = new Fire();
         Char.Fixed = this._FixedScene;
         Char.Data["Chat"] = Chat;
+        Char.ShowTooltip = ShowTooltip;
         if(Flip) Char.Flip();
         if(!Position.Z) Position.Z = 0.8;
         Char.Init(new TBX.Vertex(Position.X, Position.Y, Position.Z), new TBX.Vertex(Size.X, Size.Y, 1));
