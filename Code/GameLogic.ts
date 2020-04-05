@@ -21,11 +21,20 @@ class GameLogic
         this._Runner.SetResolution(new TBX.Vertex(1920, 1080, 0));
         let _Menu:any = new MainMenu(this._Runner, this._Game);
         this._Game.Attach(_Menu);
-        SceneFactory.GenerateAll();
+        
     }
     public Run() : void
     {
-        this._Runner.SwitchScene("Menu");
-        this._Runner.Run();
+        TBX.Reader.Read("/Assets/Scenes.json").then(Data =>
+        {
+            this._Game.Data["GO"].Scenes = JSON.parse(Data).Scenes;
+            SceneFactory.GenerateAll();
+            TBX.Reader.Read("/Assets/Characters.json").then(Data =>
+            {
+                this._Game.Data["GO"].Characters = JSON.parse(Data).Characters;
+                this._Runner.SwitchScene("Menu");
+                this._Runner.Run();
+            });
+        });
     }
 }

@@ -119,25 +119,26 @@
             "Chats":
             [
                 {
-                    "Text": "Top of the morning, good sir![Rubbing his hands nervously].",
+                    "Text": "Mornin' Stranger, what you doin' in this backwash? [Looking left and right nervously].",
                     "Options":
                     [
                         {
                             "Text": "My good man, you do seem concerned. What worries you this fine day, may i ask?.",
                             "Link": 1,
+                            "Sets": ["RacconFavor1"],
                             "Action":
                             {
                                 "ID":"SetChat",
                                 "Params":
                                 {
                                     "CharID":"Raccoon",
-                                    "Chat":-1
+                                    "Chat":2
                                 }
                             }
                         },
                         {
                             "Text": "Out of my way scoundrel.",
-                            "Link": 2,
+                            "Link": 3,
                             "Action":
                             {
                                 "ID":"SetChat",
@@ -151,7 +152,7 @@
                     ]
                 },
                 {
-                    "Text": "A large wager lost i am afraid... and with the sum at lost my chance to purchase my freedom. But Theft! -I'd never. 'Tis mighty refreshing not to be judged upon. I wish you the best of luck, good sir.",
+                    "Text": "What's it to you? Bah, doesn't matter any way, I've lost all my coin on a bet. The others think me for a fool, pox upon them. You seem different, we will see. Best be on your way Stranger!",
                     "Options":
                     [
                         {
@@ -161,45 +162,101 @@
                     ]
                 },
                 {
-                    "Text": "You'd better watch your tongue, stranger... you may come to find that knights aren't all that safe in these woods...[Turns away]",
+                    "Text": "Champion they said, can't lose they said. He lost! Where's my gold then...",
                     "Options":
                     [
                         {
-                            "Text": "...",
+                            "Text": "Oookay... [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Kghhhh! Get away it's mine!",
+                    "Text": "You'd better watch your tongue, Stranger... not even knights are safe in these woods... [Grins his teeth menacingly]",
+                    "Options":
+                    [
+                        {
+                            "Text": "Hmm, scary trash panda... [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "Kghhhh! Get your gruby hands off, the shiny is mine!",
                     "Options":
                     [
                         {
                             "Text": "Whooo! Take it easy! It's me sir Acorn.",
-                            "Link": 4
+                            "Link": 5,
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Raccoon",
+                                    "Chat":7
+                                }
+                            }
                         }
                     ]
                 },
                 {
-                    "Text": "Ohhh... sorry, didn't see it was you my friend.",
+                    "Text": "Ohhh... beg pardon, didn't see it was you Stranger. I tend to lose me temper sometimes...",
                     "Options":
                     [
                         {
                             "Text": "What's happening? What are you doing here?",
-                            "Link": 5
+                            "Link": 6
                         }
                     ]
                 },
                 {
-                    "Text": "I've seen something shiny around here, but damn it, can't find it now.",
+                    "Text": "I've got my eye on somethin' shiny 'round here, but pox to it, can't find it now. Reckon you can help a fellar out?",
                     "Options":
                     [
                         {
-                            "Text": "I don't have time for this[Leave]",
+                            "Text": "Look what I've found, do you know to whom does this dagger belong to?",
+                            "Requires": ["FoundDagger"],
+                            "Link": 8
+                        },
+                        {
+                            "Text": "I don't have time for this [Leave]",
+                            "RequiresNot": ["RacconFavor1"],
                             "Link": -1
                         },
                         {
-                            "Text": "Alright, let me take a look.",
+                            "Text": "Alright, let me take a look. [Leave]",
+                            "Requires": ["RacconFavor1"],
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "Were in this poxy bog is that damn shiny bollocks?!",
+                    "Options":
+                    [
+                        {
+                            "Text": "Look what I've found, do you know to whom does this dagger belong to?",
+                            "Requires": ["FoundDagger"],
+                            "Link": 8
+                        },
+                        {
+                            "Text": "Search not going well? [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "And what if I do?... That shiny there is Carrot's dagger... And how do I know? That stampcrab told them lot that 'i StOle hEr dAgGeR'! They been acting like bushwakers ever since...",
+                    "Options":
+                    [
+                        {
+                            "Text": "Shame that they treat you that way. [Leave]",
+                            "Sets": ["RacconFavor2"],
+                            "Link": -1
+                        },
+                        {
+                            "Text": "Thanks for the info. [Leave]",
                             "Link": -1
                         }
                     ]
@@ -209,67 +266,114 @@
                     "Options":
                     [
                         {
-                            "Text": "Look what I've found, do you know to whom does this dagger belong to?",
-                            "Link": 7
-                        }
-                    ]
-                },
-                {
-                    "Text": "It belongs to Carrot, I believe, but Carrot lost it a while ago, it might have something to do with Duke Howls death.",
-                    "Options":
-                    [
-                        {
-                            "Text": "Perhaps... Do you know if anyone had something against the Duke?",
-                            "Link": 8
-                        }
-                    ]
-                },
-                {
-                    "Text": "I don't like gossiping, but I overheard some lizard named Ali Gator was blackmailing Duke.",
-                    "Options":
-                    [
-                        {
-                            "Text": "Blackmailing? What with?",
-                            "Link": 9
-                        }
-                    ]
-                },
-                {
-                    "Text": "The Duke was allegedly planning rebellion against the Queen. And if I'm right that lizard knew about his plan and blackmailed him.",
-                    "Options":
-                    [
-                        {
-                            "Text": "Do you think Gator had something to do with Dukes death?",
+                            "Text": "Hello there, trash panda...",
+                            "RequiresNot": ["RacconFavor1", "RacconFavor2"],
                             "Link": 10
+                        },
+                        {
+                            "Text": "You fella, seem to be everywhere?",
+                            "Requires": ["RacconFavor1"],
+                            "Link": 11
+                        },
+                        {
+                            "Text": "How is day treating you my friend?",
+                            "Requires": ["RacconFavor2"],
+                            "Link": 11
                         }
                     ]
                 },
                 {
-                    "Text": "Not sure, that's your job to find out.",
+                    "Text": "Me spit on the grave of e'ery single on o' ya nutjobs!",
                     "Options":
                     [
                         {
-                            "Text": "Alright, I'll do my best.",
+                            "Text": "I wish you have nice day as well [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Another victory, my friend, you are doing great. But be careful in the arena, I've heard you are going to fight with that Gator, he's a big lad.",
+                    "Text": "Greetings to you Stranger, me is 'blessed' by your presence. Day is treating me... 'Twill be treating me excelent if you win this squalor!",
                     "Options":
                     [
                         {
-                            "Text": "Size doesn't matter if my sword finds it's way.",
+                            "Text": "You placed your bet on me?",
+                            "Link": 12,
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Raccoon",
+                                    "Chat":13
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Text": "Aye, who else? And for yous I get most of those coins..",
+                    "Options":
+                    [
+                        {
+                            "Text": "Most of the coins? Such faith in me...",
+                            "Link": 13
+                        }
+                    ]
+                },
+                {
+                    "Text": "Worry not, once you win, t'll all be lovelly-jobelly.",
+                    "Options":
+                    [
+                        {
+                            "Text": "This question might seem strange, but is there anything out of the ordinary about our Queen. That you know of ofcourse?",
+                            "RequiresFrom": ["FoundDagger", "UnlikellyPartners", "DaggerStolen"],
+                            "RequiresAmount": 5,
+                            "Link": 14
+                        },
+                        {
+                            "Text": "Thanks Oonie. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "That question ain't strange, it's straight dangerouse I say...",
+                    "Options":
+                    [
+                        {
+                            "Text": "Dogging to answer?",
+                            "Link": 11
+                        }
+                    ]
+                },
+                {
+                    "Text": "You think me for a tailwag? Nah it's not like it matters to this lot...I did hear somethin' strange when going through the treasure around the Quins tent.",
+                    "Options":
+                    [
+                        {
+                            "Text": "Treasure? You mean garbage?",
                             "Link": 12
                         }
                     ]
                 },
                 {
-                    "Text": "I suggest you just run.",
+                    "Text": "You plain deaft, that there is 'TREASURE' but i wouldn't expect you to understand, a nutty mind like yours! He he he...",
                     "Options":
                     [
                         {
-                            "Text": "I appreciate your concern.",
+                            "Text": "About what you heard?",
+                            "Link": 13
+                        }
+                    ]
+                },
+                {
+                    "Text": "Ah yes, well nothin' to it really, Foxy lady stormed out of the tent after speaking to her Highness, notin' unusual about that. I'd storm out too with her temper, musthav' made her blood boil...",
+                    "Options":
+                    [
+                        {
+                            "Text": "Thanks Oonie, that helps, I guess... [Leave]",
+                            "Sets": ["AngryQueen"],
                             "Link": -1
                         }
                     ]
@@ -361,76 +465,239 @@
             "Chats":
             [
                 {
-                    "Text": "Sorry, can't talk. Now... where is my lucky arrow?",
+                    "Text": "Excuse me, knight, for I have no time to speak to you right now. Where in the world did that arrow go...",
                     "Options":
                     [
                         {
-                            "Text": "[Leave]",
-                            "Link": -1
+                            "Text": "Is this your arrow?",
+                            "Requires": ["FoundArrow"],
+                            "Link": 1
                         },
                         {
-                            "Text": "Is this your Arrow?",
-                            "Requires": ["FoundArrow"],
-                            "Sets": ["ReturnedArrow"],
-                            "Link": 1
+                            "Text": "[Leave]",
+                            "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "My arrow! You found it! Thank you very much.",
+                    "Text": "My lucky arrow! You found it! Thank you so very much.",
                     "Options":
                     [
                         {
-                            "Text": "No Problem [Leave]",
-                            "Link": -1,
+                            "Text": "That was no trouble whatsoever, even I loose an arrow or two from time to time...", 
+                            "Link": 2,
+                            "Sets": ["ReturnedArrow"],
                             "Action":
                             {
-                                "ID": "SetChat",
-                                "Params": 
+                                "ID":"SetChat",
+                                "Params":
                                 {
-                                    "CharID": "Fox",
-                                    "Chat": 2
+                                    "CharID":"Fox",
+                                    "Chat":2
+                                }
+                            }
+                        },
+                        {
+                            "Text": "It was just around the corner... Whatever, now you can finally shut up.. [Leave]", 
+                            "Link": -1,
+                            "Sets": ["ReturnedArrow"],
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Fox",
+                                    "Chat":2
+                                }
+                            }
+                        },
+                        {
+                            "Text": "What makes you think I'm going to give it to you, so you can loose it again? [Keep Arrow]", 
+                            "Link": -1,
+                            "Sets": ["KeptArrow"],
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Fox",
+                                    "Chat":6
                                 }
                             }
                         }
                     ]
                 },
                 {
-                    "Text": "Thank you for finding my arrow.",
+                    "Text": "You have my gratitude, perhaps I can repay you a bit with some information that I can share?",
                     "Options":
                     [
                         {
-                            "Text": "No Problem [Leave]",
+                            "Text": "What can you tell me, foxy lady?", 
+                            "Link": 3
+                        },
+                        {
+                            "Text": "I really don't have time for this. [Leave]", 
+                            "Link": -1
+                        }    
+                    ]
+                },
+				{		 
+                    "Text": "Let me tell you, nothing goes on around here that I don't know about. Have you met that sneaky scoundrel, Oonie? Filthy commoner, that one. Rabbit told me that she is certain that he stole her family heirloom, and it was a pretty valuable one of that. Beautiful craftsmanship. I advise you to stay away from Oonie. Or at least, keep your belongings close, and keep your eye on him...",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue gossiping]", 
+                            "Link": 4
+                        }
+                    ]
+                },
+                {
+                    "Text": "Have you met Judge Hoot? He will be the referee in the Grand Knights' Tournament this year. He acts all just, all high and mighty, but then - he takes bribe by the chestload.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue gossiping]",
+                            "Link": 5
+                        }
+                    ]
+                },
+                {
+                    "Text": "Aristurtle is the mascot of the Tournament HAHAH! That geezer had entered ever since I was a lass, never won a single category, let alone the tournament. He is a pain in the ass, but damn, he is persistent. The same with his zealot loyalty to Her Hogness. She has been giving him the most apsurd tasks - Aristurtle, go to the next kingdom and bring me some raspberries - she said. In January. Bet you never met a hundred year old mamma's boy before! [laughs profoundly]",
+                    "Options":
+                    [
+                        {
+                            "Sets": ["TortoiseLoyalty"],
+                            "Text": "Thanks for the scoop. Very useful information. Good luck. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+				{
+                    "Text": "Out of my way, thief!",
+                    "Options":
+                    [
+                        {
+                            "Text": "Whatever... [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Congratulation on your victory!",
+                    "Text": "...",
+                    "Options":
+                    [
+                        {
+                            "Text": "Hello there, foxy lady.",
+                            "Requires": ["KeptArrow"],
+                            "Link": 6
+                        },
+                        {
+                            "Text": "Hello there, foxy lady.",
+                            "Requires": ["WonArchery"],
+                            "RequiresNot": ["KeptArrow"],
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Fox",
+                                    "Chat":10
+                                }
+                            },
+                            "Link": 8
+                        },
+                        {
+                            "Text": "Congrats on your victory earlier.",
+                            "Requires": ["LostArchery"],
+                            "RequiresNot": ["KeptArrow"],
+                            "Action":
+                            {
+                                "ID":"SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Fox",
+                                    "Chat":10
+                                }
+                            },
+                            "Link": 9
+                        }
+                    ]
+                },
+                {
+                    "Text": "Congratulations on your victory!",
                     "Options":
                     [
                         {
                             "Text": "Thank you m'lady.",
-                            "Link": 2
+                            "Link": 10
                         }
                     ]
                 },
                 {
-                    "Text": "I kind of feel bad for Carrot, first it's family dagger was stolen and later on archery contest Carrot was so frustrated, couldn't aim at all.",
+                    "Text": "Thank you, you were not half bad yourself.",
                     "Options":
                     [
                         {
-                            "Text": "Bad luck I guess.",
-                            "Link": 3
+                            "Text": "Thank you m'lady.",
+                            "Link": 10
                         }
                     ]
                 },
                 {
-                    "Text": "It will be fine, Carrot is having high hopes for the race. Carrot is one of the fastest contestants I know, never lost a race before.",
+                    "Text": "Care to stay and chat?",
+                    "Options":
+                    [
+                        {
+                            "Text": "Sure, can you tell me, what's with Carrot?",
+                            "Link": 11
+                        },
+                        {
+                            "Text": "Just came back from talking to Ali... He says that him and Howl were 'partners', and that I should ask you about it. I was hoping for some clarification.",
+                            "Link": 13
+                        },
+                        {
+                            "Text": "Sadly no. Time flies, my lady, and the race isn't waiting for anyone. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "Poor Carrot.. First his family dagger was stolen rending him so frustraited... Couldn't aim at an elephant if it was 5 feet away. Oh, the shame of it all!",
+                    "Options":
+                    [
+                        {
+                            "Text": "Bad luck, I guess.",
+                            "Sets": ["DaggerStolen"],
+                            "Link": 12
+                        }
+                    ]
+                },
+                {
+                    "Text": "If I know Carrot, and trust, I do, he will give it all in the race. He is fast as lightning, never lost a race in his life!",
                     "Options":
                     [
                         {
                             "Text": "That doesn't suits me well, but there is first time for everything.",
+                            "Link": 10
+                        }
+                    ]
+                },
+				{
+                    "Text": "Yes?",
+                    "Options":
+                    [
+                        {
+                            "Text": "Just came back from talking to Ali... He says that him and Howl were 'partners', and that I should ask you about it. I was hoping for some clarification.",
+                            "Link": 14
+                        }
+                    ]
+                },
+								 {
+                    "Text": "What? Partners?? Ermmmm... I have no idea what you're talking about! These stereotypes of the scheeming fox really get to me. You know what, I am sure that he is just trying to get between us because he sees us as his greatest competition! And we've been getting along so nicely! Jealousy is toxic! You shouldn't speak to him anymore if you want to stay good friends with me. Now, excuse me, I must prepare for the next round. [Turns away and starts rummaging through her equipment] ",
+                    "Options":
+                    [
+                        {
+                            "Text": "Erm, thanks? [Leave]",
                             "Link": -1
                         }
                     ]
@@ -982,6 +1249,7 @@
                     [
                         {
                             "Text": "Take",
+                            "Sets": ["FoundDagger"],
                             "Action":
                             {
                                 "ID": "Hide",
