@@ -1,4 +1,6 @@
-{
+export { Scenes }
+
+let Scenes = {
     "Scenes":
     [
         {
@@ -78,7 +80,7 @@
                 },
                 {
                     "Name": "Tortoise",
-                    "Position": {"X":200,"Y":800,"Z":1.1},
+                    "Position": {"X":650,"Y":600,"Z":0.9},
                     "Size": {"X":360, "Y":360},
                     "ShowTooltip": true,
                     "Chat": 0
@@ -88,9 +90,16 @@
             [
                 {
                     "Type": "Signpost",
+                    "Flip": true,
+                    "Destination": "Path1",
+                    "Tooltip": "Forest Path",
+                    "Position":  {"X":120, "Y":1000, "Z":1.2}
+                },
+                {
+                    "Type": "Signpost",
                     "Destination": "Arena1",
                     "Tooltip": "Go To Archery Competition",
-                    "Position":  {"X":500, "Y":1000, "Z":1.2}
+                    "Position":  {"X":700, "Y":1000, "Z":1.2}
                 }
             ]
         },
@@ -139,7 +148,7 @@
                     "Position": {"X":1500,"Y":680,"Z":0.8},
                     "ShowTooltip": true,
                     "Size": {"X":400, "Y":400},
-                    "Chat": 12
+                    "Chat": 10
                 },
                 {
                     "Name": "Goat",
@@ -263,7 +272,7 @@
                     "Position": {"X":4000,"Y":700,"Z":0.8},
                     "ShowTooltip": true,
                     "Size": {"X":300, "Y":300},
-                    "Chat": 3
+                    "Chat": 0
                 },
                 {
                     "Name": "Raccoon",

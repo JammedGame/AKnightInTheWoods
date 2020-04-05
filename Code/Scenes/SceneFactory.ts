@@ -43,7 +43,7 @@ class SceneFactory
         for(let i in Data.Transitions)
         {
             let Trans = Data.Transitions[i];
-            GS.CreateTransition(Trans.Type, Trans.Destination, Trans.Tooltip, Trans.Position);
+            GS.CreateTransition(Trans.Type, Trans.Destination, Trans.Tooltip, Trans.Position, Trans.Flip);
         }
         return GS;
     }

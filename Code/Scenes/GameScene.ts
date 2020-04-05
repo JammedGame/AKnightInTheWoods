@@ -112,9 +112,9 @@ class GameScene extends TBX.Scene2D
         this._Characters.push(Char);
         this.Attach(Char);
     }
-    public CreateTransition(Type:string, Destination:string, Tooltip:string, Position:any)
+    public CreateTransition(Type:string, Destination:string, Tooltip:string, Position:any, Flip:boolean)
     {
-        let Trans = new Transition(null, Type, Destination, Tooltip);
+        let Trans = new Transition(null, Type, Destination, Tooltip, Flip);
         if(!Position.Z) Position.Z = 0.7;
         Trans.Init(new TBX.Vertex(Position.X, Position.Y, Position.Z));
         this._Transitions.push(Trans);

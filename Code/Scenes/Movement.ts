@@ -51,7 +51,6 @@ class Movement
             {
                 this._GameScene.Trans.Translation.X = -(this._GameScene.Player.Position.X - 960);
             }
-            console.log(this._GameScene.Trans.Translation.X);
         }
     }
     private Move2()

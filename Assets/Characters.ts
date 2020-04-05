@@ -1,4 +1,6 @@
-{
+export { Chars }
+
+let Chars = {
     "Characters":
     [
         {
@@ -20,11 +22,11 @@
                     ]
                 },
                 {
-                    "Text": "Did you just assume my gender?!.",
+                    "Text": "Did you just assume my gender?! [Turns its back to you in an offended manner]",
                     "Options":
                     [
                         {
-                            "Text": "Uhh... sorry.",
+                            "Text": "Uhh... sorry?",
                             "Link": -1,
                             "Action":
                             {
@@ -39,79 +41,182 @@
                     ]
                 },
                 {
-                    "Text": "...",
+                    "Text": "Well?! Don't just stand there like a commoner looking at a loaf of bread. Out with it.",
                     "Options":
                     [
                         {
-                            "Text": "That was a great shot, back there.",
+                            "Text": "Does this dagger belongs to you?",
+                            "Requires": ["DaggerFound"],
+                            "RequiresNot": ["RabbitLoses", "DaggerReturned"],
+                            "Link": 5
+                        },
+                        {
+                            "Text": "Fine shot, back there. ",
                             "Link": 3
+                        },
+						{
+                            "Text": "Nevermind... [Leave]",
+                            "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Of course it was, it was perfect in fact.",
+                    "Text": "[Faces you with a sudden look of pride] Of course it was, it was perfect in fact. My great-grandfather invented shooting, you know...",
                     "Options":
                     [
                         {
-                            "Text": "Well, judge didn't think the same.",
+                            "Text": "Didn't seem to matter much in the face of the Judge though.",
                             "Link": 4
                         }
                     ]
                 },
                 {
-                    "Text": "Ahh that judge couldn't see further from his beak. I just cant wait for the race, that's my domain.",
+                    "Text": "Ahh, that judge couldn't see a true champion if he popped him on the beak! I just can't wait for the race, that's my domain.",
                     "Options":
                     [
                         {
-                            "Text": "...",
+                            "Text": "...[Shrug and leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "...",
+                    "Text": "My great-great-great uncle's golden dagger! [Rubs his eyes in disbelief] Why, yes, it has been in our family for generations. Where did you find it? I thought that filthy commoner stole it, I thought I'd never see it again!",
                     "Options":
                     [
                         {
-                            "Text": "Is this yours?",
+                            "Text": "It was lying in the woods, completely unnoticed.", 
                             "Link": 6
-                        }                   
-                    ]
-                },
-                {
-                    "Text": "Oh, yes! Where did you find it? I looked for it everywhere.",
-                    "Options":
-                    [
-                        {
-                            "Text": "I found it in a hollow tree, some one must have hid it there.",
-                            "Link": 7
                         }
                     ]
                 },
                 {
-                    "Text": "Please sir, give it back. It's been in my family for generations.",
+                    "Text": "[Gives you a serious look] Sir, if you have an ounce of honour to your name, I should suggest that you return it to me, its rightful owner. It's been in my family for generations, ever since my grand-grand...-",
                     "Options":
                     [
                         {
-                            "Text": "Here you go, it's yours. ",
+                            "Text": "[Interrupt him] Here you go, it's yours.",
+                            "Sets": ["DaggerReturned"],
+                            "Link": 7
+                        },
+                        {
+                            "Text": "[Interrupt him] It's yours, for a favor..",
+                            "Requires": ["StabWounds"],
+                            "Sets": ["RabbitLoses", "WonRace"],
+                            "Link": 10
+                        },
+                        {
+                            "Text": "[Interrupt him] Finders keepers.[Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "I knew from the moment I met you that you are not completely worthless. Now, I shall generously repay you for your service with a piece of advice - cease your investigations of Howl's murder at once. Even the jestures know by now that you're in way too deep. This crime is far bigger in scale than you can imagine. ",
+                    "Options":
+                    [
+						{
+                            "Text": "What in the world do you mean?",
                             "Link": 8
                         },
                         {
-                            "Text": "Finders keepers.[Leave]",
+                            "Text": "Nah. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+				{
+                    "Text": "[Sighs disappointedly] Well... What if the murdered Duke was not in fact 'murdered'? What if he was, in fact, executed prior to trial? [Looks around to make sure that there is no one around and speaks in a low voice] What if it turned out that Howl was plotting treason against the Crown - be the cause just or not? He would still be guilty, nonetheless.",
+					"Options":
+                    [
+						{
+                            "Text": "[Continue Listening]",
+                            "Sets": ["Rebelion"],
+                            "Link": 9
+                        }
+                    ]
+                },
+                {
+                    "Text": "It seems that JUSTICE came to stab him in the lung a couple of times. You can imagine anyone supporting Howl could be fearing the same swift hand of justice... [He gives you a frightened look] It is in no one's interest for the truth to be known. Now, excuse me, I'm late...",
+					"Options":
+                    [
+						{
+                            "Text": "Thanks for the talk. Hmmm... This seems to be getting more complicated by the minute. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Thank you, ill repay you somehow you have my word.",
-                    "Options":
+                    "Text": "What do you have on mind?",
+					"Options":
                     [
-                        {
-                            "Text": "Glad I could help.",
+						{
+                            "Text": "If I'm not wrong, this is the murder weapon...",
+                            "Link": 11
+                        }
+                    ]
+                },
+                {
+                    "Text": "NO! Well... maybe, I had my doubts why was it stolen at all.",
+					"Options":
+                    [
+						{
+                            "Text": "And can be used as hard evidence against you.",
+                            "Link": 12
+                        }
+                    ]
+                },
+                {
+                    "Text": "You filthy! I'll never... I know what you want. The only thing I can give you. Victory in upcoming race.",
+					"Options":
+                    [
+						{
+                            "Text": "Bravo! You are smarter than you look. So we have a deal.",
+                            "Link": 13
+                        }
+                    ]
+                },
+                {
+                    "Text": "Only if you give me that dagger, or lose it, permanently...",
+					"Options":
+                    [
+						{
+                            "Text": "It's yours, after I win that race. [Leave]",
                             "Link": -1
                         }
                     ]
-                }  
+                }
+            ]
+        },
+        {
+            "Name":"RabbitRun",
+            "Chats":
+            [
+                {
+                    "Text": "Go Away, can't you see I'm running.",
+					"Options":
+                    [
+						{
+                            "Text": "Does our deal still stand?",
+                            "Requires": ["RabbitLoses"],
+                            "Link": 1
+                        },
+                        {
+                            "Text": "Ok, sorry. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "YES! Yes, it does... Damn it.",
+					"Options":
+                    [
+                        {
+                            "Text": "Good. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -216,7 +321,7 @@
                     [
                         {
                             "Text": "Look what I've found, do you know to whom does this dagger belong to?",
-                            "Requires": ["FoundDagger"],
+                            "Requires": ["DaggerFound"],
                             "Link": 8
                         },
                         {
@@ -237,7 +342,7 @@
                     [
                         {
                             "Text": "Look what I've found, do you know to whom does this dagger belong to?",
-                            "Requires": ["FoundDagger"],
+                            "Requires": ["DaggerFound"],
                             "Link": 8
                         },
                         {
@@ -327,8 +432,9 @@
                     [
                         {
                             "Text": "This question might seem strange, but is there anything out of the ordinary about our Queen. That you know of ofcourse?",
-                            "RequiresFrom": ["FoundDagger", "UnlikellyPartners", "DaggerStolen"],
-                            "RequiresAmount": 5,
+                            "RequiresNot":["AngryQueen"],
+                            "RequiresFrom": ["DaggerFound", "UnlikellyPartners", "DaggerStolen", "TortoiseSneaking", "TortoiseLoyalty", "StabWounds"],
+                            "RequiresAmount": 3,
                             "Link": 14
                         },
                         {
@@ -343,7 +449,7 @@
                     [
                         {
                             "Text": "Dogging to answer?",
-                            "Link": 11
+                            "Link": 15
                         }
                     ]
                 },
@@ -353,7 +459,7 @@
                     [
                         {
                             "Text": "Treasure? You mean garbage?",
-                            "Link": 12
+                            "Link": 16
                         }
                     ]
                 },
@@ -363,7 +469,7 @@
                     [
                         {
                             "Text": "About what you heard?",
-                            "Link": 13
+                            "Link": 17
                         }
                     ]
                 },
@@ -385,43 +491,62 @@
             "Chats":
             [
                 {
-                    "Text": "A body of an old canine lies on the grass on its stomach. He is wearing a fancy plate armor, which looks very shiny and festive. His cape looks quite expensive.",
+                    "Text": "A body of an old canine lies on the grass on its stomach. He is wearing a fancy plate armor, it looks very shiny and festive. His cape looks as expensive.",
                     "Options":
                     [
                         {
-                            "Text": "Check the body",
+                            "Text": "[Check the body]",
                             "Link": 1
                         },
                         {
-                            "Text": "Leave",
+                            "Text": "[Leave]",
                             "Link": -1
                         }
                     ]
                 },                
                 {
-                    "Text": "You can see he probably died of puncture wounds. He still reaks of alcohol.",
+                    "Text": "[He probably died of puncture wounds. He still reaks of alcohol.]",
                     "Options":
                     [
                         {
-                            "Text": "Examine face",
+                            "Text": "[Examine face]",
                             "Link": 2
                         },
                         {
-                            "Text": "Examine arms",
+                            "Text": "[Examine arms]",
                             "Link": 3
                         },
                         {
-                            "Text": "Examine torso",
+                            "Text": "[Examine torso]",
+                            "Sets": ["StabWounds"],
                             "Link": 4
+                        },
+                        {
+                            "Text": "[Leave]",
+                            "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "He is middle aged wolf with sharp fangs the look in his eyes is surprised. He still reaks of alcohol.",
+                    "Text": "[The middle aged wolf has sharp fangs. The look in his eyes is surprised. He heavily reaks of alcohol.]",
                     "Options":
                     [
                         {
-                            "Text": "Continue examining",
+                            "Text": "[Continue examining]",
+                            "Link": 1
+                        },
+                        {
+                            "Text": "[Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "[There is mix of blood and skin under his claws, he was a strong wolf.]",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue examining]",
                             "Link": 1
                         },
                         {
@@ -431,29 +556,15 @@
                     ]
                 },
                 {
-                    "Text": "There is mix of blood and skin under his claws, he was a strong wolf.",
+                    "Text": "[You see two puncture wounds between the plates under his armpit. The wounds are relatively shallow, definitely not made by a sword. Perchance a knife? ]",
                     "Options":
                     [
                         {
-                            "Text": "Continue examining",
+                            "Text": "[Continue examining]",
                             "Link": 1
                         },
                         {
-                            "Text": "Leave",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "You see two puncture wounds between plates under his armpit.",
-                    "Options":
-                    [
-                        {
-                            "Text": "Continue examining",
-                            "Link": 1
-                        },
-                        {
-                            "Text": "Leave",
+                            "Text": "[Leave]",
                             "Link": -1
                         }
                     ]
@@ -566,7 +677,7 @@
                     "Options":
                     [
                         {
-                            "Sets": ["TortoiseLoyalty"],
+                            "Sets": ["TortoiseLoyalty", "TortoiseFailing"],
                             "Text": "Thanks for the scoop. Very useful information. Good luck. [Leave]",
                             "Link": -1
                         }
@@ -723,18 +834,8 @@
                     "Options":
                     [
                         {
-                            "Text": "[continue listening]",
+                            "Text": "[Continue Listening]",
                             "Link": 2
-                        }
-                    ]
-                },
-                {
-                    "Text": "We blame ourselves... After a few ales, our master went to mark a tree... we were too drunk to hear something was wrong.",
-                    "Options":
-                    [
-                        {
-                            "Text": "Surely, this is not your fault...",
-                            "Link": 3
                         }
                     ]
                 },
@@ -744,7 +845,7 @@
                     [
                         {
                             "Text": "My condolences, wolves. This must truly be a sad day for you.",
-                            "Link": 4
+                            "Link": 3
                         }
                     ]
                 },
@@ -753,7 +854,7 @@
                     "Options":
                     [
                         {
-                            "Text": "[continue traveling]",
+                            "Text": "[Leave]",
                             "Link": -1,
                             "Action":
                             {
@@ -761,7 +862,7 @@
                                 "Params":
                                 {
                                     "CharID":"Bob",
-                                    "Chat":5
+                                    "Chat":4
                                 }
                             }
                         }
@@ -798,7 +899,7 @@
                     "Options":
                     [
                         {
-                            "Text": "[continue listening]",
+                            "Text": "[Continue Listening]",
                             "Link": 2
                         }
                     ]
@@ -818,7 +919,7 @@
                     "Options":
                     [
                         {
-                            "Text": "[continue traveling]",
+                            "Text": "[Continue Listening]",
                             "Link": 4
                         }
                     ]
@@ -828,7 +929,7 @@
                     "Options":
                     [
                         {
-                            "Text": "Thanks for the head up. Stay strong.",
+                            "Text": "Thanks for the head up. Stay strong. [Leave]",
                             "Link": -1,
                             "Action":
                             {
@@ -847,7 +948,23 @@
                     "Options":
                     [
                         {
-                            "Text": "...",
+                            "Text": "Hey Jim, I wanted to inform you, Judge Hoot tasked me with finding the culprit of this crime. I will find person responsible and bring him to justice.",
+                            "Requires": ["Quest"],
+                            "Sets": ["WindTip"],
+                            "Link": 6
+                        },    
+                        {
+                            "Text": "[Leave]",
+                            "Link": -1
+                        }                       
+                    ]
+                },
+                {
+                    "Text": "[Howls morosely] Kind knight! News of your investigation over our good Lord Howl is amazing, right, Bob? [Bob woofs] Let me give you a tip. If you stay involved in the tournament, everyone will take you more seriously, so when you're in the archery ring, make sure to test the wind. Make sure your snout and whiskers are wet, wait for the wind to blow, then, as soon as it quiets down, shoot as if the arrow is two paces further in the direction opposite to the winds'. Good luck, Sir Acorn, gallant knight and true!",
+                    "Options":
+                    [
+                        {
+                            "Text": "Thanks for the tip. My condolences. [Leave]",
                             "Link": -1
                         }                       
                     ]
@@ -863,7 +980,7 @@
                     "Options":
                     [
                         {
-                            "Text": "<b>[Continue Listening]</b>",
+                            "Text": "[Continue Listening]",
                             "Link": 1
                         }                    
                     ]
@@ -874,7 +991,17 @@
                     [
                         {
                             "Text": "I accept your quest, honorable judge.",
-                            "Link": 2
+                            "Sets": ["Quest"],
+                            "Link": 2,
+                            "Action":
+                            {
+                                "ID": "SetChat",
+                                "Params":
+                                {
+                                    "CharID":"Owl",
+                                    "Chat": 2
+                                }
+                            }
                         }                    
                     ]
                 },
@@ -883,176 +1010,134 @@
                     "Options":
                     [
                         {
-                            "Text": "I want to know more about knights.",
-                            "Link": 4
-                        },
-                        {
-                            "Text": "I want to know more about entourage.",
-                            "Link": 5
-                        },
-                        {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "Is there any information I can provide to aid you?",
-                    "Options":
-                    [
-                        {
-                            "Text": "I want to know more about knights.",
-                            "Link": 4
-                        },
-                        {
-                            "Text": "I want to know more about entourage.",
-                            "Link": 6
-                        },
-                        {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "Which of the knights you want to know about?",
-                    "Options":
-                    [
-                        {
                             "Text": "What can you tell me about Duke Howl?",
-                            "Link": 7
+                            "Link": 3
                         },
                         {
-                            "Text": "What can you tell me about Aristurtle?",
-                            "Link": 8
+                            "Text": "What can you tell me about Oonie de Racko? ",
+                            "Link": 4
                         },
                         {
                             "Text": "How about… errrrm… Carrot?",
+                            "Link": 6
+                        },
+                        {
+                            "Text": "What can you tell me about Lady Mosilla?",
+                            "Link": 8
+                        },
+                        {
+                            "Text": "What can you tell me about Aristurtle?",
+                            "Sets": ["TortoiseFailing"],
                             "Link": 9
                         },
                         {
-                            "Text": "<b>[Next>]</b>",
+                            "Text": "That is all, thank you for your help. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "He was a brave knight and a true champion. However, as any successful man, false news about him travelled fast and there were many rumours… That no one would testify to. [He gives you a testing look]",
+                    "Options":
+                    [
+                        {
+                            "Text": "I want to know about someone else.",
+                            "Link": 2
+                        },
+                        {
+                            "Text": "That is all, thank you for your help. [Leave]",
+                            "Link": -1
+                        }
+                    ]
+                },
+                {
+                    "Text": "Petty thief and a rascal! Always sneaking around, always nervous. We’ve put him on probation to give him a chance to purchase his freedom, but he wasted all his belongings betting against Duke Howl. The favourite! Can you imagine all that? These uneducated commoners should really stay away from gambling, as it is an art, far more refined than their little minds can comprehend.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
                             "Link": 5
                         }
                     ]
                 },
                 {
-                    "Text": "Which of the knights you want to know about?",
+                    "Text": "Now that the Duke was... ummm... removed from the competition, the entire pool went to the house. Bugger has been roaming the area ever since, looking for small valuables to trade before they put him back in the dungeon. ",
                     "Options":
                     [
                         {
-                            "Text": "<b>[&lt;Previous]</b>",
-                            "Link": 4
-                        },
-                        {
-                            "Text": "What can you tell me about Lady Mosilla?",
-                            "Link": 10
-                        },
-                        {
                             "Text": "I want to know about someone else.",
-                            "Link": 3
+                            "Link": 2
                         },
                         {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
+                            "Text": "That is all, thank you for your help. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Which person you want to know about?",
+                    "Text": "Carrot comes from a rich, highly revered dinasty in these parts. Led a sheltered life, always praised, never repremended. Turned out to become a bit of  an oddball and led to a very fragile ego. To my knowledge, the only one Carrot takes seriously is Lady Mosilla.", 
                     "Options":
                     [
                         {
-                            "Text": "What can you tell me about Oonie de Racko? ",
-                            "Link": 11
-                        },
+                            "Text": "[Continue Listening]",
+                            "Link": 7
+                        }
+                    ]
+                },
+                {
+                    "Text": "They are childhood friends, and though they are rivals in the eye of the public and they toss around a lot of banter, everyone knows that their friendship runs deeper than any of that nonsense. As to Carrot's relationship to Duke Howl, they also bantered often, and Howl would say that he would’ve eaten Carrot already, if only he didn’t hate vegetables.", 
+                    "Options":
+                    [
                         {
                             "Text": "I want to know about someone else.",
-                            "Link": 3
+                            "Link": 2
                         },
                         {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
+                            "Text": "That is all, thank you for your help. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "He was a brave knight and a true champion. However, as any successful man, false news about him travelled fast and there were many rumours… That no one would testify to.",
+                    "Text": "She was very upset this morning. I remember she mentioned some sort of lost lucky charm or some poppycock like that. Not so upset at the news of Howl’s death. Heartless, that lass. ", 
                     "Options":
                     [
                         {
                             "Text": "I want to know about someone else.",
-                            "Link": 3
+                            "Link": 2
                         },
                         {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
+                            "Text": "That is all, thank you for your help. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "He is the oldest and wisest man I know. Aristurtle has been competing in this tournament since the very beginning, a hundred years ago. Hasn’t won a single one yet! But in his own words – slow and steady wins the race.",
+                    "Text": "He is the oldest and wisest man in these lands. Aristurtle has been competing in this tournament since the very beginning, a hundred years ago. Hasn’t won yet, but in his own words – slow and steady wins the race.",
                     "Options":
                     [
                         {
                             "Text": "I want to know about someone else.",
-                            "Link": 3
+                            "Link": 2
                         },
                         {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
+                            "Text": "That is all, thank you for your help. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Carrot is a bit of an oddball and very sensitive. Take knight Carrot’s relationship with Lady Mosilla. They are old rivals, always tied in competitions. Even though they pick on each other all the time, it is but squabbling of a pair of real close friends. Duke Howl, however, was not on good terms with Carrot. He would often say that he would’ve eaten Carrot already, if only he didn’t hate vegetables.",
-                    "Options":
-                    [
-                        {
-                            "Text": "I want to know about someone else.",
-                            "Link": 3
-                        },
-                        {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "She was very upset this morning. I remember she mentioned some sort of lost lucky charm or some poppycock like that. Not so upset at the news of Howl’s death. I wouldn’t jump to conclusions though. Mosilla is a bit… slow.",
-                    "Options":
-                    [
-                        {
-                            "Text": "I want to know about someone else.",
-                            "Link": 3
-                        },
-                        {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "He is but a petty thief and a rascal. We’ve put him on probation to give him a chance to purchase his freedom, but he wasted all his belongings betting against Duke Howl. The favourite! Can you imagine all that, just for the quota? Dirty gambler…",
-                    "Options":
-                    [
-                        {
-                            "Text": "I want to know about someone else.",
-                            "Link": 3
-                        },
-                        {
-                            "Text": "That is all, thank you for your help. <b>[Leave]</b>",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "Great performance today! Your skills are one for the songs.",
+                    "Text": "Great performance today! Your skills are worthy to write songs about!",
                     "Options":
                     [
                         {
                             "Text": "Thank you. Can I ask you further questions about our inquiry?",
-                            "Link": 13
+                            "RequiresNot": ["TortoiseSneaking"],
+                            "Link": 11
+                        },
+                        {
+                            "Text": "Thank you. [Leave]",
+                            "Link": -1
                         }
                     ]
                 },
@@ -1062,26 +1147,27 @@
                     [
                         {
                             "Text": "Have you noticed any strange behaviour around here?",
-                            "Link": 14
+                            "Link": 12
                         }
                     ]
                 },
                 {
-                    "Text": "Well... I beleive I did. I could not speak openly earlier with Sir Aristurtle on the premises.",
+                    "Text": "Well... I believe I did. I could not speak openly earlier with Sir Aristurtle on the premises.",
                     "Options":
                     [
                         {
                             "Text": "So you have seen something?",
-                            "Link": 15
+                            "Sets": ["TortoiseSneaking"],
+                            "Link": 13
                         }
                     ]
                 },
                 {
-                    "Text": "Might be that my eyes deceived me, but it appeared as if Sir Aristurtle was leaving tent of our very own Knight Carrot.",
+                    "Text": "It appeared as if Sir Aristurtle was leaving tent of our very own Knight Carrot a few nights ago. I rubbed my eyes in disbelief, when it occured to me that it is night and I am seeing clearly, no mistake about it. I deemed it mighty suspicious. I would never have pegged him to be involved in MURDER though! And murder of one of Her Hogness' subjects, of that! He is ever so faithful to the Crown. Desparate times call for desparate measures, though, so I say, you can't be too careful. ",
                     "Options":
                     [
                         {
-                            "Text": "Yes, you are right, that does seem a little bit odd. Thanks you for your help. <b>[Leave]</b>",
+                            "Text": "Hmm... that does seem a little bit off... Thanks for your help. [Leave]",
                             "Link": -1
                         }
                     ]
@@ -1103,13 +1189,18 @@
                     ]
                 },
                 {
-                    "Text": "I am here to compete in the championship. By the looks of you, I assume you are here for the same reason. *makes a small bow* I am Aristurtle.",
+                    "Text": "I am here to compete in the championship. By the looks of you, I assume you are here for the same reason. [Makes a small bow] I am Aristurtle.",
                     "Options":
                     [
                         {
                             "Text": "I have heard that you've been competing in this championship for a hundred years... literally. With no avail.",
+                            "Requires": ["TortoiseFailing"],
                             "Link": 2
-                        }
+                        },
+				        {
+                            "Text": "I am Sir Accorn of Hazelgrove, nice to meet you. [Leave]",
+                            "Link": -1
+                        }		
                     ]
                 },
                 {
@@ -1117,7 +1208,7 @@
                     "Options":
                     [
                         {
-                            "Text": "[continue listening]",
+                            "Text": "[Continue Listening]",
                             "Link": 3
                         }
                     ]
@@ -1127,7 +1218,7 @@
                     "Options":
                     [
                         {
-                            "Text": "I will enjoy beating you in the tournament today.",
+                            "Text": "What do you reckon, how will archery competition go?",
                             "Link": 4
                         }
                     ]
@@ -1137,17 +1228,17 @@
                     "Options":
                     [
                         {
-                            "Text": "I am investigating the murder of Duke Howl. Where were you last night?",
+                            "Text": "Oook.. Nevermind that. I am investigating the murder of Duke Howl. Where were you last night?",
                             "Link": 5
                         }
                     ]
                 },
                 {
-                    "Text": "I was at my house.",
+                    "Text": "I was at home. ",
                     "Options":
                     [
                         {
-                            "Text": "What can you tell me about Oonie?",
+                            "Text": "Very precise, indeed. What can you tell me about Oonie?",
                             "Link": 6
                         }
                     ]
@@ -1183,31 +1274,31 @@
                     ]
                 },
                 {
-                    "Text": "She is quite foxy.",
+                    "Text": "A fine lady, but a gossip and a deciever. Alas, beauty on the outside can reflect the exact opposite of what is inside. ",
                     "Options":
                     [
                         {
-                            "Text": "*A phone rings from his shell*",
+                            "Text": "[Continue Listening]",
                             "Link": 10
                         }
                     ]
                 },
                 {
-                    "Text": "*Ring ring*",
+                    "Text": "[A phone rings from his shell, He looks at you in a paranoid way]",
                     "Options":
                     [
                         {
-                            "Text": "*He looks at you in a paranoid way*",
+                            "Text": "[Continue Listening]",
                             "Link": 11
                         }
                     ]
                 },
                 {
-                    "Text": "I am sorry, I absolutely must take this.",
+                    "Text": "I am sorry, I absolutely must take this. [Speaks on the phone] Hello, Mother. Yes, but this year, I'm feeling confident that...",
                     "Options":
                     [
                         {
-                            "Text": "*speaks on the phone* Hello mother. Yes, but this year, I'm feeling confident that...",
+                            "Text": "[Leave]",
                             "Link": -1
                         }
                     ]
@@ -1244,12 +1335,12 @@
             "Chats":
             [
                 {
-                    "Text": "[You found weird dagger]",
+                    "Text": "[You found weird dagger, looks like a carrot?!]",
                     "Options":
                     [
                         {
-                            "Text": "Take",
-                            "Sets": ["FoundDagger"],
+                            "Text": "[Take]",
+                            "Sets": ["DaggerFound"],
                             "Action":
                             {
                                 "ID": "Hide",
@@ -1273,99 +1364,97 @@
                     "Options":
                     [
                         {
-                            "Text": "Good day sir. That is a lot of bags what is it that you do, if I may ask?",
+                            "Text": "Good day sir. I see you've brought many bags of goods to sell. May I see your wares? ",
                             "Link": 1
                         }                       
                     ]
                 },
                 {
-                    "Text": "Good day sir, my name is Giovanni and I am a traveling merchant.",
+                    "Text": "Bongiorno, signore! A fine a-day to a-you. By all-a means, look-a at my a-premium quality a-honey, and here we have a-top-a-quality premium honey, a-perfect fit for a strong-a squirrel such-a as yourself! Now with 20% less led! Would you like to make a purchase? 10% off for the brave knight!",
                     "Options":
                     [
                         {
-                            "Text": "What do you have for sale?",
+                            "Text": "Erm, maybe another time.",
                             "Link": 2
-                        },
+                        }
+                    ]
+                },
+                {
+                    "Text": "Be sure to a-stop a-by my stand-a in the next round! [Makes sure no one is around and whispers-] I will give you an extra 5% a-discount. [Winks]",
+                    "Options":
+                    [
                         {
-                            "Text": "Goodbye.",
+                            "Text": "Alright then, hah... I'll see you there. For sure. [Rolls eyes]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "I'm sorry sir but my bags are already packed, I am going to set up my shop in next camp. Must get there fast before the race starts.",
+                    "Text": "A-Blessings of the a-Heavens! You've come back for a taste, haven't you? [Wiggles his eyebrows at you]",
                     "Options":
                     [
                         {
-                            "Text": "Alright, I'll see you there. Safe travel.",
-                            "Link": -1
-                        }
-                    ]
-                },
-                {
-                    "Text": "Great! You found me!",
-                    "Options":
-                    [
-                        {
-                            "Text": "Hello Giovanni, how was your trip?",
+                            "Text": "Maybe later, Giovanni. Did you travel safely?",
                             "Link": 4
                         }
                     ]
                 },
                 {
-                    "Text": "I traveled fine, but I heard some commoners were bothered by a bear.",
+                    "Text": "A-yes, a-beautiful morning for a-taking the road-a. [Looks at you seriously all of the sudden] But as a matter of-a-fact-a, I was fearing the Unbearable the entire time.",
                     "Options":
                     [
                         {
-                            "Text": "A bear? What does a bear do around here?",
+                            "Text": "What do you mean, 'unbearable'?",
                             "Link": 5
                         }
                     ]
                 },
                 {
-                    "Text": "A bear do what a bear does... it looks for a honey of course.",
+                    "Text": "Unbearable, I mean! That-a brute-a-bear is always out to take-a my-a premium-a honey!",
                     "Options":
                     [
                         {
-                            "Text": "He must be desperate to turn outlaw for a little bit of honey.",
+                            "Text": "Sounds desperate... To turn outlaw for a little bit of honey, doesn't it?",
                             "Link": 6
                         }
                     ]
                 },
                 {
-                    "Text": "Yes he is desperate, and desperate ones will do anything to get what they want.",
+                    "Text": "A-yes, he is a-desperate bear, and a bear-a is always a-desparate for honey.",
                     "Options":
                     [
                         {
-                            "Text": "You are right.",
+                            "Text": "Hmm...",
                             "Link": 7
                         },
                         {
-                            "Text": "You are wrong.[Leave]",
+                            "Text": "Might be, probably not. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Oddly enough I happen to sell honey in my store, are you interested perhaps?",
+                    "Text": "[He interrupts your very train of thought] A-say, did I mention that I am selling a-my a-premium honey right now? 5% off for the good knight!",
                     "Options":
                     [
                         {
-                            "Text": "I didn't bring any money with me, but I can give you this golden arrow I won on archery tournament.",
+                            "Text": "Would you accept this arrow as payment? I won it in the archery ring. It might even be pure gold.",
+                            "Requires": ["GoldenArrow"],
+                            "Sets": ["Honey"],
                             "Link": 8
                         },
                         {
-                            "Text": "No, I have no use of it.",
+                            "Text": "No, I have no use of it. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "That will do. Here is your honeypot.",
+                    "Text": "[His eyes expand at the sight of gold] You a-drive a hard bargain, my friend! [Grins] But for you, I will make a special deal-a. Take this-a ultra-premium-best-quality a-honey! Produced by a-bee that-a feeds on only a-top quality pollen. [Gives you the honeypot and takes the arrow swiftly from your hand] No refunds!",
                     "Options":
                     [
                         {
-                            "Text": "Thank you.",
+                            "Text": "Well, thank you, I guess... [Leave]",
                             "Link": -1
                         }
                     ]
@@ -1417,35 +1506,46 @@
             "Chats":
             [
                 {
-                    "Text": "Greetings fellow knight, I am Ali Gator from a land far away. My journey brought me here to compete and win this tournament.",
+                    "Text": "[He is huge and speaks slowly, in a raspy voice] Greetings, fellow knight. I am Prince Ali Gator, guest of honour from the far away land of Jeejupt. It seems our journeys have brought us here to compete, and so I take it that it is destiny that I win this tournament. Ha!",
                     "Options":
                     [
                         {
-                            "Text": "Greetings, I am sir Acorn of Hazelgrove and I'm looking forward meeting you in the arena.",
+                            "Text": "Why are you so confident, are you goind to smuggle some weapons in the arena too? Have you smuggled some weapons when you killed Duke howl?",
+                            "Requires": ["Smuggler"],
+                            "RequiresNot": ["Partners"],
+                            "Sets": ["Partners"],
+                            "Link": 2
+                        },
+                        {
+                            "Text": "Sir Acorn of Hazelgrove. Looking forward to testing your 'destiny' theses in the arena.",
                             "Link": 1
                         },  
                         {
-                            "Text": "Greetings, I am sir Acorn of Hazelgrove I hope our paths won't cross in the arena.",
-                            "Link": 2
+                            "Text": "Jeez...umm... Hi, I am Acorn. Don't mind me, I'll just go on about my business... [Leave]",
+                            "Link": -1
                         }                     
                     ]
                 },
                 {
-                    "Text": "You? Fight me?! Khakhakha... What can a little fellow like you do to a mountain like me?",
+                    "Text": "You? Fight me?! Khakhakha... What can a puny little fellow like you do to a mountain like me?",
                     "Options":
                     [
+						{
+                            "Text": "We shall see, maybe by then I'll be bigger than you? [You wonder what you just said yourself, and leave]",
+                            "Link": -1
+                        },
                         {
-                            "Text": "We'll see. Farewell.",
+                            "Text": "[Make a sad face] You really are cold blooded. [Leave]",
                             "Link": -1
                         }
                     ]
                 },
                 {
-                    "Text": "Yeah, you better hope so... or I'll crush you.",
+                    "Text": "Hah! You should better get your facts straight before you jump to such misleaded conclusions. Listen to me, little squirrel, and listen well - [He leans over in an intimidating way] - firstly, everyone knows that the Shejiptian Empire could crush these lands with no effort. There is no point in blackmailing me, worm. Secondly, Howl and I were partners and I found in him a worthy foe and drinking companion. If you don't trust, ask Lady Mosilla. [He gives her a look that makes your blood freeze over] She knows all about it. ",
                     "Options":
                     [
                         {
-                            "Text": "You really are cold blooded.",
+                            "Text": "[Acting all tough] Don't mind if I do. I will see you at the arena. [Turn around and check if you wet yourself, then leave]",
                             "Link": -1
                         }
                     ]
@@ -1457,7 +1557,23 @@
             "Chats":
             [
                 {
-                    "Text": "What's that you have? Could it be honey?",
+                    "Text": "Who goes there?!",
+                    "Options":
+                    [
+                        {
+                            "Text": "Whooo, take it easy big fella. Indeed this is a honeypot I've got here. But tell me what can you offer me for it?",
+                            "Requires": ["Honey"],
+                            "RequiresNot": ["GivenHoney"],
+                            "Link": 1
+                        },
+                        {
+                            "Text": "Hello mr Bear?",
+                            "Link": 5
+                        }
+                    ]
+                },
+                {
+                    "Text": "MMMrrrrmmm! I smell honey! ",
                     "Options":
                     [
                         {
@@ -1467,46 +1583,60 @@
                     ]
                 },
                 {
-                    "Text": "Well, seeing you are nobility I can't deal with you I usually deal with those kind of situations.",
+                    "Text": "Honey! I'm home! Oh, give it to me. Give me the delicious HONEY!!! [Roars] Not eating all the honey makes my life UNBEARABLE!!!",
                     "Options":
                     [
                         {
-                            "Text": "Yeah, you better keep your claws to yourself and hurry up I have a race to win.",
+                            "Text": "Listen, you got it. But wouldn't you prefer to not be taken by the guards immediately after killing me? Let me remind you, this is a knights' tournament, and that would make me the second murdered champion here. It would make Her Hogness very sad, don't you think? How about, I give it to you peacefully, and you help me win this race?",
                             "Link": 2
                         }
                     ]
                 },
                 {
-                    "Text": "Oh, I got it! I can show you a shortcut to finish in exchange for that honeypot you've got.",
+                    "Text": "MMmmrrmm. [He calms down] Squirrly promises sweet HONEY. Come with me, Squirrly. [Points towards a very scary, dark path in the woods] ",
                     "Options":
                     [
                         {
-                            "Text": "Deal![Go with the bear]",
-                            "Link": -1
+                            "Text": "Great. [Go into the dark woods with the bear]",
+                            "Sets": ["GivenHoney", "RoidsInfo"],
+                            "Link": 3
                         },
                         {
-                            "Text": "No way I'm going with you into this dark forest...[Leave]",
+                            "Text": "No way I'm going with you into this dark forest...[Give him the honey and leave]",
+                            "Sets": ["GivenHoney"],
                             "Link": -1
                         }
                     ]
                 },
-                {
-                    "Text": "Move along sir, no shortcuts over here.",
+				{
+                    "Text": "[The bear gulps on fistfulls of honey at a time] MMMmmrmmm... Delicious honey. I like sweet! SWEET IS STRENGTH, GRAARGH! [Looks at you suddenly] But not all sweet is good, Squirrly. One time, I ate off the Shrivelberry bush, made me very STRONG. But it made me very ANGRY to see my testies shrink [Roars angrily, then eats more honey and calms down] Prince Ali eats off the Shrivelberry bush every day. Dunno how Squirrly can beat Prince Ali. Squirrly is tiny. ", 
                     "Options":
                     [
                         {
-                            "Text": "Hmm? Ok.",
+                            "Text": "Hmmm... So you're saying the berries make him strong. [Become lost in thought]",
+                            "Link": -1,
+                            "Sets": ["CheatRace", "WonRace"],
+                            "Action":
+                            {
+                                "ID": "CheatRace",
+                                "Params":
+                                {
+                                    "CharID": "Dagger"
+                                }
+                            }
+                        }
+                    ]
+                },     
+                {
+                    "Text": "Move, Squirrly, before I EAT YOUR FACE.",
+                    "Options":
+                    [
+                        {
+                            "Text": "Ok, moving riiight along. [Continue Running]",
                             "Link": -1
                         }
                     ]
                 }               
-            ]
-        },
-        {
-            "Name":"RabbitRun",
-            "Chats":
-            [
-                                
             ]
         },
         {
@@ -1537,6 +1667,32 @@
         },
         {
             "Name":"Queen",
+            "Chats":
+            [
+                {
+                    "Text": "I'm impressed sir Acorn. I must admit I wasn't expecting to see you make it to the final round.",
+                    "Options":
+                    [
+                        {
+                            "Text": "You flatter me my queen.",
+                            "Link": 1
+                        }
+                    ]
+                },
+                {
+                    "Text": "I hope you have finished your investigation, you will be announcing culprit's name after the final round.",
+                    "Options":
+                    [
+                        {
+                            "Text": "Of course! ... YES!... The culprits name...",
+                            "Link": -1
+                        }
+                    ]
+                }             
+            ]
+        },
+        {
+            "Name":"Tournament Narator",
             "Chats":
             [
                 {

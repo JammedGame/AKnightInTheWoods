@@ -6,6 +6,8 @@ import { MainMenu } from "./MainMenu";
 import { GameScene } from "./Scenes/GameScene";
 import { DefaultGameObject } from "./GameObject";
 import { SceneFactory } from "./Scenes/SceneFactory";
+import * as Chars from "./../Assets/Characters";
+import * as Scenes from "./../Assets/Scenes";
 
 class GameLogic
 {
@@ -25,16 +27,10 @@ class GameLogic
     }
     public Run() : void
     {
-        TBX.Reader.Read("/Assets/Scenes.json").then(Data =>
-        {
-            this._Game.Data["GO"].Scenes = JSON.parse(Data).Scenes;
-            SceneFactory.GenerateAll();
-            TBX.Reader.Read("/Assets/Characters.json").then(Data =>
-            {
-                this._Game.Data["GO"].Characters = JSON.parse(Data).Characters;
-                this._Runner.SwitchScene("Menu");
-                this._Runner.Run();
-            });
-        });
+        this._Game.Data["GO"].Scenes = Scenes.Scenes.Scenes;
+        this._Game.Data["GO"].Characters = Chars.Chars.Characters;
+        SceneFactory.GenerateAll();
+        this._Runner.SwitchScene("Menu");
+        this._Runner.Run();
     }
 }

@@ -8,7 +8,7 @@ class Transition extends TBX.Tile
     private _TooltipText:string;
     private _Destination:string;
     private _Runner:TBX.Runner;
-    public constructor(Old?:Transition, Art?:string, Destination?:string, TooltipText?:string)
+    public constructor(Old?:Transition, Art?:string, Destination?:string, TooltipText?:string, Flip?:boolean)
     {
         super(Old);
         this._Runner = TBX.Runner.Current;
@@ -22,6 +22,7 @@ class Transition extends TBX.Tile
         {
             if(Art) this._Art = Art;
             else this._Art = "Signpost";
+            this.FlipX = Flip;
             this._TooltipText = TooltipText;
             this._Destination = Destination;
             this.Data["Pickable"] = true;

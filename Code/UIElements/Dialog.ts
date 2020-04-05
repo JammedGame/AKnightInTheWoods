@@ -34,7 +34,7 @@ class Dialog extends TBX.UI.Panel
         BoundTop.Size = new TBX.Vertex(620, 70, 0);
         BoundTop.Dock = TBX.UI.DockType.Top;
         BoundTop.Style.Values.backgroundColor = "transparent";
-        BoundTop.Style.Values.backgroundImage = "url('/Resources/Textures/ScrollTop.png')";
+        BoundTop.Style.Values.backgroundImage = "url('Resources/Textures/ScrollTop.png')";
         BoundTop.Style.Values.backgroundRepeat = "no-repeat";
         BoundTop.Style.Values.backgroundSize = "cover";
         this.Attach(BoundTop);
@@ -46,7 +46,7 @@ class Dialog extends TBX.UI.Panel
         BoundBottom.Size = new TBX.Vertex(620, 70, 0);
         BoundBottom.Dock = TBX.UI.DockType.Bottom;
         BoundBottom.Style.Values.backgroundColor = "transparent";
-        BoundBottom.Style.Values.backgroundImage = "url('/Resources/Textures/ScrollBottom.png')";
+        BoundBottom.Style.Values.backgroundImage = "url('Resources/Textures/ScrollBottom.png')";
         BoundBottom.Style.Values.backgroundRepeat = "no-repeat";
         BoundBottom.Style.Values.backgroundSize = "cover";
         this.Attach(BoundBottom);
@@ -86,7 +86,9 @@ class Dialog extends TBX.UI.Panel
         this._Title.Style.Values.borderWidth = "0 0 3px 0";
         this._Options.Attach(this._Title);
 
-        this.Hide();
+        this.Size.Y = 1;
+        this.Style.Values.opacity = "0";
+        this.Active = false;
     }
     public OnAttach(Args) : void
     {
@@ -146,6 +148,30 @@ class Dialog extends TBX.UI.Panel
             if(!this.CheckReqs(Option.Requires))
             {
                 return;
+            }
+            console.log(this.GetHints(), Option.RequiresNot);
+            if(Option.RequiresNot)
+            {
+                let ReqsNo: boolean = false;
+                Option.RequiresNot.forEach(Req => {
+                    ReqsNo = ReqsNo || this.CheckReqs([Req]);
+                });
+                if(ReqsNo) return;
+            }
+            if(Option.RequiresNot)
+            {
+                let ReqsNo: boolean = false;
+                Option.RequiresNot.forEach(Req => {
+                    ReqsNo = ReqsNo || this.CheckReqs([Req]);
+                });
+                if(ReqsNo) return;
+            }
+            if(Option.RequiresAmount)
+            {
+                if(!this.CheckAmmountReqs(Option.RequiresFrom, Option.RequiresAmount))
+                {
+                    return;
+                }
             }
             let OL: TBX.UI.Label = new TBX.UI.Label();
             OL.Text = "- " + Option.Text;
@@ -212,5 +238,15 @@ class Dialog extends TBX.UI.Panel
             if(Hints.indexOf(Reqs[i]) == -1) return false;
         }
         return true;
+    }
+    private CheckAmmountReqs(Reqs:string[], Amount:number) : boolean
+    {
+        let Total: number = 0;
+        let Hints = this.GetHints();
+        for(let i in Reqs)
+        {
+            if(Hints.indexOf(Reqs[i]) != -1) Total++;
+        }
+        return Total > Amount;
     }
 }

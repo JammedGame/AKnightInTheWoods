@@ -8,7 +8,7 @@ import { Player } from "../Player";
 
 class Character extends TBX.Sprite
 {
-    private _Scene:GameScene;
+    protected _Scene:GameScene;
     public ShowTooltip: boolean;
     protected _IdleLength:number;
     protected _CharacterSeed:number;
@@ -34,7 +34,7 @@ class Character extends TBX.Sprite
             this._CharacterTooltip.ForeColor = TBX.Color.Black;
             this._CharacterTooltip.Style.Padding.Top = 20;
             this._CharacterTooltip.Style.Values.backgroundColor = "transparent";
-            this._CharacterTooltip.Style.Values.backgroundImage = "url('/Resources/Textures/Tooltip.png')";
+            this._CharacterTooltip.Style.Values.backgroundImage = "url('Resources/Textures/Tooltip.png')";
             this._CharacterTooltip.Style.Values.backgroundRepeat = "no-repeat";
             this._CharacterTooltip.Style.Values.backgroundSize = "cover";
         }
@@ -67,7 +67,8 @@ class Character extends TBX.Sprite
     {
         this._CharacterTooltip.Active = this.ShowTooltip && Math.abs(this._Scene.Player.Position.X - this.Position.X) < 500;
         this._CharacterTooltip.Text = this.Name;
-        this._CharacterTooltip.Position = new TBX.Vertex(this.Position.X + this._Scene.Trans.Translation.X - (this._CharacterTooltip.Size.X / 2) - 30, 300, 3);
+        let VPosition: number = this.Position.Y - (this.Size.Y/2) - 200;
+        this._CharacterTooltip.Position = new TBX.Vertex(this.Position.X + this._Scene.Trans.Translation.X - (this._CharacterTooltip.Size.X / 2) - 30, VPosition, 3);
     }
     public OnAttach(Args) : void
     {
@@ -89,6 +90,7 @@ class Character extends TBX.Sprite
         if(!this._Scene.Player.CheckProximity(this.Trans.Translation, this.Trans.Scale.X / 2)) return;
         let Dial = null;
         //Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
+        if(this.Data["Chat"] == -1) return;
         this._Scene.Dialog.SetDialog(this, this.Data["Chat"]);
         this._Scene.Dialog.Show();
     }
