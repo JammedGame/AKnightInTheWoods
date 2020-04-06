@@ -105,6 +105,7 @@ let Scenes = {
         },
         {
             "Name": "Arena1",
+            "Dialog": "Archery",
             "Type": "Arena",
             "Set": 4,
             "Characters":
@@ -126,15 +127,6 @@ let Scenes = {
                     "Position": {"X":1600,"Y":850,"Z":1.2},
                     "Size": {"X":400, "Y":400},
                     "Chat": -1
-                }
-            ],
-            "Transitions":
-            [
-                {
-                    "Type": "Signpost",
-                    "Destination": "Camp1a",
-                    "Tooltip": "Camp1a",
-                    "Position":  {"X":1800, "Y":1000, "Z":1.2}
                 }
             ]
         },

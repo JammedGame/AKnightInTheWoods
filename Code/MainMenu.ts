@@ -80,7 +80,7 @@ class MainMenu extends TBX.Scene2D
         SpriteSetSkin1.Seed = 20;
         this._Player.Trans.Scale = new TBX.Vertex(280,350,1);
         this._Player.Trans.Translation = new TBX.Vertex(420,560,2);
-        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/Player/Sitting" + i + ".png");
+        for (let i = 0; i < 3; i++) SpriteSetSkin1.Images.push("Resources/Textures/PlayerSprites/Sitting" + i + ".png");
         this._Player.SpriteSets.push(SpriteSetSkin1);
     }
 }

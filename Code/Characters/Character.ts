@@ -91,7 +91,7 @@ class Character extends TBX.Sprite
         let Dial = null;
         //Dial.ShowDialog(this._CharacterString, this.Data["Chat"]);
         if(this.Data["Chat"] == -1) return;
-        this._Scene.Dialog.SetDialog(this, this.Data["Chat"]);
+        this._Scene.Dialog.SetDialog(this.CharID, this.Data["Chat"]);
         this._Scene.Dialog.Show();
     }
 }

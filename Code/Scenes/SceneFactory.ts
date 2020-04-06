@@ -32,6 +32,7 @@ class SceneFactory
         else if(Data.Type == "Arena")
         {
             let AGS = new Arena(Data.Name);
+            AGS.DialogString = Data.Dialog;
             AGS.SetSpriteSet(Data.Set);
             GS = AGS;
         }

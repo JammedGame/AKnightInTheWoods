@@ -5,6 +5,7 @@ let Chars = {
     [
         {
             "Name":"Rabbit",
+            "Title":"Knight Carrot",
             "Chats":
             [
                 {
@@ -190,6 +191,7 @@ let Chars = {
         },
         {
             "Name":"RabbitRun",
+            "Title":"Knight Carrot",
             "Chats":
             [
                 {
@@ -221,6 +223,7 @@ let Chars = {
         },
         {
             "Name":"Raccoon",
+            "Title":"Oonie de Racko",
             "Chats":
             [
                 {
@@ -488,6 +491,7 @@ let Chars = {
         },
         {
             "Name":"Wolf",
+            "Title":"Duke Howl",
             "Chats":
             [
                 {
@@ -573,6 +577,7 @@ let Chars = {
         },
         {
             "Name":"Fox",
+            "Title":"Lady Mosilla",
             "Chats":
             [
                 {
@@ -816,7 +821,8 @@ let Chars = {
             ]
         },
         {
-            "Name":"Bob",
+            "Name":"Bob the Squire",
+            "Title":"",
             "Chats":
             [
                 {
@@ -882,6 +888,7 @@ let Chars = {
         },
         {
             "Name":"Jim",
+            "Title":"Jim the Squire",
             "Chats":
             [
                 {
@@ -973,6 +980,7 @@ let Chars = {
         },
         {
             "Name":"Owl",
+            "Title":"Judge Hoot",
             "Chats":
             [
                 {
@@ -1176,6 +1184,7 @@ let Chars = {
         },
         {
             "Name":"Tortoise",
+            "Title":"Sir Aristurtle",
             "Chats":
             [
                 {
@@ -1307,6 +1316,7 @@ let Chars = {
         },
         {
             "Name":"Arrow",
+            "Title":"Strange silver arrow",
             "Chats":
             [
                 {
@@ -1332,6 +1342,7 @@ let Chars = {
         },
         {
             "Name":"Dagger",
+            "Title":"Carrot shaped dagger",
             "Chats":
             [
                 {
@@ -1357,6 +1368,7 @@ let Chars = {
         },
         {
             "Name":"Goat",
+            "Title":"Giovanni the Merchant",
             "Chats":
             [
                 {
@@ -1463,46 +1475,88 @@ let Chars = {
         },
         {
             "Name":"Kangaroo",
+            "Title":"Sir James of Hats",
             "Chats":
             [
                 {
-                    "Text": "Ugh... agh... my arm.",
+                    "Text": "G'day mate. What brings you to chit chat with a sombre excuse for a knight such as I?",
                     "Options":
                     [
                         {
-                            "Text": "What happened, sir?",
-                            "Link": 1
-                        },  
+                            "Text": "Well what in heck happened to you?",
+                            "Link": 1,
+                        },
                         {
-                            "Text": "Heh... nice makeup [Leave]",
-                            "Link": 2
-                        }                     
+                            "Text": "Look at you all beaten with a tail between your legs, going to jumo in you mothers sack and cry?",
+                            "Link": 4,
+                        },
                     ]
                 },
-                {
-                    "Text": "Damn that lizard... I'll get him next time.",
+				{	
+					"Text": "Lollygagin under the sun, whatch you might think happened. Got my arse kicked by that Ali-Gator fellow... If Dendi was here he might be whistling a different tune, hed turn him into a pair of boots in a jifjaf...",
                     "Options":
-                    [
+					[
+						{
+                            "Text": "Ali-Gator? You mean Prince Ali?",
+                            "Link": 2,
+                        },
                         {
-                            "Text": "...",
-                            "Link": -1
+							"Text": "He got you in the head pretty hard didn't he?",
+                            "Link": 5,
+                    
                         }
-                    ]
+					],
                 },
                 {
-                    "Text": "Get out of here you joker!",
+					"Text": "Yeah that's what I said AliGator. He's a proper no good bogan, roughfian and nitter.",
                     "Options":
-                    [
-                        {
-                            "Text": "...",
-                            "Link": -1
+					[
+						{
+                            "Text": "You think a persona like that might have killed Duke Howl?",
+                            "Link": 4,
+                    
                         }
-                    ]
+					],
+                },
+                {
+					"Text": "Too right! A proper death dealer and not in a metaphorical sense, a bugger like that would have no problem cuting the competition, maybe th eodl wolf got a snif on something he shouldn't? Who knows.. but you might be the one to find out, ai?",
+                    "Options":
+					[
+						{
+                            "Text": "Thank you for the pep talk friend. See you around.",
+                            "Link": -1,
+                    
+                        }
+					],
+                },
+                {
+					"Text": "Mate, not as hard as I'm gonna rock your mellon if you keep aking my pride. Keep walkin'...",
+                    "Options":
+					[
+						{
+                            "Text": "Fine.[Leave] What an upside down kinda fellow.[To himself]",
+                            "Link": -1,
+                    
+                        }
+					],
+                },
+                {
+					"Text": "Oi, you better watch while turning your back mate as you might get my leg up down under. Off with you...'knight'. ",
+                    "Options":
+					[
+						{
+                            "Text": "...[Slowly backs away.]",
+                            "Link": -1,
+                    
+                        }
+					]
+
                 }
             ]
         },
         {
             "Name":"Gator",
+            "Title":"Prince Ali Gator",
             "Chats":
             [
                 {
@@ -1554,6 +1608,7 @@ let Chars = {
         },
         {
             "Name":"Bear",
+            "Title":"Unbearable",
             "Chats":
             [
                 {
@@ -1561,7 +1616,7 @@ let Chars = {
                     "Options":
                     [
                         {
-                            "Text": "Whooo, take it easy big fella. Indeed this is a honeypot I've got here. But tell me what can you offer me for it?",
+                            "Text": "Someone who maybe has something for you... [Put the lid of honey pot slightly ajar]",
                             "Requires": ["Honey"],
                             "RequiresNot": ["GivenHoney"],
                             "Link": 1
@@ -1578,7 +1633,7 @@ let Chars = {
                     [
                         {
                             "Text": "Whooo, take it easy big fella. Indeed this is a honeypot I've got here. But tell me what can you offer me for it?",
-                            "Link": 1
+                            "Link": 2
                         }                   
                     ]
                 },
@@ -1588,7 +1643,7 @@ let Chars = {
                     [
                         {
                             "Text": "Listen, you got it. But wouldn't you prefer to not be taken by the guards immediately after killing me? Let me remind you, this is a knights' tournament, and that would make me the second murdered champion here. It would make Her Hogness very sad, don't you think? How about, I give it to you peacefully, and you help me win this race?",
-                            "Link": 2
+                            "Link": 3
                         }
                     ]
                 },
@@ -1599,7 +1654,7 @@ let Chars = {
                         {
                             "Text": "Great. [Go into the dark woods with the bear]",
                             "Sets": ["GivenHoney", "RoidsInfo"],
-                            "Link": 3
+                            "Link": 4
                         },
                         {
                             "Text": "No way I'm going with you into this dark forest...[Give him the honey and leave]",
@@ -1641,6 +1696,7 @@ let Chars = {
         },
         {
             "Name":"TortoiseRun",
+            "Title":"Sir Aristurtle",
             "Chats":
             [
                 {
@@ -1667,6 +1723,7 @@ let Chars = {
         },
         {
             "Name":"Queen",
+            "Title": "Her Hogness",
             "Chats":
             [
                 {
@@ -1692,29 +1749,185 @@ let Chars = {
             ]
         },
         {
-            "Name":"Tournament Narator",
+            "Name":"Archery",
+            "Title":"Tournament Host",
             "Chats":
             [
                 {
-                    "Text": "I'm impressed sir Acorn. I must admit I wasn't expecting to see you make it to the final round.",
+                    "Text": "Welcome, welcome! To the first round of this tournament. Archery Competition!",
                     "Options":
                     [
                         {
-                            "Text": "You flatter me my queen.",
+                            "Text": "[Continue Listening]",
                             "Link": 1
                         }
                     ]
                 },
                 {
-                    "Text": "I hope you have finished your investigation, you will be announcing culprit's name after the final round.",
+                    "Text": "Best contender in every group will get a golden arrow, proof of their masterfull skills in archery.",
                     "Options":
                     [
                         {
-                            "Text": "Of course! ... YES!... The culprits name...",
-                            "Link": -1
+                            "Text": "[Continue Listening]",
+                            "Link": 2
                         }
                     ]
-                }             
+                },
+                {
+                    "Text": "Let's start the competition! Since it's ladies first our first contestant is Lady Mosilla of the Bog. She has been undisputed archery champion last four seasons.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 3
+                        }
+                    ]
+                },
+                {
+                    "Text": "Some say she has a special talisman, some say it's her skills that matter, let's see her shot!",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Observe Mosilla shoots her lucky arrow]",
+                            "Requires": ["ReturnedArrow"],
+                            "Link": 4
+                        },
+                        {
+                            "Text": "[Observe Mosilla take a shot]",
+                            "RequiresNot": ["ReturnedArrow"],
+                            "Link": 5
+                        }
+                    ]
+                },
+                {
+                    "Text": "Here it is. The fabled Silver Arrow. She aims she shoots, she scores. Bullseye! [Mosilla looks at you with a smile] Another perfect shot for Lady Mosilla.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 6
+                        }
+                    ]
+                },   
+                {
+                    "Text": "Oh my, she doesn't look very confident... That's one loong aim... She shoots, she scores. Another perfect shot for Lady Mossila. When one is an expert she doesn't need luck.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 6
+                        }
+                    ]
+                },
+                {
+                    "Text": "Our second contender is... Carrot! this Rabbit who comes from marches. Definatelly not a novice on the field of archery.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Observe Carrot take a shot]",
+                            "Link": 7
+                        }
+                    ]
+                },
+                {
+                    "Text": "And the Rabbit's arrow has hit the target but nowhere near the centre. Shame it ain't cabbage, motivation would be at high then.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 8
+                        }
+                    ]
+                },  
+                {
+                    "Text": "Next one is Sir Acorn of Hazelwood. It is sir, right? One cannot make a difference with you rodents. Sir Acorn is the last but not the least to apply for this tournament.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Shoot Mosilla's lucky arrow]",
+                            "Requires": ["FoundArrow"],
+                            "RequiresNot": ["ReturnedArrow"],
+                            "Sets": ["WonArchery", "GoldenArrow"],
+                            "Link": 9
+                        },
+                        {
+                            "Text": "[Take a shot as Jim told you]",
+                            "Requires": ["WindTip"],
+                            "Sets": ["WonArchery", "GoldenArrow"],
+                            "Link": 10
+                        },
+                        {
+                            "Text": "[Take a shot]",
+                            "Link": 11
+                        }
+                    ]
+                },
+                {
+                    "Text": "What a peculiar arrow Sir Acorn has. It seems strangely familiar. He shoots, he scores. Wow!  He split lady Mossila's arrow. I guess that we have a winner here",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 12
+                        }
+                    ]
+                },
+                {
+                    "Text": "Our Knight seems hesitant. Is he moving his whiskers? And slowly, very slowly, so slowly that I would think that he's related to Lady Mossila, he aims, he shoots and…Well done Sir Acorn! You managed to split lady Mossila's arrow.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 12
+                        }
+                    ]
+                },
+                {
+                    "Text": "He aims, he shoots, he flukes. He completely missed the target. One has to wonder if this little guy is nuts applying for the archery contest.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Continue Listening]",
+                            "Link": 13
+                        }
+                    ]
+                },
+                {
+                    "Text": "Congratulations, Sir Acorn! We didn't expect much of you. We present you with this golden arrow. May it always hit the intoned target.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Leave Archery]",
+                            "Link": -1,
+                            "Action":
+                            {
+                                "ID": "SwitchScene",
+                                "Params":
+                                {
+                                    "Scene": "Camp1a"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Text": "Congratulations, Mosilla! Performed as expected! We present you with this golden arrow. May it always hit the intoned target.",
+                    "Options":
+                    [
+                        {
+                            "Text": "[Leave Archery]",
+                            "Link": -1,
+                            "Action":
+                            {
+                                "ID": "SwitchScene",
+                                "Params":
+                                {
+                                    "Scene": "Camp1a"
+                                }
+                            }
+                        }
+                    ]
+                },
             ]
         }
     ]

@@ -8,7 +8,7 @@ import { Character } from "../Characters/Character";
 class Dialog extends TBX.UI.Panel
 {
     private _Scene: GameScene;
-    private _Character: Character;
+    private _Character: string;
     private _Object: TBX.UI.Label;
     private _Title: TBX.UI.Label;
     private _Options: TBX.UI.Panel;
@@ -71,7 +71,7 @@ class Dialog extends TBX.UI.Panel
         this._OptionLabels = [];
 
         this._Title = new TBX.UI.Label();
-        this._Title.Style.Text.Size = 22;
+        this._Title.Style.Text.Size = 20;
         this._Title.Style.Content.Align = TBX.UI.ContentAlign.End;
         this._Title.Style.Values.flexDirection = "column";
         this._Title.Size = new TBX.Vertex(320, 100, 1);
@@ -116,11 +116,12 @@ class Dialog extends TBX.UI.Panel
         },
         800);
     }
-    public SetDialog(Character: Character, ChatNo:number) : void
+    public SetDialog(Character: string, ChatNo:number) : void
     {
         this._Character = Character;
-        this._Object.Text = Character.Name;
-        let Chat = this.FindCharacter(Character.CharID).Chats[ChatNo];
+        let Char = this.FindCharacter(Character);
+        let Chat = Char.Chats[ChatNo];
+        this._Object.Text = Char.Title;
         this.SetChat(Chat);
     }
     private FindCharacter(Character:string) : any

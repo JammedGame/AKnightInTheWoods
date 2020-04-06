@@ -144,5 +144,9 @@ class GameScene extends TBX.Scene2D
                 }
             }
         }
+        else if(Action == "SwitchScene")
+        {
+            TBX.Runner.Current.SwitchScene(Params.Scene);
+        }
     }
 }
